@@ -1,0 +1,65 @@
+[
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "dili",
+  "metric": "AUROC",
+  "train": 0.869,
+  "test": 0.9039,
+  "gap": -0.0349,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "dili",
+  "metric": "AUPRC",
+  "train": 0.8636,
+  "test": 0.8825,
+  "gap": -0.0188,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "herg",
+  "metric": "AUROC",
+  "train": 0.8751,
+  "test": 0.7972,
+  "gap": 0.0779,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "herg",
+  "metric": "AUPRC",
+  "train": 0.9081,
+  "test": 0.9112,
+  "gap": -0.003,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "ames",
+  "metric": "AUROC",
+  "train": 0.9024,
+  "test": 0.8333,
+  "gap": 0.0692,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "ames",
+  "metric": "AUPRC",
+  "train": 0.9036,
+  "test": 0.8601,
+  "gap": 0.0435,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "ld50_zhu",
+  "metric": "MAE",
+  "train": 0.4199,
+  "test": 0.6398,
+  "gap": 0.2199,
+  "n_seed": 5
+ }
+]

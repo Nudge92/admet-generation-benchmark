@@ -1,0 +1,54 @@
+{
+ "dili": {
+  "n_test": 96,
+  "n_train_val": 379,
+  "exact_canonical_overlap": 0,
+  "full_inchikey_overlap": 0,
+  "inchikey14_overlap": 0,
+  "test_set_identity_vs_report": {
+   "n_ours": 96,
+   "n_report": 96,
+   "intersection": 96,
+   "jaccard": 1.0
+  }
+ },
+ "herg": {
+  "n_test": 132,
+  "n_train_val": 523,
+  "exact_canonical_overlap": 0,
+  "full_inchikey_overlap": 1,
+  "inchikey14_overlap": 6,
+  "test_set_identity_vs_report": {
+   "n_ours": 128,
+   "n_report": 128,
+   "intersection": 128,
+   "jaccard": 1.0
+  }
+ },
+ "ames": {
+  "n_test": 1457,
+  "n_train_val": 5821,
+  "exact_canonical_overlap": 0,
+  "full_inchikey_overlap": 1,
+  "inchikey14_overlap": 3,
+  "test_set_identity_vs_report": {
+   "n_ours": 1453,
+   "n_report": 1453,
+   "intersection": 1453,
+   "jaccard": 1.0
+  }
+ },
+ "ld50_zhu": {
+  "n_test": 1478,
+  "n_train_val": 5907,
+  "exact_canonical_overlap": 0,
+  "full_inchikey_overlap": 0,
+  "inchikey14_overlap": 0,
+  "test_set_identity_vs_report": {
+   "n_ours": 1466,
+   "n_report": 1466,
+   "intersection": 1466,
+   "jaccard": 1.0
+  }
+ }
+}

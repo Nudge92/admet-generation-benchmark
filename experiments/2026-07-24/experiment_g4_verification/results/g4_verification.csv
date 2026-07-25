@@ -1,0 +1,3 @@
+endpoint,metric,n_compared,g4_reported,g4_intersection,g2_reported,g2_intersection,delta_A,ci_lo,ci_hi,distinguishable,practically_equivalent,verdict,source
+half_life_obach,Spearman,128,0.4697,0.4981,0.3139,0.3038,0.1943,0.0305,0.341,True,False,G4 우세(구분됨),predictions/*.jsonl(재학습 0)
+solubility_aqsoldb,MAE,1978,0.7358,0.6993,0.7643,0.7414,0.0424,0.0216,0.065,True,False,G4 우세(구분됨),predictions/*.jsonl(재학습 0)

@@ -1,0 +1,90 @@
+{
+ "half_life_obach": {
+  "metric": "Spearman",
+  "direction": "higher",
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "n_g4": 134,
+  "n_g2": 134,
+  "n_intersection": 134,
+  "jaccard": 1.0,
+  "n_conformer_failed_in_test": 6,
+  "n_conformer_failed_excluded": 6,
+  "n_compared": 128,
+  "g4_reported": 0.4697,
+  "g2_reported": 0.3139,
+  "g4_intersection_seedmean": 0.4634,
+  "g2_intersection_seedmean": 0.3102,
+  "g4_intersection_predmean": 0.4981,
+  "g2_intersection_predmean": 0.3038,
+  "bootstrap_A": {
+   "delta": 0.1943,
+   "ci": [
+    0.0305,
+    0.341
+   ],
+   "frac_gt0": 0.993,
+   "distinguishable": true
+  },
+  "bootstrap_B": {
+   "delta": 0.1525,
+   "ci": [
+    -0.0184,
+    0.3247
+   ],
+   "distinguishable": false
+  },
+  "equivalence_margin": 0.05,
+  "practically_equivalent": false,
+  "verdict": "G4 우세(구분됨)",
+  "primary_method": "A(5seed 예측평균 후 부트스트랩)"
+ },
+ "solubility_aqsoldb": {
+  "metric": "MAE",
+  "direction": "lower",
+  "seeds": [
+   3,
+   4,
+   5
+  ],
+  "n_g4": 1995,
+  "n_g2": 1995,
+  "n_intersection": 1995,
+  "jaccard": 1.0,
+  "n_conformer_failed_in_test": 17,
+  "n_conformer_failed_excluded": 17,
+  "n_compared": 1978,
+  "g4_reported": 0.7358,
+  "g2_reported": 0.7643,
+  "g4_intersection_seedmean": 0.7349,
+  "g2_intersection_seedmean": 0.7584,
+  "g4_intersection_predmean": 0.6993,
+  "g2_intersection_predmean": 0.7414,
+  "bootstrap_A": {
+   "delta": 0.0424,
+   "ci": [
+    0.0216,
+    0.065
+   ],
+   "frac_gt0": 1.0,
+   "distinguishable": true
+  },
+  "bootstrap_B": {
+   "delta": 0.0234,
+   "ci": [
+    -0.0017,
+    0.0479
+   ],
+   "distinguishable": false
+  },
+  "equivalence_margin": 0.05,
+  "practically_equivalent": false,
+  "verdict": "G4 우세(구분됨)",
+  "primary_method": "A(5seed 예측평균 후 부트스트랩)"
+ }
+}

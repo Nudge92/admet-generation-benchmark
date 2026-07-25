@@ -1,0 +1,19 @@
+endpoint,label,pillar,metric,xgb_physchem,rf_physchem,xgb_ecfp,rf_ecfp,xgb_physchem_wins,rf_physchem_wins,phys_avg,ecfp_avg,physchem_avg_wins
+caco2_wang,Caco-2 투과,A,MAE,0.3037,0.3072,0.3914,0.425,True,True,0.3054,0.4082,True
+hia_hou,HIA 흡수,A,AUROC,0.9751,0.9722,0.9465,0.9324,True,True,0.9736,0.9394,True
+bioavailability_ma,경구 생체이용률,A,AUROC,0.7427,0.7289,0.695,0.6597,True,True,0.7358,0.6773,True
+pgp_broccatelli,P-gp 기질,A,AUROC,0.9097,0.8983,0.9065,0.9209,True,False,0.904,0.9137,False
+lipophilicity_astrazeneca,친유성 logD,A,MAE,0.5568,0.6314,0.682,0.7249,True,True,0.5941,0.7034,True
+solubility_aqsoldb,수용해도,A,MAE,0.7643,0.8367,1.2889,1.4,True,True,0.8005,1.3444,True
+bbb_martins,BBB 투과,D,AUROC,0.8993,0.9059,0.8708,0.8699,True,True,0.9026,0.8704,True
+ppbr_az,혈장단백결합,D,MAE,8.1186,8.5586,10.483,10.0643,True,True,8.3386,10.2736,True
+vdss_lombardo,분포용적 VDss,D,Spearman,0.5378,0.5765,0.3916,0.4978,True,True,0.5572,0.4447,True
+cyp2c9_veith,CYP2C9 억제,M,AUROC,0.8877,0.8728,0.8718,0.8622,True,True,0.8802,0.867,True
+cyp2d6_veith,CYP2D6 억제,M,AUROC,0.8675,0.8521,0.8505,0.8594,True,False,0.8598,0.855,True
+cyp3a4_veith,CYP3A4 억제,M,AUROC,0.884,0.8674,0.8703,0.858,True,True,0.8757,0.8642,True
+cyp2c9_substrate_carbonmangels,CYP2C9 기질,M,AUROC,0.5959,0.622,0.5941,0.5414,True,True,0.609,0.5678,True
+cyp2d6_substrate_carbonmangels,CYP2D6 기질,M,AUROC,0.8193,0.8093,0.7575,0.7712,True,True,0.8143,0.7644,True
+cyp3a4_substrate_carbonmangels,CYP3A4 기질,M,AUROC,0.6405,0.6559,0.6456,0.6443,False,True,0.6482,0.6449,True
+half_life_obach,반감기,E,Spearman,0.312,0.3139,0.2745,0.2616,True,True,0.313,0.268,True
+clearance_hepatocyte_az,간세포 청소율,E,Spearman,0.4212,0.4219,0.3693,0.288,True,True,0.4216,0.3286,True
+clearance_microsome_az,마이크로솜 청소율,E,Spearman,0.5507,0.544,0.4272,0.4257,True,True,0.5474,0.4264,True

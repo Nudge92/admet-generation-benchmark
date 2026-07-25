@@ -1,0 +1,22 @@
+{
+ "half_life_obach": {
+  "n_test": 135,
+  "n_test_recorded": 135,
+  "match": true,
+  "n_train_val": 532,
+  "exact_overlap_trainval_test": 0,
+  "n_test_unique_canonical": 134,
+  "primary": "Spearman",
+  "task": "reg"
+ },
+ "solubility_aqsoldb": {
+  "n_test": 1995,
+  "n_test_recorded": 1995,
+  "match": true,
+  "n_train_val": 7985,
+  "exact_overlap_trainval_test": 0,
+  "n_test_unique_canonical": 1995,
+  "primary": "MAE",
+  "task": "reg"
+ }
+}

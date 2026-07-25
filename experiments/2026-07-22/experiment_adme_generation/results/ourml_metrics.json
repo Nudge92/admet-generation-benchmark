@@ -1,0 +1,142 @@
+{
+  "caco2_wang": {
+    "task": "reg",
+    "n_train_val": 728,
+    "n_test": 182,
+    "pos_frac": null,
+    "leak_overlap": 0,
+    "per_seed": {
+      "MAE": {
+        "mean": 0.3914,
+        "std": 0.0498,
+        "seeds": [
+          0.3655,
+          0.4234,
+          0.4727,
+          0.3367,
+          0.3585
+        ]
+      },
+      "Spearman": {
+        "mean": 0.6713,
+        "std": 0.1148,
+        "seeds": [
+          0.7509,
+          0.6056,
+          0.4791,
+          0.7949,
+          0.7259
+        ]
+      }
+    },
+    "ensemble": {
+      "MAE": 0.3773,
+      "Spearman": 0.6811
+    }
+  },
+  "bbb_martins": {
+    "task": "cls",
+    "n_train_val": 1624,
+    "n_test": 406,
+    "pos_frac": 0.7531,
+    "leak_overlap": 1,
+    "per_seed": {
+      "AUROC": {
+        "mean": 0.8708,
+        "std": 0.0175,
+        "seeds": [
+          0.8634,
+          0.8708,
+          0.9002,
+          0.8463,
+          0.8735
+        ]
+      },
+      "AUPRC": {
+        "mean": 0.9553,
+        "std": 0.0073,
+        "seeds": [
+          0.9541,
+          0.9572,
+          0.9664,
+          0.9436,
+          0.9551
+        ]
+      }
+    },
+    "ensemble": {
+      "AUROC": 0.8776,
+      "AUPRC": 0.9578
+    }
+  },
+  "cyp2c9_veith": {
+    "task": "cls",
+    "n_train_val": 9673,
+    "n_test": 2419,
+    "pos_frac": 0.3386,
+    "leak_overlap": 1,
+    "per_seed": {
+      "AUROC": {
+        "mean": 0.8718,
+        "std": 0.0029,
+        "seeds": [
+          0.8739,
+          0.8748,
+          0.867,
+          0.8703,
+          0.8732
+        ]
+      },
+      "AUPRC": {
+        "mean": 0.7456,
+        "std": 0.0062,
+        "seeds": [
+          0.7513,
+          0.7484,
+          0.7343,
+          0.7439,
+          0.7502
+        ]
+      }
+    },
+    "ensemble": {
+      "AUROC": 0.8759,
+      "AUPRC": 0.7535
+    }
+  },
+  "solubility_aqsoldb": {
+    "task": "reg",
+    "n_train_val": 7985,
+    "n_test": 1995,
+    "pos_frac": null,
+    "leak_overlap": 0,
+    "per_seed": {
+      "MAE": {
+        "mean": 1.2889,
+        "std": 0.0353,
+        "seeds": [
+          1.2941,
+          1.3171,
+          1.301,
+          1.3123,
+          1.2202
+        ]
+      },
+      "Spearman": {
+        "mean": 0.6716,
+        "std": 0.016,
+        "seeds": [
+          0.6705,
+          0.6629,
+          0.6669,
+          0.6556,
+          0.7019
+        ]
+      }
+    },
+    "ensemble": {
+      "MAE": 1.2602,
+      "Spearman": 0.6911
+    }
+  }
+}

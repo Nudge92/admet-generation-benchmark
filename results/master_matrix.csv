@@ -1,0 +1,125 @@
+scope,endpoint,task,gen_range,gen,model,kind,metric,higher_better,value,sd,n_test,pos_rate,resolvable_gap_95,g1_fire_rate,g1_MCC,flag,source
+핵심 4종,DILI 간독성,—,G1~G5,G1,구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10),우리 학습,AUROC,True,,,96,,0.1112,0.3542,0.3615,누수 없음(학습 없음·규칙),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.9062,0.0207,96,,0.1112,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.9125,0.0093,96,,0.1112,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.8501,0.0235,96,,0.1112,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G4,"Uni-Mol (3D conformer, 2억 사전학습)",우리 학습,AUROC,True,0.8705,0.0134,96,,0.1112,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G5,"ChemBERTa-2 (SMILES transformer, fine-tune)",우리 학습,AUROC,True,0.8406,0.0327,96,,0.1112,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G5,"MoLFormer (SMILES transformer, fine-tune)",우리 학습,AUROC,True,0.881,0.0077,96,,0.1112,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G3,chemprop D-MPNN (우리 자체 학습·정직),우리 학습,AUROC,True,0.9039,0.0119,96,,0.1112,,,누수 0(실측·train만 학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,G3,"ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",누수 기준선,AUROC,True,0.9557,,96,,0.1112,,,★누수 의심 (TDC 전체 사전학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,DILI 간독성,—,G1~G5,참고,TDC SOTA — MiniMol,리더보드(미재현),AUROC,True,0.956,,96,,0.1112,,,—(외부 인용),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G1,구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10),우리 학습,AUROC,True,,,132,,0.0902,0.1818,-0.0283,누수 없음(학습 없음·규칙),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8219,0.0151,132,,0.0902,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8369,0.0052,132,,0.0902,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7349,0.0123,132,,0.0902,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G4,"Uni-Mol (3D conformer, 2억 사전학습)",우리 학습,AUROC,True,0.8047,0.0261,132,,0.0902,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G5,"ChemBERTa-2 (SMILES transformer, fine-tune)",우리 학습,AUROC,True,0.7388,0.0205,132,,0.0902,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G5,"MoLFormer (SMILES transformer, fine-tune)",우리 학습,AUROC,True,0.8169,0.0121,132,,0.0902,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G3,chemprop D-MPNN (우리 자체 학습·정직),우리 학습,AUROC,True,0.7972,0.0101,132,,0.0902,,,누수 0(실측·train만 학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,G3,"ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",누수 기준선,AUROC,True,0.9113,,132,,0.0902,,,★누수 의심 (TDC 전체 사전학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,hERG 차단,—,G1~G5,참고,TDC SOTA — MapLight+GNN,리더보드(미재현),AUROC,True,0.88,,132,,0.0902,,,—(외부 인용),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G1,구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10),우리 학습,AUROC,True,,,1457,,0.0277,0.5278,0.2602,누수 없음(학습 없음·규칙),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8513,0.0059,1457,,0.0277,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8422,0.0049,1457,,0.0277,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.8258,0.0024,1457,,0.0277,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G4,"Uni-Mol (3D conformer, 2억 사전학습)",우리 학습,AUROC,True,0.8228,0.0029,1457,,0.0277,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G5,"ChemBERTa-2 (SMILES transformer, fine-tune)",우리 학습,AUROC,True,0.8022,0.0212,1457,,0.0277,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G5,"MoLFormer (SMILES transformer, fine-tune)",우리 학습,AUROC,True,0.8352,0.0083,1457,,0.0277,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G3,chemprop D-MPNN (우리 자체 학습·정직),우리 학습,AUROC,True,0.8333,0.0089,1457,,0.0277,,,누수 0(실측·train만 학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,G3,"ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",누수 기준선,AUROC,True,0.9303,,1457,,0.0277,,,★누수 의심 (TDC 전체 사전학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,AMES 변이원성,—,G1~G5,참고,TDC SOTA — ZairaChem,리더보드(미재현),AUROC,True,0.871,,1457,,0.0277,,,—(외부 인용),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G1,구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10),우리 학습,MAE,False,,,1478,,0.0426,0.2936,,누수 없음(학습 없음·규칙),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G2,물리화학 서술자 + XGBoost,우리 학습,MAE,False,0.6071,0.007,1478,,0.0426,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G2,물리화학 서술자 + RandomForest,우리 학습,MAE,False,0.621,0.012,1478,,0.0426,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G2,ECFP4 지문 + XGBoost,우리 학습,MAE,False,0.6406,0.0086,1478,,0.0426,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G4,"Uni-Mol (3D conformer, 2억 사전학습)",우리 학습,MAE,False,0.5939,0.0185,1478,,0.0426,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G5,"ChemBERTa-2 (SMILES transformer, fine-tune)",우리 학습,MAE,False,0.7012,0.0057,1478,,0.0426,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G5,"MoLFormer (SMILES transformer, fine-tune)",우리 학습,MAE,False,0.6412,0.0087,1478,,0.0426,,,누수 0(실측·exact overlap 0),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G3,chemprop D-MPNN (우리 자체 학습·정직),우리 학습,MAE,False,0.6398,0.0212,1478,,0.0426,,,누수 0(실측·train만 학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,G3,"ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",누수 기준선,MAE,False,0.3361,,1478,,0.0426,,,★누수 의심 (TDC 전체 사전학습),experiment_generation_matrix/results/gen_matrix.csv
+핵심 4종,LD50 급성독성,—,G1~G5,참고,TDC SOTA — BaseBoosting,리더보드(미재현),MAE,False,0.552,,1478,,0.0426,,,—(외부 인용),experiment_generation_matrix/results/gen_matrix.csv
+확장,발암성 (Carcinogens),—,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,56,0.1964,0.2349,0.3036,0.3578,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,발암성 (Carcinogens),—,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8366,0.0143,56,0.1964,0.2349,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,발암성 (Carcinogens),—,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8139,0.0047,56,0.1964,0.2349,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,발암성 (Carcinogens),—,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.8018,0.0061,56,0.1964,0.2349,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,발암성 (Carcinogens),—,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7568,0.0037,56,0.1964,0.2349,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,발암성 (Carcinogens),—,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.8697,,56,0.1964,0.2349,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,ClinTox 임상독성,—,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,297,0.0808,0.1536,0.3502,0.0931,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,ClinTox 임상독성,—,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8014,0.0049,297,0.0808,0.1536,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,ClinTox 임상독성,—,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7556,0.0072,297,0.0808,0.1536,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,ClinTox 임상독성,—,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7775,0.0058,297,0.0808,0.1536,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,ClinTox 임상독성,—,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.6891,0.0216,297,0.0808,0.1536,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,ClinTox 임상독성,—,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.8985,,297,0.0808,0.1536,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-AR,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1437,0.0418,0.0962,0.2832,0.0232,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-AR,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.7285,0.0066,1437,0.0418,0.0962,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.6976,0.0113,1437,0.0418,0.0962,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7499,0.0059,1437,0.0418,0.0962,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.6687,0.0039,1437,0.0418,0.0962,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.8535,,1437,0.0418,0.0962,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-AR-LBD,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1305,0.0261,0.1274,0.2851,0.0352,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-AR-LBD,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8101,0.0077,1305,0.0261,0.1274,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR-LBD,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7767,0.0048,1305,0.0261,0.1274,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR-LBD,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7334,0.0072,1305,0.0261,0.1274,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR-LBD,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7214,0.006,1305,0.0261,0.1274,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AR-LBD,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.8945,,1305,0.0261,0.1274,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-AhR,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1268,0.1806,0.0508,0.2863,0.0474,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-AhR,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8692,0.0034,1268,0.1806,0.0508,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AhR,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8681,0.0013,1268,0.1806,0.0508,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AhR,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.862,0.0034,1268,0.1806,0.0508,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AhR,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.8313,0.0016,1268,0.1806,0.0508,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-AhR,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.9353,,1268,0.1806,0.0508,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-Aromatase,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1051,0.0904,0.0773,0.275,-0.0009,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-Aromatase,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8027,0.0095,1051,0.0904,0.0773,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-Aromatase,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7508,0.0059,1051,0.0904,0.0773,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-Aromatase,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.741,0.0082,1051,0.0904,0.0773,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-Aromatase,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7065,0.0068,1051,0.0904,0.0773,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-Aromatase,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.9138,,1051,0.0904,0.0773,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-ER,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1152,0.1727,0.0544,0.2856,-0.0144,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-ER,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.7531,0.0044,1152,0.1727,0.0544,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7525,0.0017,1152,0.1727,0.0544,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.6871,0.0044,1152,0.1727,0.0544,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7101,0.0038,1152,0.1727,0.0544,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.8237,,1152,0.1727,0.0544,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-ER-LBD,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1335,0.0682,0.0786,0.2891,-0.0283,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-ER-LBD,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8414,0.002,1335,0.0682,0.0786,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER-LBD,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8234,0.0063,1335,0.0682,0.0786,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER-LBD,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7611,0.0027,1335,0.0682,0.0786,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER-LBD,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.8084,0.0019,1335,0.0682,0.0786,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-ER-LBD,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.909,,1335,0.0682,0.0786,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,NR-PPAR-gamma,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1209,0.038,0.1098,0.2878,0.0073,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,NR-PPAR-gamma,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8057,0.0049,1209,0.038,0.1098,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-PPAR-gamma,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8362,0.0078,1209,0.038,0.1098,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-PPAR-gamma,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7212,0.0069,1209,0.038,0.1098,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-PPAR-gamma,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7287,0.0102,1209,0.038,0.1098,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,NR-PPAR-gamma,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.9314,,1209,0.038,0.1098,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,SR-ARE,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1056,0.2083,0.0523,0.2794,0.0496,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,SR-ARE,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.7949,0.0048,1056,0.2083,0.0523,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ARE,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7777,0.001,1056,0.2083,0.0523,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ARE,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.705,0.0029,1056,0.2083,0.0523,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ARE,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7323,0.0028,1056,0.2083,0.0523,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ARE,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.8799,,1056,0.2083,0.0523,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,SR-ATAD5,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1372,0.0445,0.0955,0.2806,0.0069,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,SR-ATAD5,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.7598,0.0043,1372,0.0445,0.0955,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ATAD5,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7504,0.0048,1372,0.0445,0.0955,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ATAD5,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7597,0.0037,1372,0.0445,0.0955,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ATAD5,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7573,0.0023,1372,0.0445,0.0955,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-ATAD5,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.903,,1372,0.0445,0.0955,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,SR-HSE,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1213,0.0692,0.0818,0.2803,-0.0184,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,SR-HSE,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.8028,0.0074,1213,0.0692,0.0818,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-HSE,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8023,0.0029,1213,0.0692,0.0818,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-HSE,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7686,0.002,1213,0.0692,0.0818,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-HSE,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7719,0.0041,1213,0.0692,0.0818,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-HSE,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.9075,,1213,0.0692,0.0818,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,SR-MMP,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1052,0.2548,0.048,0.289,0.0315,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,SR-MMP,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.9041,0.0014,1052,0.2548,0.048,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-MMP,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.8912,0.0012,1052,0.2548,0.048,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-MMP,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.832,0.0018,1052,0.2548,0.048,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-MMP,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.8366,0.0051,1052,0.2548,0.048,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-MMP,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.9563,,1052,0.2548,0.048,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json
+확장,Tox21,SR-p53,G1~G3,G1,구조알림 (BRENK+NIH + Benigni-Bossa),우리 학습(규칙),AUROC,True,,,1294,0.0927,0.0688,0.2836,0.0057,누수 없음(학습 없음),experiment_gen_expansion_g1g3/results/g1_summary.csv
+확장,Tox21,SR-p53,G1~G3,G2,물리화학 서술자 + XGBoost,우리 학습,AUROC,True,0.819,0.005,1294,0.0927,0.0688,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-p53,G1~G3,G2,물리화학 서술자 + RandomForest,우리 학습,AUROC,True,0.7938,0.0049,1294,0.0927,0.0688,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-p53,G1~G3,G2,ECFP4 지문 + XGBoost,우리 학습,AUROC,True,0.7726,0.0036,1294,0.0927,0.0688,,,누수 0(실측),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-p53,G1~G3,G3,chemprop D-MPNN (정직),우리 학습,AUROC,True,0.7723,0.0066,1294,0.0927,0.0688,,,누수 0(train만 학습),experiment_gen_expansion_g1g3/results/expansion_metrics.json
+확장,Tox21,SR-p53,G1~G3,G3,ADMET-AI,누수 기준선,AUROC,True,0.9032,,1294,0.0927,0.0688,,,★누수 의심(TDC 전체 사전학습),experiment_gen_expansion_g1g3/results/admetai_metrics.json

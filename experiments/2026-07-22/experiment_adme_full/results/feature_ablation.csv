@@ -1,0 +1,91 @@
+endpoint,label,pillar,task,metric,stack,value,sd,n_seed,source,delta_vs_prev
+bbb_martins,BBB 투과,D,cls,AUROC,ecfp,0.8708,0.0175,5,results/progress.jsonl,
+bbb_martins,BBB 투과,D,cls,AUROC,+phys,0.905,0.0038,5,results/progress.jsonl,0.0342
+bbb_martins,BBB 투과,D,cls,AUROC,+ion,0.9029,0.0078,5,results/progress.jsonl,-0.0021
+bbb_martins,BBB 투과,D,cls,AUROC,+3d,0.9044,0.0039,5,results/progress.jsonl,0.0015
+bbb_martins,BBB 투과,D,cls,AUROC,+medchem,0.9037,0.0043,5,results/progress.jsonl,-0.0007
+bioavailability_ma,경구 생체이용률,A,cls,AUROC,ecfp,0.695,0.022,5,results/progress.jsonl,
+bioavailability_ma,경구 생체이용률,A,cls,AUROC,+phys,0.7433,0.011,5,results/progress.jsonl,0.0483
+bioavailability_ma,경구 생체이용률,A,cls,AUROC,+ion,0.7381,0.0121,5,results/progress.jsonl,-0.0052
+bioavailability_ma,경구 생체이용률,A,cls,AUROC,+3d,0.7387,0.0121,5,results/progress.jsonl,0.0006
+bioavailability_ma,경구 생체이용률,A,cls,AUROC,+medchem,0.7346,0.0239,5,results/progress.jsonl,-0.0041
+caco2_wang,Caco-2 투과,A,reg,MAE,ecfp,0.3914,0.0498,5,results/progress.jsonl,
+caco2_wang,Caco-2 투과,A,reg,MAE,+phys,0.2916,0.0067,5,results/progress.jsonl,0.0998
+caco2_wang,Caco-2 투과,A,reg,MAE,+ion,0.2866,0.0103,5,results/progress.jsonl,0.005
+caco2_wang,Caco-2 투과,A,reg,MAE,+3d,0.2965,0.0107,5,results/progress.jsonl,-0.0099
+caco2_wang,Caco-2 투과,A,reg,MAE,+medchem,0.2948,0.0075,5,results/progress.jsonl,0.0017
+clearance_hepatocyte_az,간세포 청소율,E,reg,Spearman,ecfp,0.3693,0.0386,5,results/progress.jsonl,
+clearance_hepatocyte_az,간세포 청소율,E,reg,Spearman,+phys,0.4288,0.0514,5,results/progress.jsonl,0.0595
+clearance_hepatocyte_az,간세포 청소율,E,reg,Spearman,+ion,0.4097,0.0387,5,results/progress.jsonl,-0.0191
+clearance_hepatocyte_az,간세포 청소율,E,reg,Spearman,+3d,0.419,0.061,5,results/progress.jsonl,0.0093
+clearance_hepatocyte_az,간세포 청소율,E,reg,Spearman,+medchem,0.4181,0.0492,5,results/progress.jsonl,-0.0009
+clearance_microsome_az,마이크로솜 청소율,E,reg,Spearman,ecfp,0.4272,0.0257,5,results/progress.jsonl,
+clearance_microsome_az,마이크로솜 청소율,E,reg,Spearman,+phys,0.5436,0.0195,5,results/progress.jsonl,0.1164
+clearance_microsome_az,마이크로솜 청소율,E,reg,Spearman,+ion,0.5506,0.0098,5,results/progress.jsonl,0.007
+clearance_microsome_az,마이크로솜 청소율,E,reg,Spearman,+3d,0.5569,0.0211,5,results/progress.jsonl,0.0063
+clearance_microsome_az,마이크로솜 청소율,E,reg,Spearman,+medchem,0.5606,0.0208,5,results/progress.jsonl,0.0037
+cyp2c9_substrate_carbonmangels,CYP2C9 기질,M,cls,AUROC,ecfp,0.5941,0.0155,5,results/progress.jsonl,
+cyp2c9_substrate_carbonmangels,CYP2C9 기질,M,cls,AUROC,+phys,0.5858,0.0241,5,results/progress.jsonl,-0.0083
+cyp2c9_substrate_carbonmangels,CYP2C9 기질,M,cls,AUROC,+ion,0.596,0.0202,5,results/progress.jsonl,0.0102
+cyp2c9_substrate_carbonmangels,CYP2C9 기질,M,cls,AUROC,+3d,0.6152,0.012,5,results/progress.jsonl,0.0192
+cyp2c9_substrate_carbonmangels,CYP2C9 기질,M,cls,AUROC,+medchem,0.6097,0.0046,5,results/progress.jsonl,-0.0055
+cyp2c9_veith,CYP2C9 억제,M,cls,AUROC,ecfp,0.8718,0.0029,5,results/progress.jsonl,
+cyp2c9_veith,CYP2C9 억제,M,cls,AUROC,+phys,0.8944,0.0014,5,results/progress.jsonl,0.0226
+cyp2c9_veith,CYP2C9 억제,M,cls,AUROC,+ion,0.8953,0.0021,5,results/progress.jsonl,0.0009
+cyp2c9_veith,CYP2C9 억제,M,cls,AUROC,+3d,0.8969,0.002,5,results/progress.jsonl,0.0016
+cyp2c9_veith,CYP2C9 억제,M,cls,AUROC,+medchem,0.8973,0.0015,5,results/progress.jsonl,0.0004
+cyp2d6_substrate_carbonmangels,CYP2D6 기질,M,cls,AUROC,ecfp,0.7575,0.0225,5,results/progress.jsonl,
+cyp2d6_substrate_carbonmangels,CYP2D6 기질,M,cls,AUROC,+phys,0.8098,0.0103,5,results/progress.jsonl,0.0523
+cyp2d6_substrate_carbonmangels,CYP2D6 기질,M,cls,AUROC,+ion,0.8097,0.0139,5,results/progress.jsonl,-0.0001
+cyp2d6_substrate_carbonmangels,CYP2D6 기질,M,cls,AUROC,+3d,0.8085,0.0106,5,results/progress.jsonl,-0.0012
+cyp2d6_substrate_carbonmangels,CYP2D6 기질,M,cls,AUROC,+medchem,0.8044,0.0081,5,results/progress.jsonl,-0.0041
+cyp2d6_veith,CYP2D6 억제,M,cls,AUROC,ecfp,0.8505,0.005,5,results/progress.jsonl,
+cyp2d6_veith,CYP2D6 억제,M,cls,AUROC,+phys,0.881,0.0027,5,results/progress.jsonl,0.0305
+cyp2d6_veith,CYP2D6 억제,M,cls,AUROC,+ion,0.8863,0.0018,5,results/progress.jsonl,0.0053
+cyp2d6_veith,CYP2D6 억제,M,cls,AUROC,+3d,0.8847,0.0027,5,results/progress.jsonl,-0.0016
+cyp2d6_veith,CYP2D6 억제,M,cls,AUROC,+medchem,0.8832,0.001,5,results/progress.jsonl,-0.0015
+cyp3a4_substrate_carbonmangels,CYP3A4 기질,M,cls,AUROC,ecfp,0.6456,0.018,5,results/progress.jsonl,
+cyp3a4_substrate_carbonmangels,CYP3A4 기질,M,cls,AUROC,+phys,0.6363,0.0211,5,results/progress.jsonl,-0.0093
+cyp3a4_substrate_carbonmangels,CYP3A4 기질,M,cls,AUROC,+ion,0.6478,0.0113,5,results/progress.jsonl,0.0115
+cyp3a4_substrate_carbonmangels,CYP3A4 기질,M,cls,AUROC,+3d,0.6288,0.0058,5,results/progress.jsonl,-0.019
+cyp3a4_substrate_carbonmangels,CYP3A4 기질,M,cls,AUROC,+medchem,0.6305,0.0125,5,results/progress.jsonl,0.0017
+cyp3a4_veith,CYP3A4 억제,M,cls,AUROC,ecfp,0.8703,0.0019,5,results/progress.jsonl,
+cyp3a4_veith,CYP3A4 억제,M,cls,AUROC,+phys,0.8985,0.0007,5,results/progress.jsonl,0.0282
+cyp3a4_veith,CYP3A4 억제,M,cls,AUROC,+ion,0.8988,0.0013,5,results/progress.jsonl,0.0003
+cyp3a4_veith,CYP3A4 억제,M,cls,AUROC,+3d,0.9,0.0012,5,results/progress.jsonl,0.0012
+cyp3a4_veith,CYP3A4 억제,M,cls,AUROC,+medchem,0.9006,0.0009,5,results/progress.jsonl,0.0006
+half_life_obach,반감기,E,reg,Spearman,ecfp,0.2745,0.0438,5,results/progress.jsonl,
+half_life_obach,반감기,E,reg,Spearman,+phys,0.3182,0.0398,5,results/progress.jsonl,0.0437
+half_life_obach,반감기,E,reg,Spearman,+ion,0.3284,0.0258,5,results/progress.jsonl,0.0102
+half_life_obach,반감기,E,reg,Spearman,+3d,0.3276,0.0251,5,results/progress.jsonl,-0.0008
+half_life_obach,반감기,E,reg,Spearman,+medchem,0.3264,0.0343,5,results/progress.jsonl,-0.0012
+hia_hou,HIA 흡수,A,cls,AUROC,ecfp,0.9465,0.0141,5,results/progress.jsonl,
+hia_hou,HIA 흡수,A,cls,AUROC,+phys,0.9754,0.004,5,results/progress.jsonl,0.0289
+hia_hou,HIA 흡수,A,cls,AUROC,+ion,0.9791,0.0042,5,results/progress.jsonl,0.0037
+hia_hou,HIA 흡수,A,cls,AUROC,+3d,0.9793,0.0026,5,results/progress.jsonl,0.0002
+hia_hou,HIA 흡수,A,cls,AUROC,+medchem,0.9791,0.0029,5,results/progress.jsonl,-0.0002
+lipophilicity_astrazeneca,친유성 logD,A,reg,MAE,ecfp,0.682,0.0066,5,results/progress.jsonl,
+lipophilicity_astrazeneca,친유성 logD,A,reg,MAE,+phys,0.5469,0.0089,5,results/progress.jsonl,0.1351
+lipophilicity_astrazeneca,친유성 logD,A,reg,MAE,+ion,0.5288,0.008,5,results/progress.jsonl,0.0181
+lipophilicity_astrazeneca,친유성 logD,A,reg,MAE,+3d,0.5295,0.0083,5,results/progress.jsonl,-0.0007
+lipophilicity_astrazeneca,친유성 logD,A,reg,MAE,+medchem,0.53,0.0065,5,results/progress.jsonl,-0.0005
+pgp_broccatelli,P-gp 기질,A,cls,AUROC,ecfp,0.9065,0.0052,5,results/progress.jsonl,
+pgp_broccatelli,P-gp 기질,A,cls,AUROC,+phys,0.9113,0.0156,5,results/progress.jsonl,0.0048
+pgp_broccatelli,P-gp 기질,A,cls,AUROC,+ion,0.9109,0.0148,5,results/progress.jsonl,-0.0004
+pgp_broccatelli,P-gp 기질,A,cls,AUROC,+3d,0.9096,0.0149,5,results/progress.jsonl,-0.0013
+pgp_broccatelli,P-gp 기질,A,cls,AUROC,+medchem,0.9094,0.0142,5,results/progress.jsonl,-0.0002
+ppbr_az,혈장단백결합,D,reg,MAE,ecfp,10.483,0.242,5,results/progress.jsonl,
+ppbr_az,혈장단백결합,D,reg,MAE,+phys,8.2314,0.1734,5,results/progress.jsonl,2.2516
+ppbr_az,혈장단백결합,D,reg,MAE,+ion,8.1226,0.1342,5,results/progress.jsonl,0.1088
+ppbr_az,혈장단백결합,D,reg,MAE,+3d,8.1761,0.2031,5,results/progress.jsonl,-0.0535
+ppbr_az,혈장단백결합,D,reg,MAE,+medchem,8.059,0.142,5,results/progress.jsonl,0.1171
+solubility_aqsoldb,수용해도,A,reg,MAE,ecfp,1.2889,0.0353,5,results/progress.jsonl,
+solubility_aqsoldb,수용해도,A,reg,MAE,+phys,0.7708,0.0177,5,results/progress.jsonl,0.5181
+solubility_aqsoldb,수용해도,A,reg,MAE,+ion,0.7677,0.0159,5,results/progress.jsonl,0.0031
+solubility_aqsoldb,수용해도,A,reg,MAE,+3d,0.7595,0.0137,5,results/progress.jsonl,0.0082
+solubility_aqsoldb,수용해도,A,reg,MAE,+medchem,0.7648,0.0155,5,results/progress.jsonl,-0.0053
+vdss_lombardo,분포용적 VDss,D,reg,Spearman,ecfp,0.3916,0.0351,5,results/progress.jsonl,
+vdss_lombardo,분포용적 VDss,D,reg,Spearman,+phys,0.4752,0.0165,5,results/progress.jsonl,0.0836
+vdss_lombardo,분포용적 VDss,D,reg,Spearman,+ion,0.4719,0.0223,5,results/progress.jsonl,-0.0033
+vdss_lombardo,분포용적 VDss,D,reg,Spearman,+3d,0.4828,0.0301,5,results/progress.jsonl,0.0109
+vdss_lombardo,분포용적 VDss,D,reg,Spearman,+medchem,0.4841,0.0371,5,results/progress.jsonl,0.0013

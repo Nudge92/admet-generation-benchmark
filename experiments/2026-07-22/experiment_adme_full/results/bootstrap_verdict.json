@@ -1,0 +1,956 @@
+{
+ "caco2_wang": {
+  "metric": "MAE",
+  "higher_better": false,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.2907,
+    "lo": 0.2625,
+    "hi": 0.3207
+   },
+   "rf_physchem": {
+    "mean": 0.3014,
+    "lo": 0.2707,
+    "hi": 0.3324
+   },
+   "xgb_ecfp": {
+    "mean": 0.3755,
+    "lo": 0.3392,
+    "hi": 0.4144
+   },
+   "dmpnn_ours": {
+    "mean": 0.3228,
+    "lo": 0.2937,
+    "hi": 0.3515
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": -0.0113,
+    "lo": -0.0224,
+    "hi": -0.0002,
+    "p_two": 0.048,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": -0.0866,
+    "lo": -0.1239,
+    "hi": -0.0491,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "dmpnn_ours": {
+    "delta": -0.0338,
+    "lo": -0.0615,
+    "hi": -0.0063,
+    "p_two": 0.019,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 3,
+  "n_compared": 3
+ },
+ "hia_hou": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.9765,
+    "lo": 0.9395,
+    "hi": 1.0
+   },
+   "rf_physchem": {
+    "mean": 0.9713,
+    "lo": 0.9306,
+    "hi": 0.9966
+   },
+   "xgb_ecfp": {
+    "mean": 0.9539,
+    "lo": 0.9117,
+    "hi": 0.9875
+   },
+   "dmpnn_ours": {
+    "mean": 0.9168,
+    "lo": 0.8299,
+    "hi": 0.9792
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.0047,
+    "lo": -0.0176,
+    "hi": 0.0268,
+    "p_two": 0.596,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.0256,
+    "lo": -0.0195,
+    "hi": 0.0732,
+    "p_two": 0.242,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.0597,
+    "lo": -0.003,
+    "hi": 0.1579,
+    "p_two": 0.075,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 0,
+  "n_compared": 3
+ },
+ "bioavailability_ma": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.7446,
+    "lo": 0.6406,
+    "hi": 0.837
+   },
+   "rf_physchem": {
+    "mean": 0.7298,
+    "lo": 0.6326,
+    "hi": 0.8196
+   },
+   "xgb_ecfp": {
+    "mean": 0.7082,
+    "lo": 0.5977,
+    "hi": 0.8086
+   },
+   "dmpnn_ours": {
+    "mean": 0.5323,
+    "lo": 0.4144,
+    "hi": 0.6521
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.0157,
+    "lo": -0.0297,
+    "hi": 0.0627,
+    "p_two": 0.5,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.037,
+    "lo": -0.0445,
+    "hi": 0.1171,
+    "p_two": 0.365,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.214,
+    "lo": 0.1021,
+    "hi": 0.3249,
+    "p_two": 0.001,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 1,
+  "n_compared": 3
+ },
+ "pgp_broccatelli": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.9204,
+    "lo": 0.8849,
+    "hi": 0.9509
+   },
+   "rf_physchem": {
+    "mean": 0.9055,
+    "lo": 0.8685,
+    "hi": 0.9385
+   },
+   "xgb_ecfp": {
+    "mean": 0.9097,
+    "lo": 0.8705,
+    "hi": 0.9434
+   },
+   "dmpnn_ours": {
+    "mean": 0.9132,
+    "lo": 0.8756,
+    "hi": 0.9473
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.0162,
+    "lo": -0.0017,
+    "hi": 0.036,
+    "p_two": 0.073,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.0107,
+    "lo": -0.0171,
+    "hi": 0.0387,
+    "p_two": 0.44,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.0072,
+    "lo": -0.0213,
+    "hi": 0.0355,
+    "p_two": 0.608,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 0,
+  "n_compared": 3
+ },
+ "lipophilicity_astrazeneca": {
+  "metric": "MAE",
+  "higher_better": false,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.5464,
+    "lo": 0.516,
+    "hi": 0.5764
+   },
+   "rf_physchem": {
+    "mean": 0.628,
+    "lo": 0.5966,
+    "hi": 0.661
+   },
+   "xgb_ecfp": {
+    "mean": 0.6702,
+    "lo": 0.6358,
+    "hi": 0.7048
+   },
+   "dmpnn_ours": {
+    "mean": 0.4224,
+    "lo": 0.3967,
+    "hi": 0.4488
+   }
+  },
+  "note": "",
+  "best_predicted_model": "dmpnn_ours",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": -0.1233,
+    "lo": -0.1495,
+    "hi": -0.0969,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "rf_physchem": {
+    "delta": -0.2044,
+    "lo": -0.2348,
+    "hi": -0.1734,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": -0.248,
+    "lo": -0.2833,
+    "hi": -0.213,
+    "p_two": 0.0,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 3,
+  "n_compared": 3
+ },
+ "solubility_aqsoldb": {
+  "metric": "MAE",
+  "higher_better": false,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.7404,
+    "lo": 0.7092,
+    "hi": 0.7719
+   },
+   "rf_physchem": {
+    "mean": 0.8178,
+    "lo": 0.7858,
+    "hi": 0.8523
+   },
+   "xgb_ecfp": {
+    "mean": 1.2597,
+    "lo": 1.2159,
+    "hi": 1.3015
+   },
+   "dmpnn_ours": {
+    "mean": 0.7485,
+    "lo": 0.7164,
+    "hi": 0.7825
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": -0.0781,
+    "lo": -0.0914,
+    "hi": -0.0642,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": -0.5191,
+    "lo": -0.5591,
+    "hi": -0.4791,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "dmpnn_ours": {
+    "delta": -0.0082,
+    "lo": -0.0322,
+    "hi": 0.015,
+    "p_two": 0.497,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 2,
+  "n_compared": 3
+ },
+ "bbb_martins": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.9138,
+    "lo": 0.8791,
+    "hi": 0.944
+   },
+   "rf_physchem": {
+    "mean": 0.9188,
+    "lo": 0.8842,
+    "hi": 0.9483
+   },
+   "xgb_ecfp": {
+    "mean": 0.8883,
+    "lo": 0.8477,
+    "hi": 0.924
+   },
+   "dmpnn_ours": {
+    "mean": 0.8777,
+    "lo": 0.8278,
+    "hi": 0.9221
+   }
+  },
+  "note": "",
+  "best_predicted_model": "rf_physchem",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": 0.0054,
+    "lo": -0.014,
+    "hi": 0.0266,
+    "p_two": 0.63,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.0305,
+    "lo": -0.0019,
+    "hi": 0.065,
+    "p_two": 0.068,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.0411,
+    "lo": 0.0111,
+    "hi": 0.0756,
+    "p_two": 0.01,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 1,
+  "n_compared": 3
+ },
+ "ppbr_az": {
+  "metric": "MAE",
+  "higher_better": false,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 7.4232,
+    "lo": 6.6307,
+    "hi": 8.296
+   },
+   "rf_physchem": {
+    "mean": 8.0064,
+    "lo": 7.1972,
+    "hi": 8.8598
+   },
+   "xgb_ecfp": {
+    "mean": 9.6265,
+    "lo": 8.6929,
+    "hi": 10.6306
+   },
+   "dmpnn_ours": {
+    "mean": 7.475,
+    "lo": 6.648,
+    "hi": 8.4258
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": -0.5953,
+    "lo": -0.8798,
+    "hi": -0.3323,
+    "p_two": 0.001,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": -2.1931,
+    "lo": -3.0991,
+    "hi": -1.2809,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "dmpnn_ours": {
+    "delta": -0.0582,
+    "lo": -0.7187,
+    "hi": 0.5893,
+    "p_two": 0.851,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 2,
+  "n_compared": 3
+ },
+ "vdss_lombardo": {
+  "metric": "Spearman",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.5714,
+    "lo": 0.472,
+    "hi": 0.6643
+   },
+   "rf_physchem": {
+    "mean": 0.5877,
+    "lo": 0.4892,
+    "hi": 0.6809
+   },
+   "xgb_ecfp": {
+    "mean": 0.4352,
+    "lo": 0.3212,
+    "hi": 0.5438
+   },
+   "dmpnn_ours": {
+    "mean": 0.5522,
+    "lo": 0.4486,
+    "hi": 0.6419
+   }
+  },
+  "note": "",
+  "best_predicted_model": "rf_physchem",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": 0.0163,
+    "lo": -0.0446,
+    "hi": 0.0828,
+    "p_two": 0.62,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.155,
+    "lo": 0.0575,
+    "hi": 0.2604,
+    "p_two": 0.001,
+    "distinguishable": true
+   },
+   "dmpnn_ours": {
+    "delta": 0.0393,
+    "lo": -0.0502,
+    "hi": 0.1243,
+    "p_two": 0.358,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 1,
+  "n_compared": 3
+ },
+ "cyp2c9_veith": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.8917,
+    "lo": 0.8784,
+    "hi": 0.9045
+   },
+   "rf_physchem": {
+    "mean": 0.8752,
+    "lo": 0.8608,
+    "hi": 0.8894
+   },
+   "xgb_ecfp": {
+    "mean": 0.876,
+    "lo": 0.8609,
+    "hi": 0.8904
+   },
+   "dmpnn_ours": {
+    "mean": 0.8836,
+    "lo": 0.8697,
+    "hi": 0.8975
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.0166,
+    "lo": 0.0108,
+    "hi": 0.0225,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": 0.0158,
+    "lo": 0.0061,
+    "hi": 0.0257,
+    "p_two": 0.001,
+    "distinguishable": true
+   },
+   "dmpnn_ours": {
+    "delta": 0.0083,
+    "lo": -0.0004,
+    "hi": 0.017,
+    "p_two": 0.061,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 2,
+  "n_compared": 3
+ },
+ "cyp2d6_veith": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.8734,
+    "lo": 0.8531,
+    "hi": 0.8922
+   },
+   "rf_physchem": {
+    "mean": 0.8548,
+    "lo": 0.8322,
+    "hi": 0.8745
+   },
+   "xgb_ecfp": {
+    "mean": 0.8555,
+    "lo": 0.8345,
+    "hi": 0.8754
+   },
+   "dmpnn_ours": {
+    "mean": 0.8698,
+    "lo": 0.8496,
+    "hi": 0.8889
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.0186,
+    "lo": 0.0088,
+    "hi": 0.029,
+    "p_two": 0.001,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": 0.0182,
+    "lo": 0.0025,
+    "hi": 0.0334,
+    "p_two": 0.023,
+    "distinguishable": true
+   },
+   "dmpnn_ours": {
+    "delta": 0.0039,
+    "lo": -0.0102,
+    "hi": 0.0179,
+    "p_two": 0.586,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 2,
+  "n_compared": 3
+ },
+ "cyp3a4_veith": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.8885,
+    "lo": 0.876,
+    "hi": 0.901
+   },
+   "rf_physchem": {
+    "mean": 0.8694,
+    "lo": 0.8554,
+    "hi": 0.883
+   },
+   "xgb_ecfp": {
+    "mean": 0.874,
+    "lo": 0.8606,
+    "hi": 0.888
+   },
+   "dmpnn_ours": {
+    "mean": 0.8943,
+    "lo": 0.882,
+    "hi": 0.9059
+   }
+  },
+  "note": "",
+  "best_predicted_model": "dmpnn_ours",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": 0.0056,
+    "lo": -0.0044,
+    "hi": 0.0154,
+    "p_two": 0.266,
+    "distinguishable": false
+   },
+   "rf_physchem": {
+    "delta": 0.0248,
+    "lo": 0.0141,
+    "hi": 0.0359,
+    "p_two": 0.0,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": 0.0202,
+    "lo": 0.0101,
+    "hi": 0.0299,
+    "p_two": 0.0,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 2,
+  "n_compared": 3
+ },
+ "cyp2c9_substrate_carbonmangels": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.6006,
+    "lo": 0.4981,
+    "hi": 0.6994
+   },
+   "rf_physchem": {
+    "mean": 0.6217,
+    "lo": 0.5159,
+    "hi": 0.7244
+   },
+   "xgb_ecfp": {
+    "mean": 0.5975,
+    "lo": 0.4965,
+    "hi": 0.7007
+   },
+   "dmpnn_ours": {
+    "mean": 0.6261,
+    "lo": 0.5192,
+    "hi": 0.7258
+   }
+  },
+  "note": "",
+  "best_predicted_model": "dmpnn_ours",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": 0.027,
+    "lo": -0.0553,
+    "hi": 0.104,
+    "p_two": 0.508,
+    "distinguishable": false
+   },
+   "rf_physchem": {
+    "delta": 0.0027,
+    "lo": -0.0748,
+    "hi": 0.0772,
+    "p_two": 0.935,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.0315,
+    "lo": -0.0648,
+    "hi": 0.126,
+    "p_two": 0.504,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 0,
+  "n_compared": 3
+ },
+ "cyp2d6_substrate_carbonmangels": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.8205,
+    "lo": 0.7451,
+    "hi": 0.8896
+   },
+   "rf_physchem": {
+    "mean": 0.8163,
+    "lo": 0.7368,
+    "hi": 0.8863
+   },
+   "xgb_ecfp": {
+    "mean": 0.7723,
+    "lo": 0.6837,
+    "hi": 0.8539
+   },
+   "dmpnn_ours": {
+    "mean": 0.7808,
+    "lo": 0.6953,
+    "hi": 0.8633
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.006,
+    "lo": -0.0185,
+    "hi": 0.0315,
+    "p_two": 0.643,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.048,
+    "lo": -0.0065,
+    "hi": 0.1069,
+    "p_two": 0.087,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.0402,
+    "lo": -0.0103,
+    "hi": 0.0929,
+    "p_two": 0.128,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 0,
+  "n_compared": 3
+ },
+ "cyp3a4_substrate_carbonmangels": {
+  "metric": "AUROC",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.6444,
+    "lo": 0.5428,
+    "hi": 0.7387
+   },
+   "rf_physchem": {
+    "mean": 0.6642,
+    "lo": 0.5684,
+    "hi": 0.7562
+   },
+   "xgb_ecfp": {
+    "mean": 0.6485,
+    "lo": 0.5457,
+    "hi": 0.7461
+   },
+   "dmpnn_ours": {
+    "mean": 0.5725,
+    "lo": 0.4734,
+    "hi": 0.6727
+   }
+  },
+  "note": "",
+  "best_predicted_model": "rf_physchem",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": 0.0192,
+    "lo": -0.0203,
+    "hi": 0.0601,
+    "p_two": 0.358,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.0135,
+    "lo": -0.0641,
+    "hi": 0.0894,
+    "p_two": 0.732,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.0875,
+    "lo": 0.0198,
+    "hi": 0.1553,
+    "p_two": 0.008,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 1,
+  "n_compared": 3
+ },
+ "half_life_obach": {
+  "metric": "Spearman",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.3565,
+    "lo": 0.1975,
+    "hi": 0.508
+   },
+   "rf_physchem": {
+    "mean": 0.3114,
+    "lo": 0.1442,
+    "hi": 0.4707
+   },
+   "xgb_ecfp": {
+    "mean": 0.284,
+    "lo": 0.1129,
+    "hi": 0.4554
+   },
+   "dmpnn_ours": {
+    "mean": 0.2224,
+    "lo": 0.0578,
+    "hi": 0.373
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.043,
+    "lo": -0.0566,
+    "hi": 0.135,
+    "p_two": 0.334,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.0723,
+    "lo": -0.1417,
+    "hi": 0.2884,
+    "p_two": 0.537,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.1363,
+    "lo": -0.0567,
+    "hi": 0.3323,
+    "p_two": 0.165,
+    "distinguishable": false
+   }
+  },
+  "n_distinguishable": 0,
+  "n_compared": 3
+ },
+ "clearance_hepatocyte_az": {
+  "metric": "Spearman",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.5242,
+    "lo": 0.4075,
+    "hi": 0.6231
+   },
+   "rf_physchem": {
+    "mean": 0.4713,
+    "lo": 0.3605,
+    "hi": 0.5723
+   },
+   "xgb_ecfp": {
+    "mean": 0.4341,
+    "lo": 0.3199,
+    "hi": 0.5414
+   },
+   "dmpnn_ours": {
+    "mean": 0.3863,
+    "lo": 0.2669,
+    "hi": 0.5026
+   }
+  },
+  "note": "",
+  "best_predicted_model": "xgb_physchem",
+  "best_vs_others": {
+   "rf_physchem": {
+    "delta": 0.0527,
+    "lo": 0.0017,
+    "hi": 0.1072,
+    "p_two": 0.042,
+    "distinguishable": true
+   },
+   "xgb_ecfp": {
+    "delta": 0.0887,
+    "lo": -0.0296,
+    "hi": 0.2039,
+    "p_two": 0.153,
+    "distinguishable": false
+   },
+   "dmpnn_ours": {
+    "delta": 0.1351,
+    "lo": 0.0516,
+    "hi": 0.2226,
+    "p_two": 0.003,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 2,
+  "n_compared": 3
+ },
+ "clearance_microsome_az": {
+  "metric": "Spearman",
+  "higher_better": true,
+  "ci": {
+   "xgb_physchem": {
+    "mean": 0.5725,
+    "lo": 0.4802,
+    "hi": 0.6591
+   },
+   "rf_physchem": {
+    "mean": 0.5449,
+    "lo": 0.4454,
+    "hi": 0.6329
+   },
+   "xgb_ecfp": {
+    "mean": 0.4426,
+    "lo": 0.327,
+    "hi": 0.549
+   },
+   "dmpnn_ours": {
+    "mean": 0.5852,
+    "lo": 0.4829,
+    "hi": 0.672
+   }
+  },
+  "note": "",
+  "best_predicted_model": "dmpnn_ours",
+  "best_vs_others": {
+   "xgb_physchem": {
+    "delta": 0.0117,
+    "lo": -0.0604,
+    "hi": 0.0816,
+    "p_two": 0.706,
+    "distinguishable": false
+   },
+   "rf_physchem": {
+    "delta": 0.0413,
+    "lo": -0.0293,
+    "hi": 0.1088,
+    "p_two": 0.241,
+    "distinguishable": false
+   },
+   "xgb_ecfp": {
+    "delta": 0.1397,
+    "lo": 0.0524,
+    "hi": 0.2303,
+    "p_two": 0.001,
+    "distinguishable": true
+   }
+  },
+  "n_distinguishable": 1,
+  "n_compared": 3
+ }
+}

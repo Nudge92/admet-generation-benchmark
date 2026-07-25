@@ -1,0 +1,234 @@
+{
+ "A_reorder": [
+  {
+   "endpoint": "DILI 간독성",
+   "n_rows": 10,
+   "before": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "TDC SOTA — MiniMol"
+   ],
+   "after": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "TDC SOTA — MiniMol"
+   ],
+   "rowset_identical": true
+  },
+  {
+   "endpoint": "hERG 차단",
+   "n_rows": 10,
+   "before": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "TDC SOTA — MapLight+GNN"
+   ],
+   "after": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "TDC SOTA — MapLight+GNN"
+   ],
+   "rowset_identical": true
+  },
+  {
+   "endpoint": "AMES 변이원성",
+   "n_rows": 10,
+   "before": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "TDC SOTA — ZairaChem"
+   ],
+   "after": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "TDC SOTA — ZairaChem"
+   ],
+   "rowset_identical": true
+  },
+  {
+   "endpoint": "LD50 급성독성",
+   "n_rows": 10,
+   "before": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "TDC SOTA — BaseBoosting"
+   ],
+   "after": [
+    "구조알림 (BRENK+NIH + Benigni-Bossa SMARTS 10)",
+    "물리화학 서술자 + XGBoost",
+    "물리화학 서술자 + RandomForest",
+    "ECFP4 지문 + XGBoost",
+    "chemprop D-MPNN (우리 자체 학습·정직)",
+    "ADMET-AI (Chemprop D-MPNN, 공개 사전학습)",
+    "Uni-Mol (3D conformer, 2억 사전학습)",
+    "ChemBERTa-2 (SMILES transformer, fine-tune)",
+    "MoLFormer (SMILES transformer, fine-tune)",
+    "TDC SOTA — BaseBoosting"
+   ],
+   "rowset_identical": true
+  }
+ ],
+ "A_figures": [
+  {
+   "endpoint": "DILI 간독성",
+   "bar_order": [
+    "G2",
+    "G2",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G5"
+   ],
+   "values": [
+    0.9062,
+    0.9125,
+    0.8501,
+    0.9039,
+    0.8705,
+    0.8406,
+    0.881
+   ]
+  },
+  {
+   "endpoint": "hERG 차단",
+   "bar_order": [
+    "G2",
+    "G2",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G5"
+   ],
+   "values": [
+    0.8219,
+    0.8369,
+    0.7349,
+    0.7972,
+    0.8047,
+    0.7388,
+    0.8169
+   ]
+  },
+  {
+   "endpoint": "AMES 변이원성",
+   "bar_order": [
+    "G2",
+    "G2",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G5"
+   ],
+   "values": [
+    0.8513,
+    0.8422,
+    0.8258,
+    0.8333,
+    0.8228,
+    0.8022,
+    0.8352
+   ]
+  },
+  {
+   "endpoint": "LD50 급성독성",
+   "bar_order": [
+    "G2",
+    "G2",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G5"
+   ],
+   "values": [
+    0.6071,
+    0.621,
+    0.6406,
+    0.6398,
+    0.5939,
+    0.7012,
+    0.6412
+   ]
+  }
+ ],
+ "B_dedupe": {
+  "rows_before": 22,
+  "rows_after": 16,
+  "removed": 6,
+  "rowset_identical": true
+ },
+ "C_summary": {
+  "banner_updated": true,
+  "conclusion2_updated": true
+ },
+ "verification": {
+  "§3-A DILI 간독성 셀집합 동일": true,
+  "§3-A hERG 차단 셀집합 동일": true,
+  "§3-A AMES 변이원성 셀집합 동일": true,
+  "§3-A LD50 급성독성 셀집합 동일": true,
+  "§8 셀집합 동일(중복 제외)": true,
+  "새로 생긴 숫자 없음": true,
+  "고유 숫자값 집합 동일": true,
+  "감소분이 §8 중복분과 정확히 일치": true,
+  "§6 수치와 정합(3·10)": true
+ },
+ "counts": {
+  "numbers_before": 570,
+  "numbers_after": 552,
+  "numbers_removed_as_duplicates": 18,
+  "size_before": 554584,
+  "size_after": 553646
+ }
+}

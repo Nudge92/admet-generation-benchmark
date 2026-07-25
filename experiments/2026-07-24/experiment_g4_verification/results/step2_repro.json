@@ -1,0 +1,39 @@
+{
+ "tolerance": 0.005,
+ "checks": [
+  {
+   "endpoint": "half_life_obach",
+   "model": "rf_physchem",
+   "metric": "Spearman",
+   "reported": 0.3139,
+   "reproduced": 0.3139,
+   "diff": 0.0,
+   "within_tol": true,
+   "per_seed": [
+    0.2619,
+    0.3033,
+    0.3117,
+    0.3446,
+    0.3482
+   ],
+   "n_test": 135
+  },
+  {
+   "endpoint": "solubility_aqsoldb",
+   "model": "xgb_physchem",
+   "metric": "MAE",
+   "reported": 0.7643,
+   "reproduced": 0.7643,
+   "diff": 0.0,
+   "within_tol": true,
+   "per_seed": [
+    0.7897,
+    0.758,
+    0.7614,
+    0.7507,
+    0.7617
+   ],
+   "n_test": 1995
+  }
+ ]
+}

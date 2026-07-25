@@ -1,0 +1,90 @@
+{"model": "rf_ecfp", "endpoint": "caco2_wang", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 0.428, "Spearman": 0.6365}}
+{"model": "rf_ecfp", "endpoint": "caco2_wang", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 0.4075, "Spearman": 0.6828}}
+{"model": "rf_ecfp", "endpoint": "caco2_wang", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 0.4713, "Spearman": 0.4704}}
+{"model": "rf_ecfp", "endpoint": "caco2_wang", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 0.4252, "Spearman": 0.6521}}
+{"model": "rf_ecfp", "endpoint": "caco2_wang", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 0.3931, "Spearman": 0.7282}}
+{"model": "rf_ecfp", "endpoint": "hia_hou", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9372, "AUPRC": 0.9659, "pos_rate": 0.7692}}
+{"model": "rf_ecfp", "endpoint": "hia_hou", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9397, "AUPRC": 0.9546, "pos_rate": 0.7692}}
+{"model": "rf_ecfp", "endpoint": "hia_hou", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9362, "AUPRC": 0.9652, "pos_rate": 0.7692}}
+{"model": "rf_ecfp", "endpoint": "hia_hou", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9323, "AUPRC": 0.9644, "pos_rate": 0.7692}}
+{"model": "rf_ecfp", "endpoint": "hia_hou", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9165, "AUPRC": 0.9436, "pos_rate": 0.7692}}
+{"model": "rf_ecfp", "endpoint": "bioavailability_ma", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6693, "AUPRC": 0.8371, "pos_rate": 0.7578}}
+{"model": "rf_ecfp", "endpoint": "bioavailability_ma", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6601, "AUPRC": 0.8172, "pos_rate": 0.7578}}
+{"model": "rf_ecfp", "endpoint": "bioavailability_ma", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6279, "AUPRC": 0.8117, "pos_rate": 0.7578}}
+{"model": "rf_ecfp", "endpoint": "bioavailability_ma", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6866, "AUPRC": 0.8615, "pos_rate": 0.7578}}
+{"model": "rf_ecfp", "endpoint": "bioavailability_ma", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6546, "AUPRC": 0.8309, "pos_rate": 0.7578}}
+{"model": "rf_ecfp", "endpoint": "pgp_broccatelli", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9172, "AUPRC": 0.9339, "pos_rate": 0.5061}}
+{"model": "rf_ecfp", "endpoint": "pgp_broccatelli", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9247, "AUPRC": 0.9374, "pos_rate": 0.5061}}
+{"model": "rf_ecfp", "endpoint": "pgp_broccatelli", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9248, "AUPRC": 0.9379, "pos_rate": 0.5061}}
+{"model": "rf_ecfp", "endpoint": "pgp_broccatelli", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9178, "AUPRC": 0.9329, "pos_rate": 0.5061}}
+{"model": "rf_ecfp", "endpoint": "pgp_broccatelli", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.9202, "AUPRC": 0.9356, "pos_rate": 0.5061}}
+{"model": "rf_ecfp", "endpoint": "lipophilicity_astrazeneca", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 0.7272, "Spearman": 0.6308}}
+{"model": "rf_ecfp", "endpoint": "lipophilicity_astrazeneca", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 0.7233, "Spearman": 0.6225}}
+{"model": "rf_ecfp", "endpoint": "lipophilicity_astrazeneca", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 0.7298, "Spearman": 0.6267}}
+{"model": "rf_ecfp", "endpoint": "lipophilicity_astrazeneca", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 0.7234, "Spearman": 0.6143}}
+{"model": "rf_ecfp", "endpoint": "lipophilicity_astrazeneca", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 0.7209, "Spearman": 0.6295}}
+{"model": "rf_ecfp", "endpoint": "solubility_aqsoldb", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 1.4147, "Spearman": 0.6144}}
+{"model": "rf_ecfp", "endpoint": "solubility_aqsoldb", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 1.4325, "Spearman": 0.6005}}
+{"model": "rf_ecfp", "endpoint": "solubility_aqsoldb", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 1.4053, "Spearman": 0.6253}}
+{"model": "rf_ecfp", "endpoint": "solubility_aqsoldb", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 1.4049, "Spearman": 0.6125}}
+{"model": "rf_ecfp", "endpoint": "solubility_aqsoldb", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 1.3425, "Spearman": 0.6588}}
+{"model": "rf_ecfp", "endpoint": "bbb_martins", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8702, "AUPRC": 0.9594, "pos_rate": 0.8079}}
+{"model": "rf_ecfp", "endpoint": "bbb_martins", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8644, "AUPRC": 0.9565, "pos_rate": 0.8079}}
+{"model": "rf_ecfp", "endpoint": "bbb_martins", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8723, "AUPRC": 0.9569, "pos_rate": 0.8079}}
+{"model": "rf_ecfp", "endpoint": "bbb_martins", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8673, "AUPRC": 0.9537, "pos_rate": 0.8079}}
+{"model": "rf_ecfp", "endpoint": "bbb_martins", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8754, "AUPRC": 0.9567, "pos_rate": 0.8079}}
+{"model": "rf_ecfp", "endpoint": "ppbr_az", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 10.2971, "Spearman": 0.2771}}
+{"model": "rf_ecfp", "endpoint": "ppbr_az", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 9.9206, "Spearman": 0.3781}}
+{"model": "rf_ecfp", "endpoint": "ppbr_az", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 10.1657, "Spearman": 0.3188}}
+{"model": "rf_ecfp", "endpoint": "ppbr_az", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 9.9358, "Spearman": 0.3905}}
+{"model": "rf_ecfp", "endpoint": "ppbr_az", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 10.0021, "Spearman": 0.3939}}
+{"model": "rf_ecfp", "endpoint": "vdss_lombardo", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 4.4879, "Spearman": 0.5038}}
+{"model": "rf_ecfp", "endpoint": "vdss_lombardo", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 4.0622, "Spearman": 0.5164}}
+{"model": "rf_ecfp", "endpoint": "vdss_lombardo", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 5.1953, "Spearman": 0.4787}}
+{"model": "rf_ecfp", "endpoint": "vdss_lombardo", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 4.5113, "Spearman": 0.4863}}
+{"model": "rf_ecfp", "endpoint": "vdss_lombardo", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 4.3425, "Spearman": 0.5039}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_veith", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8631, "AUPRC": 0.7332, "pos_rate": 0.3183}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_veith", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8639, "AUPRC": 0.7354, "pos_rate": 0.3183}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_veith", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8607, "AUPRC": 0.7284, "pos_rate": 0.3183}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_veith", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8597, "AUPRC": 0.7256, "pos_rate": 0.3183}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_veith", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8634, "AUPRC": 0.7347, "pos_rate": 0.3183}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_veith", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8571, "AUPRC": 0.6425, "pos_rate": 0.1687}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_veith", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8601, "AUPRC": 0.6495, "pos_rate": 0.1687}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_veith", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8593, "AUPRC": 0.6452, "pos_rate": 0.1687}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_veith", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8577, "AUPRC": 0.6526, "pos_rate": 0.1687}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_veith", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.863, "AUPRC": 0.6533, "pos_rate": 0.1687}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_veith", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8582, "AUPRC": 0.8291, "pos_rate": 0.4386}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_veith", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8567, "AUPRC": 0.8289, "pos_rate": 0.4386}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_veith", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8568, "AUPRC": 0.8274, "pos_rate": 0.4386}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_veith", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8564, "AUPRC": 0.8278, "pos_rate": 0.4386}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_veith", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.8617, "AUPRC": 0.832, "pos_rate": 0.4386}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_substrate_carbonmangels", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.5228, "AUPRC": 0.3366, "pos_rate": 0.2815}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_substrate_carbonmangels", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.5255, "AUPRC": 0.361, "pos_rate": 0.2815}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_substrate_carbonmangels", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.5364, "AUPRC": 0.3564, "pos_rate": 0.2815}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_substrate_carbonmangels", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.5441, "AUPRC": 0.3809, "pos_rate": 0.2815}}
+{"model": "rf_ecfp", "endpoint": "cyp2c9_substrate_carbonmangels", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.578, "AUPRC": 0.3752, "pos_rate": 0.2815}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_substrate_carbonmangels", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.7825, "AUPRC": 0.6821, "pos_rate": 0.3185}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_substrate_carbonmangels", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.7703, "AUPRC": 0.6545, "pos_rate": 0.3185}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_substrate_carbonmangels", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.7821, "AUPRC": 0.6424, "pos_rate": 0.3185}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_substrate_carbonmangels", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.771, "AUPRC": 0.6679, "pos_rate": 0.3185}}
+{"model": "rf_ecfp", "endpoint": "cyp2d6_substrate_carbonmangels", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.7501, "AUPRC": 0.6468, "pos_rate": 0.3185}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_substrate_carbonmangels", "seed": 1, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6432, "AUPRC": 0.6891, "pos_rate": 0.5852}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_substrate_carbonmangels", "seed": 2, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6259, "AUPRC": 0.7078, "pos_rate": 0.5852}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_substrate_carbonmangels", "seed": 3, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6444, "AUPRC": 0.7104, "pos_rate": 0.5852}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_substrate_carbonmangels", "seed": 4, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6606, "AUPRC": 0.7393, "pos_rate": 0.5852}}
+{"model": "rf_ecfp", "endpoint": "cyp3a4_substrate_carbonmangels", "seed": 5, "task": "cls", "status": "ok", "metrics": {"AUROC": 0.6475, "AUPRC": 0.6993, "pos_rate": 0.5852}}
+{"model": "rf_ecfp", "endpoint": "half_life_obach", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 27.3275, "Spearman": 0.27}}
+{"model": "rf_ecfp", "endpoint": "half_life_obach", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 31.2289, "Spearman": 0.2416}}
+{"model": "rf_ecfp", "endpoint": "half_life_obach", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 31.3413, "Spearman": 0.2734}}
+{"model": "rf_ecfp", "endpoint": "half_life_obach", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 22.0493, "Spearman": 0.2557}}
+{"model": "rf_ecfp", "endpoint": "half_life_obach", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 21.8588, "Spearman": 0.2673}}
+{"model": "rf_ecfp", "endpoint": "clearance_hepatocyte_az", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 35.6493, "Spearman": 0.3293}}
+{"model": "rf_ecfp", "endpoint": "clearance_hepatocyte_az", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 36.6825, "Spearman": 0.2787}}
+{"model": "rf_ecfp", "endpoint": "clearance_hepatocyte_az", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 36.0761, "Spearman": 0.3257}}
+{"model": "rf_ecfp", "endpoint": "clearance_hepatocyte_az", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 36.7305, "Spearman": 0.2432}}
+{"model": "rf_ecfp", "endpoint": "clearance_hepatocyte_az", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 36.0985, "Spearman": 0.263}}
+{"model": "rf_ecfp", "endpoint": "clearance_microsome_az", "seed": 1, "task": "reg", "status": "ok", "metrics": {"MAE": 27.045, "Spearman": 0.4419}}
+{"model": "rf_ecfp", "endpoint": "clearance_microsome_az", "seed": 2, "task": "reg", "status": "ok", "metrics": {"MAE": 27.0278, "Spearman": 0.4725}}
+{"model": "rf_ecfp", "endpoint": "clearance_microsome_az", "seed": 3, "task": "reg", "status": "ok", "metrics": {"MAE": 28.3407, "Spearman": 0.3833}}
+{"model": "rf_ecfp", "endpoint": "clearance_microsome_az", "seed": 4, "task": "reg", "status": "ok", "metrics": {"MAE": 28.9922, "Spearman": 0.399}}
+{"model": "rf_ecfp", "endpoint": "clearance_microsome_az", "seed": 5, "task": "reg", "status": "ok", "metrics": {"MAE": 28.748, "Spearman": 0.432}}

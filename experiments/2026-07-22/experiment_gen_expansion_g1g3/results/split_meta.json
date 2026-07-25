@@ -1,0 +1,290 @@
+{
+ "Carcinogens_Lagunin": {
+  "split": "TDC scaffold (Bemis-Murcko) seed=42 · frac 0.7/0.1/0.2",
+  "source": "Tox(name).get_split(method='scaffold', seed=42)",
+  "n_labels": 1,
+  "labels": [
+   "Y"
+  ],
+  "per_label": {
+   "Y": {
+    "train": {
+     "n": 196,
+     "pos": 44,
+     "pos_rate": 0.2245
+    },
+    "valid": {
+     "n": 28,
+     "pos": 5,
+     "pos_rate": 0.1786
+    },
+    "test": {
+     "n": 56,
+     "pos": 11,
+     "pos_rate": 0.1964
+    }
+   }
+  },
+  "n_train": 196,
+  "n_valid": 28,
+  "n_test": 56
+ },
+ "ClinTox": {
+  "split": "TDC scaffold (Bemis-Murcko) seed=42 · frac 0.7/0.1/0.2",
+  "source": "Tox(name).get_split(method='scaffold', seed=42)",
+  "n_labels": 1,
+  "labels": [
+   "Y"
+  ],
+  "per_label": {
+   "Y": {
+    "train": {
+     "n": 1034,
+     "pos": 71,
+     "pos_rate": 0.0687
+    },
+    "valid": {
+     "n": 147,
+     "pos": 17,
+     "pos_rate": 0.1156
+    },
+    "test": {
+     "n": 297,
+     "pos": 24,
+     "pos_rate": 0.0808
+    }
+   }
+  },
+  "n_train": 1034,
+  "n_valid": 147,
+  "n_test": 297
+ },
+ "Tox21": {
+  "split": "TDC scaffold (Bemis-Murcko) seed=42 · frac 0.7/0.1/0.2",
+  "source": "12과제 합집합 + tdc.utils.split.create_scaffold_split(seed=42)",
+  "n_labels": 12,
+  "labels": [
+   "NR-AR",
+   "NR-AR-LBD",
+   "NR-AhR",
+   "NR-Aromatase",
+   "NR-ER",
+   "NR-ER-LBD",
+   "NR-PPAR-gamma",
+   "SR-ARE",
+   "SR-ATAD5",
+   "SR-HSE",
+   "SR-MMP",
+   "SR-p53"
+  ],
+  "per_label": {
+   "NR-AR": {
+    "train": {
+     "n": 5103,
+     "pos": 175,
+     "pos_rate": 0.0343
+    },
+    "valid": {
+     "n": 718,
+     "pos": 73,
+     "pos_rate": 0.1017
+    },
+    "test": {
+     "n": 1437,
+     "pos": 60,
+     "pos_rate": 0.0418
+    }
+   },
+   "NR-AR-LBD": {
+    "train": {
+     "n": 4799,
+     "pos": 142,
+     "pos_rate": 0.0296
+    },
+    "valid": {
+     "n": 647,
+     "pos": 61,
+     "pos_rate": 0.0943
+    },
+    "test": {
+     "n": 1305,
+     "pos": 34,
+     "pos_rate": 0.0261
+    }
+   },
+   "NR-AhR": {
+    "train": {
+     "n": 4663,
+     "pos": 455,
+     "pos_rate": 0.0976
+    },
+    "valid": {
+     "n": 611,
+     "pos": 84,
+     "pos_rate": 0.1375
+    },
+    "test": {
+     "n": 1268,
+     "pos": 229,
+     "pos_rate": 0.1806
+    }
+   },
+   "NR-Aromatase": {
+    "train": {
+     "n": 4234,
+     "pos": 163,
+     "pos_rate": 0.0385
+    },
+    "valid": {
+     "n": 530,
+     "pos": 42,
+     "pos_rate": 0.0792
+    },
+    "test": {
+     "n": 1051,
+     "pos": 95,
+     "pos_rate": 0.0904
+    }
+   },
+   "NR-ER": {
+    "train": {
+     "n": 4442,
+     "pos": 505,
+     "pos_rate": 0.1137
+    },
+    "valid": {
+     "n": 592,
+     "pos": 87,
+     "pos_rate": 0.147
+    },
+    "test": {
+     "n": 1152,
+     "pos": 199,
+     "pos_rate": 0.1727
+    }
+   },
+   "NR-ER-LBD": {
+    "train": {
+     "n": 4943,
+     "pos": 217,
+     "pos_rate": 0.0439
+    },
+    "valid": {
+     "n": 670,
+     "pos": 41,
+     "pos_rate": 0.0612
+    },
+    "test": {
+     "n": 1335,
+     "pos": 91,
+     "pos_rate": 0.0682
+    }
+   },
+   "NR-PPAR-gamma": {
+    "train": {
+     "n": 4633,
+     "pos": 110,
+     "pos_rate": 0.0237
+    },
+    "valid": {
+     "n": 601,
+     "pos": 30,
+     "pos_rate": 0.0499
+    },
+    "test": {
+     "n": 1209,
+     "pos": 46,
+     "pos_rate": 0.038
+    }
+   },
+   "SR-ARE": {
+    "train": {
+     "n": 4256,
+     "pos": 606,
+     "pos_rate": 0.1424
+    },
+    "valid": {
+     "n": 513,
+     "pos": 116,
+     "pos_rate": 0.2261
+    },
+    "test": {
+     "n": 1056,
+     "pos": 220,
+     "pos_rate": 0.2083
+    }
+   },
+   "SR-ATAD5": {
+    "train": {
+     "n": 4997,
+     "pos": 176,
+     "pos_rate": 0.0352
+    },
+    "valid": {
+     "n": 696,
+     "pos": 27,
+     "pos_rate": 0.0388
+    },
+    "test": {
+     "n": 1372,
+     "pos": 61,
+     "pos_rate": 0.0445
+    }
+   },
+   "SR-HSE": {
+    "train": {
+     "n": 4667,
+     "pos": 248,
+     "pos_rate": 0.0531
+    },
+    "valid": {
+     "n": 580,
+     "pos": 40,
+     "pos_rate": 0.069
+    },
+    "test": {
+     "n": 1213,
+     "pos": 84,
+     "pos_rate": 0.0692
+    }
+   },
+   "SR-MMP": {
+    "train": {
+     "n": 4193,
+     "pos": 546,
+     "pos_rate": 0.1302
+    },
+    "valid": {
+     "n": 559,
+     "pos": 104,
+     "pos_rate": 0.186
+    },
+    "test": {
+     "n": 1052,
+     "pos": 268,
+     "pos_rate": 0.2548
+    }
+   },
+   "SR-p53": {
+    "train": {
+     "n": 4817,
+     "pos": 234,
+     "pos_rate": 0.0486
+    },
+    "valid": {
+     "n": 656,
+     "pos": 69,
+     "pos_rate": 0.1052
+    },
+    "test": {
+     "n": 1294,
+     "pos": 120,
+     "pos_rate": 0.0927
+    }
+   }
+  },
+  "n_train": 5474,
+  "n_valid": 783,
+  "n_test": 1566
+ }
+}

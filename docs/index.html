@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADMET 세대 벤치마크 — 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --line:#d1d9e0;
+    --accent:#0969da; --soft:#f6f8fa; --warn:#d1242f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --line:#3d444d;
+           --accent:#4493f8; --soft:#151b23; --warn:#ff7b72; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",
+            "Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:56px 24px 96px}
+  h1{font-size:30px;line-height:1.3;margin:0 0 14px;letter-spacing:-.02em}
+  .lede{font-size:17px;color:var(--muted);margin:0 0 8px}
+  .repo{font-size:14px;margin:22px 0 40px}
+  .repo a{color:var(--accent);text-decoration:none}
+  .repo a:hover{text-decoration:underline}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+         gap:12px;margin:0 0 44px}
+  .stat{background:var(--soft);border:1px solid var(--line);border-radius:8px;
+        padding:14px 16px}
+  .stat b{display:block;font-size:23px;line-height:1.2;letter-spacing:-.01em}
+  .stat span{font-size:12.5px;color:var(--muted)}
+
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;
+     color:var(--muted);font-weight:600;margin:0 0 14px}
+  .card{display:block;border:1px solid var(--line);border-radius:10px;
+        padding:18px 20px;margin-bottom:12px;text-decoration:none;color:inherit;
+        transition:border-color .12s,transform .12s}
+  .card:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .card .t{font-size:17px;font-weight:600;margin-bottom:4px}
+  .card .d{font-size:14px;color:var(--muted)}
+  .card.primary{border-left:4px solid var(--accent);background:var(--soft)}
+  .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--accent);
+       border:1px solid var(--accent);border-radius:20px;padding:1px 9px;
+       margin-left:8px;vertical-align:2px}
+
+  .note{border-left:3px solid var(--warn);padding:2px 0 2px 16px;
+        margin:40px 0 0;font-size:14px;color:var(--muted)}
+  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+         font-size:13px;color:var(--muted)}
+  footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>ADMET 세대 벤치마크</h1>
+  <p class="lede">규칙 → 고전 ML → GNN → 3D → 파운데이션.<br>
+     5개 세대를 36개 엔드포인트에서 동일 분할·동일 지표로 다시 쟀다.</p>
+  <p class="repo">→ <a href="https://github.com/Nudge92/admet-generation-benchmark">GitHub 저장소</a>
+     · <a href="https://github.com/Nudge92/admet-generation-benchmark/blob/main/notes/self_corrections.md">자기정정 8건</a></p>
+
+  <div class="stats">
+    <div class="stat"><b>36</b><span>엔드포인트 (독성 18 · ADME 18)</span></div>
+    <div class="stat"><b>1</b><span>재표집을 통과한 세대 효과</span></div>
+    <div class="stat"><b>17 / 36</b><span>1위·2위 구분 불가</span></div>
+    <div class="stat"><b>8</b><span>자기정정 기록</span></div>
+  </div>
+
+  <h2>보고서</h2>
+
+  <a class="card primary" href="master_integrated_report.html">
+    <div class="t">통합 마스터<span class="tag">여기부터</span></div>
+    <div class="d">36과제 전부 · 배포 가이드 · 자기정정 8건 · 한계</div>
+  </a>
+
+  <a class="card" href="master_report.html">
+    <div class="t">독성 18과제 — 세대 벤치마크</div>
+    <div class="d">핵심 4종 + 확장 14과제 · DeLong 대응비교 · §11 배포 가이드</div>
+  </a>
+
+  <a class="card" href="reliability_report.html">
+    <div class="t">독성 배포 신뢰도</div>
+    <div class="d">작동점 재설정 · 적용 도메인(AD) · 보정(ECE) · 예측구간</div>
+  </a>
+
+  <a class="card" href="report_adme_full.html">
+    <div class="t">ADME 18개 — 3축 분석</div>
+    <div class="d">축① 세대 · 축② 특징(물성 vs ECFP) · 축③ 학습방식(멀티태스크)</div>
+  </a>
+
+  <a class="card" href="adme_reliability_report.html">
+    <div class="t">ADME 배포 신뢰도</div>
+    <div class="d">§7 배포 가이드 · 엔드포인트별 권고 작동점</div>
+  </a>
+
+  <a class="card" href="g4_verification.html">
+    <div class="t">G4 검증 — 반감기 · 수용해도</div>
+    <div class="d">seed 처리 방식에 따른 판정 뒤집힘 (자기정정 ⑧의 근거)</div>
+  </a>
+
+  <p class="note">
+    이 보고서들은 재현 가능한 산출물에서 생성됐다. test set 정의 36개와 예측 원자료는
+    저장소에 커밋되어 있고, ADMET-AI는 누수가 확인되어 순위 판정에서 제외했다.
+    수치를 인용하기 전에 각 보고서의 한계 절을 함께 읽기를 권한다.
+  </p>
+
+  <footer>
+    코드 MIT · 문서와 그림 CC BY 4.0 · 데이터는 TDC 및 원 출처의 라이선스를 따름<br>
+    <a href="https://github.com/Nudge92/admet-generation-benchmark">Nudge92 / admet-generation-benchmark</a>
+  </footer>
+
+</div>
+</body>
+</html>

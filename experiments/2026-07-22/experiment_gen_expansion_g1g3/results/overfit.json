@@ -1,0 +1,1122 @@
+[
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.9999,
+  "test": 0.8366,
+  "gap": 0.1633,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.9995,
+  "test": 0.5611,
+  "gap": 0.4384,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.9999,
+  "test": 0.8139,
+  "gap": 0.186,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.9995,
+  "test": 0.5678,
+  "gap": 0.4317,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.9999,
+  "test": 0.8018,
+  "gap": 0.1981,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.9995,
+  "test": 0.6024,
+  "gap": 0.3971,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.8074,
+  "test": 0.7568,
+  "gap": 0.0507,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.5737,
+  "test": 0.5513,
+  "gap": 0.0224,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.9989,
+  "test": 0.8014,
+  "gap": 0.1975,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.9854,
+  "test": 0.3596,
+  "gap": 0.6258,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.9989,
+  "test": 0.7556,
+  "gap": 0.2433,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.9854,
+  "test": 0.3276,
+  "gap": 0.6578,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.9965,
+  "test": 0.7775,
+  "gap": 0.219,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.9725,
+  "test": 0.3195,
+  "gap": 0.653,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUROC",
+  "train": 0.8673,
+  "test": 0.6891,
+  "gap": 0.1782,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "metric": "AUPRC",
+  "train": 0.3363,
+  "test": 0.2494,
+  "gap": 0.0869,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7285,
+  "gap": 0.2715,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUPRC",
+  "train": 0.9999,
+  "test": 0.3566,
+  "gap": 0.6433,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.6976,
+  "gap": 0.3024,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUPRC",
+  "train": 0.9999,
+  "test": 0.3617,
+  "gap": 0.6382,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUROC",
+  "train": 0.9864,
+  "test": 0.7499,
+  "gap": 0.2366,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUPRC",
+  "train": 0.8871,
+  "test": 0.3956,
+  "gap": 0.4915,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUROC",
+  "train": 0.7976,
+  "test": 0.6687,
+  "gap": 0.129,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "metric": "AUPRC",
+  "train": 0.421,
+  "test": 0.3595,
+  "gap": 0.0615,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8101,
+  "gap": 0.1899,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.1795,
+  "gap": 0.8205,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7767,
+  "gap": 0.2233,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.2151,
+  "gap": 0.7849,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUROC",
+  "train": 0.9917,
+  "test": 0.7334,
+  "gap": 0.2584,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUPRC",
+  "train": 0.9103,
+  "test": 0.2328,
+  "gap": 0.6775,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUROC",
+  "train": 0.8759,
+  "test": 0.7214,
+  "gap": 0.1545,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "metric": "AUPRC",
+  "train": 0.5651,
+  "test": 0.2842,
+  "gap": 0.2809,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8692,
+  "gap": 0.1308,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.6804,
+  "gap": 0.3196,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8681,
+  "gap": 0.1319,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.6713,
+  "gap": 0.3287,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUROC",
+  "train": 0.9813,
+  "test": 0.862,
+  "gap": 0.1193,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUPRC",
+  "train": 0.9211,
+  "test": 0.6201,
+  "gap": 0.301,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUROC",
+  "train": 0.8891,
+  "test": 0.8313,
+  "gap": 0.0578,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "metric": "AUPRC",
+  "train": 0.4949,
+  "test": 0.5284,
+  "gap": -0.0335,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8027,
+  "gap": 0.1973,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUPRC",
+  "train": 0.9997,
+  "test": 0.3522,
+  "gap": 0.6475,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7508,
+  "gap": 0.2492,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUPRC",
+  "train": 0.9997,
+  "test": 0.2551,
+  "gap": 0.7446,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUROC",
+  "train": 0.982,
+  "test": 0.741,
+  "gap": 0.241,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUPRC",
+  "train": 0.9184,
+  "test": 0.2751,
+  "gap": 0.6433,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUROC",
+  "train": 0.8707,
+  "test": 0.7065,
+  "gap": 0.1642,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "metric": "AUPRC",
+  "train": 0.2613,
+  "test": 0.1762,
+  "gap": 0.0851,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUROC",
+  "train": 0.9999,
+  "test": 0.7531,
+  "gap": 0.2468,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUPRC",
+  "train": 0.9996,
+  "test": 0.5359,
+  "gap": 0.4637,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7525,
+  "gap": 0.2475,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUPRC",
+  "train": 0.9996,
+  "test": 0.5278,
+  "gap": 0.4718,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUROC",
+  "train": 0.9354,
+  "test": 0.6871,
+  "gap": 0.2483,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUPRC",
+  "train": 0.7812,
+  "test": 0.4046,
+  "gap": 0.3766,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUROC",
+  "train": 0.7225,
+  "test": 0.7101,
+  "gap": 0.0125,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "metric": "AUPRC",
+  "train": 0.3645,
+  "test": 0.3464,
+  "gap": 0.0181,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8414,
+  "gap": 0.1586,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUPRC",
+  "train": 0.9998,
+  "test": 0.4662,
+  "gap": 0.5336,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8234,
+  "gap": 0.1766,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUPRC",
+  "train": 0.9997,
+  "test": 0.51,
+  "gap": 0.4897,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUROC",
+  "train": 0.9776,
+  "test": 0.7611,
+  "gap": 0.2165,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUPRC",
+  "train": 0.8411,
+  "test": 0.3524,
+  "gap": 0.4887,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUROC",
+  "train": 0.837,
+  "test": 0.8084,
+  "gap": 0.0286,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "metric": "AUPRC",
+  "train": 0.3654,
+  "test": 0.2209,
+  "gap": 0.1445,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8057,
+  "gap": 0.1943,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUPRC",
+  "train": 0.9999,
+  "test": 0.2164,
+  "gap": 0.7835,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8362,
+  "gap": 0.1638,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUPRC",
+  "train": 0.9999,
+  "test": 0.2269,
+  "gap": 0.773,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUROC",
+  "train": 0.9844,
+  "test": 0.7212,
+  "gap": 0.2632,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUPRC",
+  "train": 0.8868,
+  "test": 0.1846,
+  "gap": 0.7023,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUROC",
+  "train": 0.8215,
+  "test": 0.7287,
+  "gap": 0.0928,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "metric": "AUPRC",
+  "train": 0.241,
+  "test": 0.0889,
+  "gap": 0.1521,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7949,
+  "gap": 0.2051,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.4989,
+  "gap": 0.5011,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7777,
+  "gap": 0.2223,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.4712,
+  "gap": 0.5288,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUROC",
+  "train": 0.9595,
+  "test": 0.705,
+  "gap": 0.2545,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUPRC",
+  "train": 0.8801,
+  "test": 0.3636,
+  "gap": 0.5166,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUROC",
+  "train": 0.8127,
+  "test": 0.7323,
+  "gap": 0.0803,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "metric": "AUPRC",
+  "train": 0.4959,
+  "test": 0.4243,
+  "gap": 0.0716,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7598,
+  "gap": 0.2402,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.192,
+  "gap": 0.808,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7504,
+  "gap": 0.2496,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.1715,
+  "gap": 0.8285,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUROC",
+  "train": 0.9921,
+  "test": 0.7597,
+  "gap": 0.2323,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUPRC",
+  "train": 0.8805,
+  "test": 0.1512,
+  "gap": 0.7293,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUROC",
+  "train": 0.8699,
+  "test": 0.7573,
+  "gap": 0.1126,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "metric": "AUPRC",
+  "train": 0.2446,
+  "test": 0.1422,
+  "gap": 0.1024,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8028,
+  "gap": 0.1972,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUPRC",
+  "train": 0.9999,
+  "test": 0.3657,
+  "gap": 0.6342,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8023,
+  "gap": 0.1977,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.3151,
+  "gap": 0.6849,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUROC",
+  "train": 0.9764,
+  "test": 0.7686,
+  "gap": 0.2079,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUPRC",
+  "train": 0.8484,
+  "test": 0.2862,
+  "gap": 0.5622,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUROC",
+  "train": 0.8257,
+  "test": 0.7719,
+  "gap": 0.0538,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "metric": "AUPRC",
+  "train": 0.3465,
+  "test": 0.2257,
+  "gap": 0.1208,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.9041,
+  "gap": 0.0959,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.7832,
+  "gap": 0.2168,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.8912,
+  "gap": 0.1088,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUPRC",
+  "train": 0.9999,
+  "test": 0.7671,
+  "gap": 0.2328,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUROC",
+  "train": 0.9794,
+  "test": 0.832,
+  "gap": 0.1474,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUPRC",
+  "train": 0.9318,
+  "test": 0.6304,
+  "gap": 0.3014,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUROC",
+  "train": 0.9031,
+  "test": 0.8366,
+  "gap": 0.0665,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "metric": "AUPRC",
+  "train": 0.594,
+  "test": 0.6164,
+  "gap": -0.0224,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.819,
+  "gap": 0.181,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.3749,
+  "gap": 0.6251,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUROC",
+  "train": 1.0,
+  "test": 0.7938,
+  "gap": 0.2062,
+  "n_seed": 5
+ },
+ {
+  "model": "rf_physchem",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUPRC",
+  "train": 1.0,
+  "test": 0.3341,
+  "gap": 0.6659,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUROC",
+  "train": 0.9868,
+  "test": 0.7726,
+  "gap": 0.2143,
+  "n_seed": 5
+ },
+ {
+  "model": "xgb_ecfp",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUPRC",
+  "train": 0.8841,
+  "test": 0.3072,
+  "gap": 0.5769,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUROC",
+  "train": 0.8632,
+  "test": 0.7723,
+  "gap": 0.0909,
+  "n_seed": 5
+ },
+ {
+  "model": "dmpnn_ours",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "metric": "AUPRC",
+  "train": 0.3059,
+  "test": 0.2534,
+  "gap": 0.0526,
+  "n_seed": 5
+ }
+]

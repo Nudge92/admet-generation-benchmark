@@ -1,0 +1,117 @@
+<meta charset="utf-8"><title>G4 Uni-Mol 중간 스냅샷 — 실행 중</title>
+<style>
+body{font-family:'Nanum Gothic',system-ui,sans-serif;max-width:1180px;margin:0 auto;padding:22px 26px;color:#1d2129;line-height:1.6}
+h1{font-size:24px;border-bottom:3px solid #457b9d;padding-bottom:9px;margin-bottom:4px}
+h2{font-size:19px;margin-top:32px;border-left:5px solid #457b9d;padding-left:11px}
+table{border-collapse:collapse;width:100%;margin:11px 0;font-size:12.5px}
+th,td{border:1px solid #d8dde3;padding:4px 7px}th{background:#eef2f5}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.g4{background:#e7eef6;font-weight:700}.leak{background:#fff1ec;color:#c1440e}
+.na{color:#98a2ab}.best{background:#e8f6f1;font-weight:700}
+.badge{display:inline-block;font-size:10.5px;padding:1px 6px;border-radius:8px;margin-left:4px}
+.b-full{background:#dff2ee;color:#1d6b60}.b-part{background:#ffe9c9;color:#8a5a00}
+.b-none{background:#eceff2;color:#6b7580}.b-uns{background:#fdeceb;color:#b3261e}
+.banner{background:#fff4e0;border:2px solid #f0c078;border-radius:10px;padding:15px 19px;margin:14px 0}
+.warn{background:#fff8ec;border:1px solid #f0d9a8;border-radius:8px;padding:13px 17px;margin:14px 0}
+.box{background:#f7f9fb;border:1px solid #dfe5ea;border-radius:8px;padding:13px 17px;margin:14px 0}
+small,.src{font-size:11.5px;color:#6b7580}code{background:#eef2f5;padding:1px 4px;border-radius:3px;font-size:11.5px}
+</style>
+<h1>G4 (Uni-Mol) 중간 스냅샷 — 다른 세대와의 잠정 비교</h1>
+<div class='banner'><b>★실행 중 중간 스냅샷 — 최종 결과가 아닙니다.</b><br>스냅샷 시각 <b>2026-07-23 10:14:50</b> · G4 성공 런 <b>31/90</b> · 완주 6 · 부분 1 · 미실행 11 (18개 중)<br><b>G5(파운데이션)는 아직 미실행</b>이므로 세대 최종 결론을 낼 수 없습니다. 아래 모든 서술은 <b>잠정 관찰</b>이며, 구분 가능선·신뢰구간을 계산하지 않았으므로 <b>어느 세대가 이겼다고 판정하지 않습니다</b>.</div>
+<h2>① G4 진행 현황 (정직한 커버리지)</h2>
+<table><tr><th>기둥</th><th>엔드포인트</th><th>주지표</th><th class='n'>성공 seed</th><th class='n'>실패</th><th>상태</th><th>실패 사유(요약)</th></tr>
+<tr><td>A 흡수</td><td>Caco-2 투과<br><small>caco2_wang</small></td><td>MAE ↓</td><td class='n'>5</td><td class='n'>0</td><td><span class='badge b-full'>완주 5/5</span></td><td class='src'></td></tr>
+<tr><td>A 흡수</td><td>HIA 흡수<br><small>hia_hou</small></td><td>AUROC ↑</td><td class='n'>5</td><td class='n'>0</td><td><span class='badge b-full'>완주 5/5</span></td><td class='src'></td></tr>
+<tr><td>A 흡수</td><td>경구 생체이용률<br><small>bioavailability_ma</small></td><td>AUROC ↑</td><td class='n'>5</td><td class='n'>0</td><td><span class='badge b-full'>완주 5/5</span></td><td class='src'></td></tr>
+<tr><td>A 흡수</td><td>P-gp 기질<br><small>pgp_broccatelli</small></td><td>AUROC ↑</td><td class='n'>5</td><td class='n'>0</td><td><span class='badge b-full'>완주 5/5</span></td><td class='src'></td></tr>
+<tr><td>A 흡수</td><td>친유성 logD<br><small>lipophilicity_astrazeneca</small></td><td>MAE ↓</td><td class='n'>5</td><td class='n'>0</td><td><span class='badge b-full'>완주 5/5</span></td><td class='src'></td></tr>
+<tr><td>A 흡수</td><td>수용해도<br><small>solubility_aqsoldb</small></td><td>MAE ↓</td><td class='n'>5</td><td class='n'>0</td><td><span class='badge b-full'>완주 5/5</span></td><td class='src'></td></tr>
+<tr><td>D 분포</td><td>BBB 투과<br><small>bbb_martins</small></td><td>AUROC ↑</td><td class='n'>1</td><td class='n'>4</td><td><span class='badge b-part'>부분 1/5</span></td><td class='src'>CUDA out of memory. Tried to allocate 132.00 MiB. GPU 0 has </td></tr>
+<tr><td>D 분포</td><td>혈장단백결합<br><small>ppbr_az</small></td><td>MAE ↓</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>D 분포</td><td>분포용적 VDss<br><small>vdss_lombardo</small></td><td>Spearman ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>M 대사</td><td>CYP2C9 억제<br><small>cyp2c9_veith</small></td><td>AUROC ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>M 대사</td><td>CYP2D6 억제<br><small>cyp2d6_veith</small></td><td>AUROC ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>M 대사</td><td>CYP3A4 억제<br><small>cyp3a4_veith</small></td><td>AUROC ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>M 대사</td><td>CYP2C9 기질<br><small>cyp2c9_substrate_carbonmangels</small></td><td>AUROC ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>M 대사</td><td>CYP2D6 기질<br><small>cyp2d6_substrate_carbonmangels</small></td><td>AUROC ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>M 대사</td><td>CYP3A4 기질<br><small>cyp3a4_substrate_carbonmangels</small></td><td>AUROC ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>E 배설</td><td>반감기<br><small>half_life_obach</small></td><td>Spearman ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>E 배설</td><td>간세포 청소율<br><small>clearance_hepatocyte_az</small></td><td>Spearman ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+<tr><td>E 배설</td><td>마이크로솜 청소율<br><small>clearance_microsome_az</small></td><td>Spearman ↑</td><td class='n'>0</td><td class='n'>0</td><td><span class='badge b-none'>미실행/대기</span></td><td class='src'><span class='na'>대기(아직 실행 전)</span></td></tr>
+</table>
+<div class='box'><b>요약</b> — 18개 중 <b>완주 6 · 부분 1 · 미실행 11</b>. 미실행 셀은 <b>0이 아니라 N/A(아직 실행 전)</b>이며, 실패 셀은 OOM 재시도 대기 상태다(재시도 로직은 `status==ok` 만 완료로 인정하도록 수정됨).</div>
+<h2>② 세대 비교 — (a) 전체 seed 평균 · (b) ★G4 성공 seed로 맞춘 평균</h2>
+<div class='warn'><b>왜 두 벌인가</b> — G4는 아직 일부 seed만 끝났다. (a)는 각 모델의 원래 5-seed 평균이라 <b>비교 대상 seed가 서로 다르고</b>, (b)는 G4가 성공한 <b>바로 그 seed로만</b> G2·G3를 다시 평균해 조건을 맞춘 것이다. (a)와 (b)가 크게 다르면 그 엔드포인트는 <b>seed 변동이 크다</b>는 뜻이다.</div>
+<h3>Caco-2 투과 <small>(caco2_wang · A 흡수 · MAE 낮을수록 좋음)</small><span class='badge b-part'>G4 seed 5/5</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td class='best'>xgb_physchem</td><td class='n' class='best'>0.3037</td><td class='n'>5</td><td class='n' class='best'>0.3037</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0083</td></tr>
+<tr><td>G2</td><td>rf_physchem</td><td class='n'>0.3072</td><td class='n'>5</td><td class='n'>0.3072</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0028</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>0.3914</td><td class='n'>5</td><td class='n'>0.3914</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0498</td></tr>
+<tr><td>G3</td><td>dmpnn_ours</td><td class='n'>0.3359</td><td class='n'>5</td><td class='n'>0.3359</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0302</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.3326</td><td class='n'>5</td><td class='n' class='g4'>0.3326</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0089</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.2177</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>3위</b> · (b) 기준 <b>3위</b> · (b)에서 1위는 <b>xgb_physchem</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h3>HIA 흡수 <small>(hia_hou · A 흡수 · AUROC 높을수록 좋음)</small><span class='badge b-part'>G4 seed 5/5</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td class='best'>xgb_physchem</td><td class='n' class='best'>0.9751</td><td class='n'>5</td><td class='n' class='best'>0.9751</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0028</td></tr>
+<tr><td>G2</td><td>rf_physchem</td><td class='n'>0.9722</td><td class='n'>5</td><td class='n'>0.9722</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0026</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>0.9465</td><td class='n'>5</td><td class='n'>0.9465</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0141</td></tr>
+<tr><td>G3</td><td>dmpnn_ours</td><td class='n'>0.9080</td><td class='n'>5</td><td class='n'>0.9080</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0209</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.9621</td><td class='n'>5</td><td class='n' class='g4'>0.9621</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0162</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.9988</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>3위</b> · (b) 기준 <b>3위</b> · (b)에서 1위는 <b>xgb_physchem</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h3>경구 생체이용률 <small>(bioavailability_ma · A 흡수 · AUROC 높을수록 좋음)</small><span class='badge b-part'>G4 seed 5/5</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td class='best'>xgb_physchem</td><td class='n' class='best'>0.7427</td><td class='n'>5</td><td class='n' class='best'>0.7427</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0111</td></tr>
+<tr><td>G2</td><td>rf_physchem</td><td class='n'>0.7289</td><td class='n'>5</td><td class='n'>0.7289</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0117</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>0.6950</td><td class='n'>5</td><td class='n'>0.6950</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0220</td></tr>
+<tr><td>G3</td><td>dmpnn_ours</td><td class='n'>0.5326</td><td class='n'>5</td><td class='n'>0.5326</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0256</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.6814</td><td class='n'>5</td><td class='n' class='g4'>0.6814</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0503</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.8407</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>4위</b> · (b) 기준 <b>4위</b> · (b)에서 1위는 <b>xgb_physchem</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h3>P-gp 기질 <small>(pgp_broccatelli · A 흡수 · AUROC 높을수록 좋음)</small><span class='badge b-part'>G4 seed 5/5</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td class='best'>xgb_physchem</td><td class='n' class='best'>0.9097</td><td class='n'>5</td><td class='n' class='best'>0.9097</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0178</td></tr>
+<tr><td>G2</td><td>rf_physchem</td><td class='n'>0.8983</td><td class='n'>5</td><td class='n'>0.8983</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0188</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>0.9065</td><td class='n'>5</td><td class='n'>0.9065</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0052</td></tr>
+<tr><td>G3</td><td>dmpnn_ours</td><td class='n'>0.9090</td><td class='n'>5</td><td class='n'>0.9090</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0109</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.8752</td><td class='n'>5</td><td class='n' class='g4'>0.8752</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0193</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.9651</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>5위</b> · (b) 기준 <b>5위</b> · (b)에서 1위는 <b>xgb_physchem</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h3>친유성 logD <small>(lipophilicity_astrazeneca · A 흡수 · MAE 낮을수록 좋음)</small><span class='badge b-part'>G4 seed 5/5</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td>xgb_physchem</td><td class='n'>0.5568</td><td class='n'>5</td><td class='n'>0.5568</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0042</td></tr>
+<tr><td>G2</td><td>rf_physchem</td><td class='n'>0.6314</td><td class='n'>5</td><td class='n'>0.6314</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0034</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>0.6820</td><td class='n'>5</td><td class='n'>0.6820</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0066</td></tr>
+<tr><td>G3</td><td class='best'>dmpnn_ours</td><td class='n' class='best'>0.4406</td><td class='n'>5</td><td class='n' class='best'>0.4406</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0102</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.4907</td><td class='n'>5</td><td class='n' class='g4'>0.4907</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0094</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.2914</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>2위</b> · (b) 기준 <b>2위</b> · (b)에서 1위는 <b>dmpnn_ours</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h3>수용해도 <small>(solubility_aqsoldb · A 흡수 · MAE 낮을수록 좋음)</small><span class='badge b-part'>G4 seed 5/5</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td>xgb_physchem</td><td class='n'>0.7643</td><td class='n'>5</td><td class='n'>0.7643</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0133</td></tr>
+<tr><td>G2</td><td>rf_physchem</td><td class='n'>0.8367</td><td class='n'>5</td><td class='n'>0.8367</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0118</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>1.2889</td><td class='n'>5</td><td class='n'>1.2889</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0353</td></tr>
+<tr><td>G3</td><td>dmpnn_ours</td><td class='n'>0.7936</td><td class='n'>5</td><td class='n'>0.7936</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0219</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.7358</td><td class='n'>5</td><td class='n' class='g4'>0.7358</td><td class='n'>5</td><td class='n'>+0.0000</td><td class='src'>±0.0087</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.5370</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>1위</b> · (b) 기준 <b>1위</b> · (b)에서 1위는 <b>unimol</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h3>BBB 투과 <small>(bbb_martins · D 분포 · AUROC 높을수록 좋음)</small><span class='badge b-part'>G4 seed 1/5</span> <span class='badge b-uns'>SD 불안정(n≤2)</span></h3>
+<table><tr><th>세대</th><th>모델</th><th class='n'>(a) 전체 seed</th><th class='n'>n</th><th class='n'>(b) seed 맞춤</th><th class='n'>n</th><th class='n'>(a)−(b) 차</th><th>비고</th></tr>
+<tr><td>G2</td><td>xgb_physchem</td><td class='n'>0.8993</td><td class='n'>5</td><td class='n'>0.8901</td><td class='n'>1</td><td class='n'>+0.0092</td><td class='src'>±0.0079</td></tr>
+<tr><td>G2</td><td class='best'>rf_physchem</td><td class='n' class='best'>0.9059</td><td class='n'>5</td><td class='n' class='best'>0.8996</td><td class='n'>1</td><td class='n'>+0.0063</td><td class='src'>±0.0055</td></tr>
+<tr><td>G2</td><td>xgb_ecfp</td><td class='n'>0.8708</td><td class='n'>5</td><td class='n'>0.8634</td><td class='n'>1</td><td class='n'>+0.0074</td><td class='src'>±0.0175</td></tr>
+<tr><td>G3</td><td>dmpnn_ours</td><td class='n'>0.8563</td><td class='n'>5</td><td class='n'>0.8862</td><td class='n'>1</td><td class='n'>-0.0299</td><td class='src'>±0.0280</td></tr>
+<tr><td>G4</td><td class='g4'>unimol</td><td class='n' class='g4'>0.8362</td><td class='n'>1</td><td class='n' class='g4'>0.8362</td><td class='n'>1</td><td class='n'>+0.0000</td><td class='src'>±0.0000</td></tr>
+<tr><td>G3</td><td class='leak'>admetai</td><td class='n' class='leak'>0.9504</td><td class='n'>1</td><td class='n' class='leak'><span class='na'>—</span></td><td class='n'>0</td><td class='n'></td><td class='src'>★누수 의심(TDC 전체 사전학습)·순위 제외</td></tr>
+<tr><td colspan=8 class='src'>G5(파운데이션): <b>대기</b> — 아직 실행 전</td></tr></table>
+<p><small>정직 세대 5개 중 G4 순위 — (a) 기준 <b>5위</b> · (b) 기준 <b>5위</b> · (b)에서 1위는 <b>rf_physchem</b>. ADMET-AI는 누수라 순위에서 뺐다. <b>이 순위는 잠정</b>이며 구분 가능선을 계산하지 않았다.</small></p>
+<h2>③ 잠정 관찰</h2>
+<div class='warn'><ol><li>집계 가능한 <b>7개</b> 엔드포인트에서 G4가 1위인 경우는 (a) 전체 seed 기준 <b>1개</b> · (b) seed 맞춤 기준 <b>1개</b>다. <b>이겼다/졌다로 읽지 말 것</b> — 미완료·소seed 예비 관측이다.</li><li>(a)와 (b)의 차가 가장 큰 엔드포인트는 <b>BBB 투과</b> 0.0299 · <b>Caco-2 투과</b> 0.0000 · <b>HIA 흡수</b> 0.0000 로, 그만큼 <b>seed 변동이 크다</b>. 이런 곳에서는 seed 수가 다른 비교를 특히 조심해야 한다.</li><li><b>G5(ChemBERTa-2·MoLFormer)가 미실행</b>이므로 '세대 사다리'는 아직 완성되지 않았다. 지금 표는 G2·G3·G4만의 부분 그림이다.</li><li><b>구분 가능선·신뢰구간을 계산하지 않았다.</b> 격차가 커 보여도 <b>차이 관찰</b>까지만이고 통계적 판정이 아니다. 최종 보고서에서 부트스트랩·DeLong으로 판정한다.</li><li>엔드포인트마다 <b>분할·지표·난이도가 다르므로 절대값을 가로로 비교하지 말 것</b>. 세대 순위는 <b>같은 엔드포인트 안에서만</b> 의미가 있다.</li></ol></div>
+<p class='src'>출처: <code>results/finetune2_raw.jsonl</code>(G4) · <code>results/progress.jsonl</code>(G2·G3·ADMET-AI) — 둘 다 <b>/tmp 스냅샷을 통해 읽기 전용</b>으로 접근했다. 이 문서는 새 파일에만 쓴다(<code>g4_partial_view.html</code> · <code>g4_partial.csv</code>). 재실행하면 그 시점으로 갱신된다: <code>python src/g4_partial_view.py</code></p>

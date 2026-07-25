@@ -1,0 +1,121 @@
+{
+ "Carcinogens_Lagunin": {
+  "Y": {
+   "status": "ok",
+   "n": 56,
+   "AUROC": 0.8697,
+   "AUPRC": 0.7363,
+   "pos_rate": 0.1964,
+   "admetai_train_size": 278.0
+  }
+ },
+ "ClinTox": {
+  "Y": {
+   "status": "ok",
+   "n": 297,
+   "AUROC": 0.8985,
+   "AUPRC": 0.5417,
+   "pos_rate": 0.0808,
+   "admetai_train_size": 1459.0
+  }
+ },
+ "Tox21": {
+  "NR-AR": {
+   "status": "ok",
+   "n": 1437,
+   "AUROC": 0.8535,
+   "AUPRC": 0.5285,
+   "pos_rate": 0.0418,
+   "admetai_train_size": 7258.0
+  },
+  "NR-AR-LBD": {
+   "status": "ok",
+   "n": 1305,
+   "AUROC": 0.8945,
+   "AUPRC": 0.5463,
+   "pos_rate": 0.0261,
+   "admetai_train_size": 6751.0
+  },
+  "NR-AhR": {
+   "status": "ok",
+   "n": 1268,
+   "AUROC": 0.9353,
+   "AUPRC": 0.8179,
+   "pos_rate": 0.1806,
+   "admetai_train_size": 6542.0
+  },
+  "NR-Aromatase": {
+   "status": "ok",
+   "n": 1051,
+   "AUROC": 0.9138,
+   "AUPRC": 0.639,
+   "pos_rate": 0.0904,
+   "admetai_train_size": 5815.0
+  },
+  "NR-ER": {
+   "status": "ok",
+   "n": 1152,
+   "AUROC": 0.8237,
+   "AUPRC": 0.6143,
+   "pos_rate": 0.1727,
+   "admetai_train_size": 6186.0
+  },
+  "NR-ER-LBD": {
+   "status": "ok",
+   "n": 1335,
+   "AUROC": 0.909,
+   "AUPRC": 0.6154,
+   "pos_rate": 0.0682,
+   "admetai_train_size": 6948.0
+  },
+  "NR-PPAR-gamma": {
+   "status": "ok",
+   "n": 1209,
+   "AUROC": 0.9314,
+   "AUPRC": 0.5512,
+   "pos_rate": 0.038,
+   "admetai_train_size": 6443.0
+  },
+  "SR-ARE": {
+   "status": "ok",
+   "n": 1056,
+   "AUROC": 0.8799,
+   "AUPRC": 0.6868,
+   "pos_rate": 0.2083,
+   "admetai_train_size": 5825.0
+  },
+  "SR-ATAD5": {
+   "status": "ok",
+   "n": 1372,
+   "AUROC": 0.903,
+   "AUPRC": 0.3784,
+   "pos_rate": 0.0445,
+   "admetai_train_size": 7065.0
+  },
+  "SR-HSE": {
+   "status": "ok",
+   "n": 1213,
+   "AUROC": 0.9075,
+   "AUPRC": 0.5543,
+   "pos_rate": 0.0692,
+   "admetai_train_size": 6460.0
+  },
+  "SR-MMP": {
+   "status": "ok",
+   "n": 1052,
+   "AUROC": 0.9563,
+   "AUPRC": 0.8766,
+   "pos_rate": 0.2548,
+   "admetai_train_size": 5804.0
+  },
+  "SR-p53": {
+   "status": "ok",
+   "n": 1294,
+   "AUROC": 0.9032,
+   "AUPRC": 0.5924,
+   "pos_rate": 0.0927,
+   "admetai_train_size": 6767.0
+  }
+ },
+ "_caveat": "ADMET-AI 공개모델은 TDC 전체로 사전학습 → 이 test 분자를 학습에 포함했을 가능성이 매우 높음(패키지 메타의 학습 size가 해당 TDC 데이터셋 전체 크기와 일치). ★누수 의심 값."
+}

@@ -1,0 +1,38 @@
+{
+ "caco2_wang": {
+  "n_test_official": 182,
+  "n_unique_canon": 181,
+  "n_report": 181,
+  "intersection": 181,
+  "jaccard": 1.0,
+  "train_test_exact_overlap": 0,
+  "n_train_val": 728
+ },
+ "bbb_martins": {
+  "n_test_official": 406,
+  "n_unique_canon": 394,
+  "n_report": 394,
+  "intersection": 394,
+  "jaccard": 1.0,
+  "train_test_exact_overlap": 1,
+  "n_train_val": 1624
+ },
+ "cyp2c9_veith": {
+  "n_test_official": 2419,
+  "n_unique_canon": 2419,
+  "n_report": 2419,
+  "intersection": 2419,
+  "jaccard": 1.0,
+  "train_test_exact_overlap": 1,
+  "n_train_val": 9673
+ },
+ "solubility_aqsoldb": {
+  "n_test_official": 1997,
+  "n_unique_canon": 1997,
+  "n_report": 1997,
+  "intersection": 1997,
+  "jaccard": 1.0,
+  "train_test_exact_overlap": 0,
+  "n_train_val": 7985
+ }
+}

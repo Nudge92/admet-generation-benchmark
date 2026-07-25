@@ -1,0 +1,31 @@
+{
+ "dili": {
+  "task": "cls",
+  "n": 96,
+  "AUROC": 0.9557,
+  "AUPRC": 0.9648,
+  "MCC": 0.7948,
+  "pos_rate": 0.5208
+ },
+ "herg": {
+  "task": "cls",
+  "n": 132,
+  "AUROC": 0.9113,
+  "AUPRC": 0.957,
+  "MCC": 0.5849,
+  "pos_rate": 0.7348
+ },
+ "ames": {
+  "task": "cls",
+  "n": 1457,
+  "AUROC": 0.9303,
+  "AUPRC": 0.951,
+  "MCC": 0.6966,
+  "pos_rate": 0.5971
+ },
+ "ld50_zhu": {
+  "task": "reg",
+  "n": 1478,
+  "MAE": 0.3361
+ }
+}

@@ -1,0 +1,2250 @@
+{
+ "caco2_wang": {
+  "endpoint": "caco2_wang",
+  "label": "Caco-2 투과",
+  "pillar": "A",
+  "task": "reg",
+  "metric": "MAE",
+  "higher_better": false,
+  "champion": "xgb_physchem",
+  "n_test": 181,
+  "AD": {
+   "cut_ood": 0.2105,
+   "cut_border": 0.3261,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 728,
+   "bands": {
+    "in-domain": {
+     "n": 82,
+     "frac": 0.453,
+     "perf": 0.2821
+    },
+    "경계": {
+     "n": 48,
+     "frac": 0.2652,
+     "perf": 0.3109
+    },
+    "OOD": {
+     "n": 51,
+     "frac": 0.2818,
+     "perf": 0.2817
+    }
+   },
+   "verdict": "★AD가 성능을 예측 못함"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.3034,
+   "lo": 0.2725,
+   "hi": 0.3351,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.2901,
+   "lo": 0.2628,
+   "hi": 0.321,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": -0.0226,
+   "residual_sd": 0.3514,
+   "residual_q": [
+    -0.6121,
+    -0.2364,
+    -0.0727,
+    0.2756,
+    0.5322
+   ],
+   "systematic_bias_slope": -0.0017,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 0.735,
+   "PI90_coverage": 0.9724,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "CN1CC(=O)NC1=N",
+     "y_true": -5.935,
+     "y_pred": -4.947,
+     "abs_err": 0.988
+    },
+    {
+     "smiles": "CNS(=O)(=O)Cc1ccc2[nH]cc(CCN(C)C)c2c1",
+     "y_true": -5.683,
+     "y_pred": -4.732,
+     "abs_err": 0.951
+    },
+    {
+     "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)Cc3ccccc3)C(=O)N2[C@H]1C(=O)O",
+     "y_true": -6.025,
+     "y_pred": -5.225,
+     "abs_err": 0.8
+    },
+    {
+     "smiles": "COc1ccc(-c2cc(=O)c3c(O)cc(OC4O[C@H](CO[C@@H]5OC[C@@H](O)[C@H",
+     "y_true": -6.16,
+     "y_pred": -6.945,
+     "abs_err": 0.785
+    },
+    {
+     "smiles": "CC(=O)N[C@@H](Cc1c[nH]c2ccccc12)C(=O)N[C@@H](C)C(=O)NCC(=O)N",
+     "y_true": -7.31,
+     "y_pred": -6.57,
+     "abs_err": 0.74
+    }
+   ]
+  }
+ },
+ "hia_hou": {
+  "endpoint": "hia_hou",
+  "label": "HIA 흡수",
+  "pillar": "A",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 117,
+  "AD": {
+   "cut_ood": 0.1831,
+   "cut_border": 0.2434,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 461,
+   "bands": {
+    "in-domain": {
+     "n": 73,
+     "frac": 0.6239,
+     "perf": 0.9822
+    },
+    "경계": {
+     "n": 24,
+     "frac": 0.2051,
+     "perf": 0.9748
+    },
+    "OOD": {
+     "n": 20,
+     "frac": 0.1709,
+     "perf": 1.0
+    }
+   },
+   "verdict": "★AD가 성능을 예측 못함"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.9751,
+   "lo": 0.9407,
+   "hi": 0.9984,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.9778,
+   "lo": 0.9422,
+   "hi": 1.0,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.7692,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 89,
+    "FP": 5,
+    "FN": 1,
+    "TN": 22,
+    "sensitivity": 0.9889,
+    "specificity": 0.8148,
+    "PPV": 0.9468,
+    "NPV": 0.9565,
+    "MCC": 0.8521
+   },
+   "t_star": {
+    "threshold": 0.532,
+    "TP": 89,
+    "FP": 5,
+    "FN": 1,
+    "TN": 22,
+    "sensitivity": 0.9889,
+    "specificity": 0.8148,
+    "PPV": 0.9468,
+    "NPV": 0.9565,
+    "MCC": 0.8521
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.7618·n_valid=253)"
+  },
+  "calibration": {
+   "ECE": 0.0469,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 12,
+     "conf": 0.0423,
+     "freq": 0.0
+    },
+    {
+     "bin": 1,
+     "n": 8,
+     "conf": 0.1335,
+     "freq": 0.0
+    },
+    {
+     "bin": 2,
+     "n": 1,
+     "conf": 0.2565,
+     "freq": 0.0
+    },
+    {
+     "bin": 3,
+     "n": 2,
+     "conf": 0.3785,
+     "freq": 0.5
+    },
+    {
+     "bin": 6,
+     "n": 1,
+     "conf": 0.6309,
+     "freq": 0.0
+    },
+    {
+     "bin": 7,
+     "n": 5,
+     "conf": 0.7798,
+     "freq": 0.6
+    },
+    {
+     "bin": 8,
+     "n": 5,
+     "conf": 0.8639,
+     "freq": 1.0
+    },
+    {
+     "bin": 9,
+     "n": 83,
+     "conf": 0.9904,
+     "freq": 0.9759
+    }
+   ],
+   "mean_conf": 0.8004,
+   "obs_rate": 0.7692,
+   "direction": "과신",
+   "mean_conf_on_positives": 0.9699,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.977,
+   "auc_other": 0.9173,
+   "delta": 0.0597,
+   "z": 1.478,
+   "p_value": 0.139,
+   "significant": false
+  }
+ },
+ "bioavailability_ma": {
+  "endpoint": "bioavailability_ma",
+  "label": "경구 생체이용률",
+  "pillar": "A",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 128,
+  "AD": {
+   "cut_ood": 0.1848,
+   "cut_border": 0.2448,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 512,
+   "bands": {
+    "in-domain": {
+     "n": 104,
+     "frac": 0.8125,
+     "perf": 0.7481
+    },
+    "경계": {
+     "n": 20,
+     "frac": 0.1562,
+     "perf": 0.7273
+    },
+    "OOD": {
+     "n": 4,
+     "frac": 0.0312,
+     "perf": null
+    }
+   },
+   "verdict": "판정 불가(OOD 표본<20)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.743,
+   "lo": 0.6443,
+   "hi": 0.8328,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.7453,
+   "lo": 0.6454,
+   "hi": 0.8377,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.7578,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 86,
+    "FP": 24,
+    "FN": 11,
+    "TN": 7,
+    "sensitivity": 0.8866,
+    "specificity": 0.2258,
+    "PPV": 0.7818,
+    "NPV": 0.3889,
+    "MCC": 0.1385
+   },
+   "t_star": {
+    "threshold": 0.984,
+    "TP": 42,
+    "FP": 2,
+    "FN": 55,
+    "TN": 29,
+    "sensitivity": 0.433,
+    "specificity": 0.9355,
+    "PPV": 0.9545,
+    "NPV": 0.3452,
+    "MCC": 0.3324
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.3037·n_valid=263)"
+  },
+  "calibration": {
+   "ECE": 0.1665,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 3,
+     "conf": 0.0681,
+     "freq": 0.3333
+    },
+    {
+     "bin": 1,
+     "n": 3,
+     "conf": 0.1456,
+     "freq": 0.6667
+    },
+    {
+     "bin": 2,
+     "n": 7,
+     "conf": 0.2585,
+     "freq": 0.7143
+    },
+    {
+     "bin": 3,
+     "n": 2,
+     "conf": 0.3489,
+     "freq": 1.0
+    },
+    {
+     "bin": 4,
+     "n": 3,
+     "conf": 0.4361,
+     "freq": 0.3333
+    },
+    {
+     "bin": 5,
+     "n": 5,
+     "conf": 0.5509,
+     "freq": 0.4
+    },
+    {
+     "bin": 6,
+     "n": 5,
+     "conf": 0.6622,
+     "freq": 0.4
+    },
+    {
+     "bin": 7,
+     "n": 10,
+     "conf": 0.7556,
+     "freq": 0.4
+    },
+    {
+     "bin": 8,
+     "n": 11,
+     "conf": 0.8556,
+     "freq": 0.8182
+    },
+    {
+     "bin": 9,
+     "n": 79,
+     "conf": 0.9763,
+     "freq": 0.8734
+    }
+   ],
+   "mean_conf": 0.8173,
+   "obs_rate": 0.7578,
+   "direction": "과신",
+   "mean_conf_on_positives": 0.8609,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.7466,
+   "auc_other": 0.5321,
+   "delta": 0.2145,
+   "z": 3.699,
+   "p_value": 0.000217,
+   "significant": true
+  }
+ },
+ "pgp_broccatelli": {
+  "endpoint": "pgp_broccatelli",
+  "label": "P-gp 기질",
+  "pillar": "A",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 245,
+  "AD": {
+   "cut_ood": 0.2175,
+   "cut_border": 0.3289,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 973,
+   "bands": {
+    "in-domain": {
+     "n": 141,
+     "frac": 0.5755,
+     "perf": 0.9196
+    },
+    "경계": {
+     "n": 66,
+     "frac": 0.2694,
+     "perf": 0.9072
+    },
+    "OOD": {
+     "n": 38,
+     "frac": 0.1551,
+     "perf": 0.8114
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.9096,
+   "lo": 0.872,
+   "hi": 0.9425,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.9217,
+   "lo": 0.8882,
+   "hi": 0.9524,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.5061,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 89,
+    "FP": 11,
+    "FN": 35,
+    "TN": 110,
+    "sensitivity": 0.7177,
+    "specificity": 0.9091,
+    "PPV": 0.89,
+    "NPV": 0.7586,
+    "MCC": 0.6376
+   },
+   "t_star": {
+    "threshold": 0.676,
+    "TP": 80,
+    "FP": 8,
+    "FN": 44,
+    "TN": 113,
+    "sensitivity": 0.6452,
+    "specificity": 0.9339,
+    "PPV": 0.9091,
+    "NPV": 0.7197,
+    "MCC": 0.6034
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.7643·n_valid=456)"
+  },
+  "calibration": {
+   "ECE": 0.1189,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 105,
+     "conf": 0.0249,
+     "freq": 0.0952
+    },
+    {
+     "bin": 1,
+     "n": 20,
+     "conf": 0.1497,
+     "freq": 0.7
+    },
+    {
+     "bin": 2,
+     "n": 6,
+     "conf": 0.2349,
+     "freq": 0.3333
+    },
+    {
+     "bin": 3,
+     "n": 5,
+     "conf": 0.3354,
+     "freq": 0.6
+    },
+    {
+     "bin": 4,
+     "n": 9,
+     "conf": 0.4645,
+     "freq": 0.6667
+    },
+    {
+     "bin": 5,
+     "n": 9,
+     "conf": 0.5463,
+     "freq": 0.6667
+    },
+    {
+     "bin": 6,
+     "n": 3,
+     "conf": 0.6329,
+     "freq": 1.0
+    },
+    {
+     "bin": 7,
+     "n": 6,
+     "conf": 0.7653,
+     "freq": 0.6667
+    },
+    {
+     "bin": 8,
+     "n": 7,
+     "conf": 0.8474,
+     "freq": 0.8571
+    },
+    {
+     "bin": 9,
+     "n": 75,
+     "conf": 0.9889,
+     "freq": 0.9333
+    }
+   ],
+   "mean_conf": 0.4261,
+   "obs_rate": 0.5061,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.7226,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.9208,
+   "auc_other": 0.914,
+   "delta": 0.0069,
+   "z": 0.488,
+   "p_value": 0.625,
+   "significant": false
+  }
+ },
+ "lipophilicity_astrazeneca": {
+  "endpoint": "lipophilicity_astrazeneca",
+  "label": "친유성 logD",
+  "pillar": "A",
+  "task": "reg",
+  "metric": "MAE",
+  "higher_better": false,
+  "champion": "dmpnn_ours",
+  "n_test": 840,
+  "AD": {
+   "cut_ood": 0.2644,
+   "cut_border": 0.3724,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 3360,
+   "bands": {
+    "in-domain": {
+     "n": 584,
+     "frac": 0.6952,
+     "perf": 0.3596
+    },
+    "경계": {
+     "n": 207,
+     "frac": 0.2464,
+     "perf": 0.5445
+    },
+    "OOD": {
+     "n": 49,
+     "frac": 0.0583,
+     "perf": 0.6642
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.4407,
+   "lo": 0.4147,
+   "hi": 0.4676,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.4231,
+   "lo": 0.3975,
+   "hi": 0.4499,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": 0.0803,
+   "residual_sd": 0.5652,
+   "residual_q": [
+    -0.8136,
+    -0.2323,
+    0.0902,
+    0.4118,
+    0.9285
+   ],
+   "systematic_bias_slope": 0.0151,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 0.9279,
+   "PI90_coverage": 0.9179,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "COc1cc(-n2cnc3cc(-c4ccc(Cl)cc4)sc3c2=O)ccc1OC[C@H](OP(=O)(O)",
+     "y_true": -0.04,
+     "y_pred": 3.963,
+     "abs_err": 4.003
+    },
+    {
+     "smiles": "O=C1N=C(O)NC1(c1ccccc1)c1ccccc1",
+     "y_true": 2.41,
+     "y_pred": -0.452,
+     "abs_err": 2.862
+    },
+    {
+     "smiles": "C/N=C(\\S)n1nc(-c2ccc(Cl)cc2)nc1N",
+     "y_true": 4.12,
+     "y_pred": 1.438,
+     "abs_err": 2.682
+    },
+    {
+     "smiles": "O=c1c(O)cccc2cc(O)c(O)c(O)c12",
+     "y_true": 2.03,
+     "y_pred": -0.26,
+     "abs_err": 2.29
+    },
+    {
+     "smiles": "COc1cccc(-c2ccc(/C=C3\\SC(=S)N([C@@H](Cc4ccccc4)C(=O)O)C3=O)c",
+     "y_true": 1.5,
+     "y_pred": -0.401,
+     "abs_err": 1.901
+    }
+   ]
+  }
+ },
+ "solubility_aqsoldb": {
+  "endpoint": "solubility_aqsoldb",
+  "label": "수용해도",
+  "pillar": "A",
+  "task": "reg",
+  "metric": "MAE",
+  "higher_better": false,
+  "champion": "xgb_physchem",
+  "n_test": 1995,
+  "AD": {
+   "cut_ood": 0.2857,
+   "cut_border": 0.4209,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 7985,
+   "bands": {
+    "in-domain": {
+     "n": 828,
+     "frac": 0.415,
+     "perf": 0.6569
+    },
+    "경계": {
+     "n": 878,
+     "frac": 0.4401,
+     "perf": 0.7869
+    },
+    "OOD": {
+     "n": 289,
+     "frac": 0.1449,
+     "perf": 0.838
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.7645,
+   "lo": 0.7329,
+   "hi": 0.797,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.7407,
+   "lo": 0.7106,
+   "hi": 0.772,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": -0.0374,
+   "residual_sd": 1.0233,
+   "residual_q": [
+    -1.6762,
+    -0.5746,
+    -0.0293,
+    0.5082,
+    1.547
+   ],
+   "systematic_bias_slope": 0.0468,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 1.9875,
+   "PI90_coverage": 0.9414,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "C1CO[Sb]2OCCO[Sb](O1)OCCO2",
+     "y_true": -9.025,
+     "y_pred": -2.042,
+     "abs_err": 6.983
+    },
+    {
+     "smiles": "N=C(N)N.O=C(O)C1=NN(c2ccc(S(=O)(=O)O)cc2)C(=O)C1N=Nc1ccc(S(=",
+     "y_true": -7.751,
+     "y_pred": -1.78,
+     "abs_err": 5.972
+    },
+    {
+     "smiles": "ClC1=C(Cl)C2(Cl)C3CCC4C(CCC3C1(Cl)C2(Cl)Cl)C1(Cl)C(Cl)=C(Cl)",
+     "y_true": -13.172,
+     "y_pred": -7.934,
+     "abs_err": 5.238
+    },
+    {
+     "smiles": "O=C(O)CCCCCNc1nc(NCCCCCC(=O)O)nc(NCCCCCC(=O)O)n1.OCCN(CCO)CC",
+     "y_true": -6.683,
+     "y_pred": -1.545,
+     "abs_err": 5.138
+    },
+    {
+     "smiles": "Nc1c(S(=O)(=O)O)cc(Nc2ccc(S(=O)(=O)O)c(Nc3nc(Cl)nc(Cl)n3)c2)",
+     "y_true": 0.196,
+     "y_pred": -4.829,
+     "abs_err": 5.024
+    }
+   ]
+  }
+ },
+ "bbb_martins": {
+  "endpoint": "bbb_martins",
+  "label": "BBB 투과",
+  "pillar": "D",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "rf_physchem",
+  "n_test": 394,
+  "AD": {
+   "cut_ood": 0.2351,
+   "cut_border": 0.3459,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 1624,
+   "bands": {
+    "in-domain": {
+     "n": 175,
+     "frac": 0.4442,
+     "perf": 0.9438
+    },
+    "경계": {
+     "n": 131,
+     "frac": 0.3325,
+     "perf": 0.8901
+    },
+    "OOD": {
+     "n": 88,
+     "frac": 0.2234,
+     "perf": 0.9243
+    }
+   },
+   "verdict": "★AD가 성능을 예측 못함"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.9062,
+   "lo": 0.8645,
+   "hi": 0.9409,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.919,
+   "lo": 0.8832,
+   "hi": 0.9498,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.8046,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 301,
+    "FP": 29,
+    "FN": 16,
+    "TN": 48,
+    "sensitivity": 0.9495,
+    "specificity": 0.6234,
+    "PPV": 0.9121,
+    "NPV": 0.75,
+    "MCC": 0.6159
+   },
+   "t_star": {
+    "threshold": 0.737,
+    "TP": 241,
+    "FP": 5,
+    "FN": 76,
+    "TN": 72,
+    "sensitivity": 0.7603,
+    "specificity": 0.9351,
+    "PPV": 0.9797,
+    "NPV": 0.4865,
+    "MCC": 0.5693
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.663·n_valid=763)"
+  },
+  "calibration": {
+   "ECE": 0.0967,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 12,
+     "conf": 0.0603,
+     "freq": 0.0833
+    },
+    {
+     "bin": 1,
+     "n": 16,
+     "conf": 0.156,
+     "freq": 0.125
+    },
+    {
+     "bin": 2,
+     "n": 6,
+     "conf": 0.2344,
+     "freq": 0.0
+    },
+    {
+     "bin": 3,
+     "n": 9,
+     "conf": 0.3622,
+     "freq": 0.4444
+    },
+    {
+     "bin": 4,
+     "n": 21,
+     "conf": 0.4621,
+     "freq": 0.4286
+    },
+    {
+     "bin": 5,
+     "n": 26,
+     "conf": 0.5516,
+     "freq": 0.7308
+    },
+    {
+     "bin": 6,
+     "n": 36,
+     "conf": 0.6632,
+     "freq": 0.5833
+    },
+    {
+     "bin": 7,
+     "n": 67,
+     "conf": 0.7538,
+     "freq": 0.9701
+    },
+    {
+     "bin": 8,
+     "n": 79,
+     "conf": 0.8503,
+     "freq": 0.9367
+    },
+    {
+     "bin": 9,
+     "n": 122,
+     "conf": 0.954,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.7357,
+   "obs_rate": 0.8046,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.8165,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.9189,
+   "auc_other": 0.8774,
+   "delta": 0.0415,
+   "z": 2.451,
+   "p_value": 0.0142,
+   "significant": true
+  }
+ },
+ "ppbr_az": {
+  "endpoint": "ppbr_az",
+  "label": "혈장단백결합",
+  "pillar": "D",
+  "task": "reg",
+  "metric": "MAE",
+  "higher_better": false,
+  "champion": "xgb_physchem",
+  "n_test": 343,
+  "AD": {
+   "cut_ood": 0.2632,
+   "cut_border": 0.4521,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 2231,
+   "bands": {
+    "in-domain": {
+     "n": 153,
+     "frac": 0.4461,
+     "perf": 6.1521
+    },
+    "경계": {
+     "n": 149,
+     "frac": 0.4344,
+     "perf": 8.301
+    },
+    "OOD": {
+     "n": 41,
+     "frac": 0.1195,
+     "perf": 9.0032
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 8.1147,
+   "lo": 7.3925,
+   "hi": 8.8509,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 7.4299,
+   "lo": 6.6521,
+   "hi": 8.2754,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": 0.9354,
+   "residual_sd": 10.7197,
+   "residual_q": [
+    -19.8561,
+    -1.9451,
+    2.7969,
+    6.1361,
+    13.5125
+   ],
+   "systematic_bias_slope": 0.0236,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 25.0198,
+   "PI90_coverage": 0.9621,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "C[C@@]1(c2cc(-c3cncnc3)c(F)cc2F)CCSC(N)=N1",
+     "y_true": 32.88,
+     "y_pred": 86.066,
+     "abs_err": 53.186
+    },
+    {
+     "smiles": "CC(C)(C(=O)c1cccnc1)c1cccnc1",
+     "y_true": 11.18,
+     "y_pred": 58.968,
+     "abs_err": 47.788
+    },
+    {
+     "smiles": "CC(C)[C@H](O)C(=O)N[C@@H](C)C(=O)N[C@@H]1C(=O)N(C)CCc2ccccc2",
+     "y_true": 19.71,
+     "y_pred": 64.634,
+     "abs_err": 44.924
+    },
+    {
+     "smiles": "CCc1cc2c(cc1N1CCC(N3CCOCC3)CC1)C(C)(C)c1[nH]c3cc(C#N)ccc3c1C",
+     "y_true": 50.0,
+     "y_pred": 93.961,
+     "abs_err": 43.961
+    },
+    {
+     "smiles": "Nc1nc(O)c(Cl)c(-c2ccccc2)n1",
+     "y_true": 93.39,
+     "y_pred": 55.338,
+     "abs_err": 38.052
+    }
+   ]
+  }
+ },
+ "vdss_lombardo": {
+  "endpoint": "vdss_lombardo",
+  "label": "분포용적 VDss",
+  "pillar": "D",
+  "task": "reg",
+  "metric": "Spearman",
+  "higher_better": true,
+  "champion": "rf_physchem",
+  "n_test": 221,
+  "AD": {
+   "cut_ood": 0.1953,
+   "cut_border": 0.2577,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 904,
+   "bands": {
+    "in-domain": {
+     "n": 116,
+     "frac": 0.5249,
+     "perf": 0.7089
+    },
+    "경계": {
+     "n": 69,
+     "frac": 0.3122,
+     "perf": 0.519
+    },
+    "OOD": {
+     "n": 36,
+     "frac": 0.1629,
+     "perf": 0.1949
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.5744,
+   "lo": 0.4703,
+   "hi": 0.6677,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.5868,
+   "lo": 0.4842,
+   "hi": 0.6791,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": -3.4054,
+   "residual_sd": 18.5463,
+   "residual_q": [
+    -10.0549,
+    -3.1137,
+    -1.5756,
+    -0.5396,
+    5.5861
+   ],
+   "systematic_bias_slope": -0.9693,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 7.8947,
+   "PI90_coverage": 0.8959,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "CC(CC(c1ccccc1)c1ccccc1)[NH2+]C(C)(C)C",
+     "y_true": 5.1,
+     "y_pred": 194.574,
+     "abs_err": 189.474
+    },
+    {
+     "smiles": "CCC1(c2cccc(O)c2)CCCC[NH+](C)C1",
+     "y_true": 3.3,
+     "y_pred": 187.484,
+     "abs_err": 184.184
+    },
+    {
+     "smiles": "COC1C(=O)C2(C)C(OC)CC3OCC3(OC(C)=O)C2C(OC(=O)c2ccccc2)C2(O)C",
+     "y_true": 48.0,
+     "y_pred": 9.426,
+     "abs_err": 38.574
+    },
+    {
+     "smiles": "CCC(CO)NCC[NH2+]C(CC)CO",
+     "y_true": 1.7,
+     "y_pred": 33.572,
+     "abs_err": 31.872
+    },
+    {
+     "smiles": "OCC(O)C(O)C(O)C(O)CO",
+     "y_true": 0.24,
+     "y_pred": 29.943,
+     "abs_err": 29.703
+    }
+   ]
+  }
+ },
+ "cyp2c9_veith": {
+  "endpoint": "cyp2c9_veith",
+  "label": "CYP2C9 억제",
+  "pillar": "M",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 2419,
+  "AD": {
+   "cut_ood": 0.2845,
+   "cut_border": 0.3665,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 9673,
+   "bands": {
+    "in-domain": {
+     "n": 1448,
+     "frac": 0.5986,
+     "perf": 0.8918
+    },
+    "경계": {
+     "n": 681,
+     "frac": 0.2815,
+     "perf": 0.8837
+    },
+    "OOD": {
+     "n": 290,
+     "frac": 0.1199,
+     "perf": 0.8683
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.8878,
+   "lo": 0.8741,
+   "hi": 0.9011,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.8917,
+   "lo": 0.8782,
+   "hi": 0.9043,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.3183,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 527,
+    "FP": 188,
+    "FN": 243,
+    "TN": 1461,
+    "sensitivity": 0.6844,
+    "specificity": 0.886,
+    "PPV": 0.7371,
+    "NPV": 0.8574,
+    "MCC": 0.5823
+   },
+   "t_star": {
+    "threshold": 0.358,
+    "TP": 602,
+    "FP": 257,
+    "FN": 168,
+    "TN": 1392,
+    "sensitivity": 0.7818,
+    "specificity": 0.8441,
+    "PPV": 0.7008,
+    "NPV": 0.8923,
+    "MCC": 0.6093
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.6116·n_valid=4644)"
+  },
+  "calibration": {
+   "ECE": 0.0344,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 1104,
+     "conf": 0.0278,
+     "freq": 0.0417
+    },
+    {
+     "bin": 1,
+     "n": 240,
+     "conf": 0.1471,
+     "freq": 0.1833
+    },
+    {
+     "bin": 2,
+     "n": 138,
+     "conf": 0.2463,
+     "freq": 0.3116
+    },
+    {
+     "bin": 3,
+     "n": 113,
+     "conf": 0.346,
+     "freq": 0.4602
+    },
+    {
+     "bin": 4,
+     "n": 109,
+     "conf": 0.4483,
+     "freq": 0.5321
+    },
+    {
+     "bin": 5,
+     "n": 117,
+     "conf": 0.5518,
+     "freq": 0.6068
+    },
+    {
+     "bin": 6,
+     "n": 139,
+     "conf": 0.6541,
+     "freq": 0.6403
+    },
+    {
+     "bin": 7,
+     "n": 147,
+     "conf": 0.7525,
+     "freq": 0.7143
+    },
+    {
+     "bin": 8,
+     "n": 182,
+     "conf": 0.8485,
+     "freq": 0.8132
+    },
+    {
+     "bin": 9,
+     "n": 130,
+     "conf": 0.9359,
+     "freq": 0.8769
+    }
+   ],
+   "mean_conf": 0.3018,
+   "obs_rate": 0.3183,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.614,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.8917,
+   "auc_other": 0.8834,
+   "delta": 0.0083,
+   "z": 1.81,
+   "p_value": 0.0702,
+   "significant": false
+  }
+ },
+ "cyp2d6_veith": {
+  "endpoint": "cyp2d6_veith",
+  "label": "CYP2D6 억제",
+  "pillar": "M",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 2626,
+  "AD": {
+   "cut_ood": 0.2885,
+   "cut_border": 0.3723,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 10504,
+   "bands": {
+    "in-domain": {
+     "n": 1451,
+     "frac": 0.5526,
+     "perf": 0.895
+    },
+    "경계": {
+     "n": 759,
+     "frac": 0.289,
+     "perf": 0.8446
+    },
+    "OOD": {
+     "n": 416,
+     "frac": 0.1584,
+     "perf": 0.8243
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.8676,
+   "lo": 0.8467,
+   "hi": 0.8873,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.8736,
+   "lo": 0.8532,
+   "hi": 0.8922,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.1687,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 204,
+    "FP": 47,
+    "FN": 239,
+    "TN": 2136,
+    "sensitivity": 0.4605,
+    "specificity": 0.9785,
+    "PPV": 0.8127,
+    "NPV": 0.8994,
+    "MCC": 0.5591
+   },
+   "t_star": {
+    "threshold": 0.284,
+    "TP": 271,
+    "FP": 147,
+    "FN": 172,
+    "TN": 2036,
+    "sensitivity": 0.6117,
+    "specificity": 0.9327,
+    "PPV": 0.6483,
+    "NPV": 0.9221,
+    "MCC": 0.5573
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.5258·n_valid=5160)"
+  },
+  "calibration": {
+   "ECE": 0.0306,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 1851,
+     "conf": 0.0296,
+     "freq": 0.054
+    },
+    {
+     "bin": 1,
+     "n": 248,
+     "conf": 0.1413,
+     "freq": 0.1694
+    },
+    {
+     "bin": 2,
+     "n": 135,
+     "conf": 0.2514,
+     "freq": 0.3037
+    },
+    {
+     "bin": 3,
+     "n": 85,
+     "conf": 0.3491,
+     "freq": 0.3529
+    },
+    {
+     "bin": 4,
+     "n": 56,
+     "conf": 0.4445,
+     "freq": 0.4643
+    },
+    {
+     "bin": 5,
+     "n": 60,
+     "conf": 0.5457,
+     "freq": 0.7167
+    },
+    {
+     "bin": 6,
+     "n": 43,
+     "conf": 0.6446,
+     "freq": 0.7674
+    },
+    {
+     "bin": 7,
+     "n": 56,
+     "conf": 0.747,
+     "freq": 0.8214
+    },
+    {
+     "bin": 8,
+     "n": 51,
+     "conf": 0.8443,
+     "freq": 0.8431
+    },
+    {
+     "bin": 9,
+     "n": 41,
+     "conf": 0.9526,
+     "freq": 0.9512
+    }
+   ],
+   "mean_conf": 0.1382,
+   "obs_rate": 0.1687,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.4441,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.8736,
+   "auc_other": 0.8696,
+   "delta": 0.0039,
+   "z": 0.555,
+   "p_value": 0.579,
+   "significant": false
+  }
+ },
+ "cyp3a4_veith": {
+  "endpoint": "cyp3a4_veith",
+  "label": "CYP3A4 억제",
+  "pillar": "M",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 2467,
+  "AD": {
+   "cut_ood": 0.2844,
+   "cut_border": 0.3662,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 9861,
+   "bands": {
+    "in-domain": {
+     "n": 1716,
+     "frac": 0.6956,
+     "perf": 0.8976
+    },
+    "경계": {
+     "n": 605,
+     "frac": 0.2452,
+     "perf": 0.8501
+    },
+    "OOD": {
+     "n": 146,
+     "frac": 0.0592,
+     "perf": 0.8425
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.884,
+   "lo": 0.871,
+   "hi": 0.8964,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.8886,
+   "lo": 0.8757,
+   "hi": 0.9014,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.4386,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 863,
+    "FP": 263,
+    "FN": 219,
+    "TN": 1122,
+    "sensitivity": 0.7976,
+    "specificity": 0.8101,
+    "PPV": 0.7664,
+    "NPV": 0.8367,
+    "MCC": 0.6054
+   },
+   "t_star": {
+    "threshold": 0.401,
+    "TP": 922,
+    "FP": 346,
+    "FN": 160,
+    "TN": 1039,
+    "sensitivity": 0.8521,
+    "specificity": 0.7502,
+    "PPV": 0.7271,
+    "NPV": 0.8666,
+    "MCC": 0.598
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.6228·n_valid=4750)"
+  },
+  "calibration": {
+   "ECE": 0.0184,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 646,
+     "conf": 0.0323,
+     "freq": 0.0433
+    },
+    {
+     "bin": 1,
+     "n": 227,
+     "conf": 0.1484,
+     "freq": 0.1542
+    },
+    {
+     "bin": 2,
+     "n": 176,
+     "conf": 0.2463,
+     "freq": 0.233
+    },
+    {
+     "bin": 3,
+     "n": 148,
+     "conf": 0.3468,
+     "freq": 0.3649
+    },
+    {
+     "bin": 4,
+     "n": 144,
+     "conf": 0.4449,
+     "freq": 0.4236
+    },
+    {
+     "bin": 5,
+     "n": 151,
+     "conf": 0.5483,
+     "freq": 0.543
+    },
+    {
+     "bin": 6,
+     "n": 193,
+     "conf": 0.6502,
+     "freq": 0.6269
+    },
+    {
+     "bin": 7,
+     "n": 197,
+     "conf": 0.7553,
+     "freq": 0.6701
+    },
+    {
+     "bin": 8,
+     "n": 242,
+     "conf": 0.8538,
+     "freq": 0.8306
+    },
+    {
+     "bin": 9,
+     "n": 343,
+     "conf": 0.957,
+     "freq": 0.9534
+    }
+   ],
+   "mean_conf": 0.448,
+   "obs_rate": 0.4386,
+   "direction": "과신",
+   "mean_conf_on_positives": 0.7133,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.8885,
+   "auc_other": 0.8941,
+   "delta": -0.0055,
+   "z": -1.112,
+   "p_value": 0.266,
+   "significant": false
+  }
+ },
+ "cyp2c9_substrate_carbonmangels": {
+  "endpoint": "cyp2c9_substrate_carbonmangels",
+  "label": "CYP2C9 기질",
+  "pillar": "M",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "rf_physchem",
+  "n_test": 135,
+  "AD": {
+   "cut_ood": 0.1879,
+   "cut_border": 0.249,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 534,
+   "bands": {
+    "in-domain": {
+     "n": 101,
+     "frac": 0.7481,
+     "perf": 0.6265
+    },
+    "경계": {
+     "n": 26,
+     "frac": 0.1926,
+     "perf": 0.5833
+    },
+    "OOD": {
+     "n": 8,
+     "frac": 0.0593,
+     "perf": null
+    }
+   },
+   "verdict": "판정 불가(OOD 표본<20)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.6219,
+   "lo": 0.5151,
+   "hi": 0.7229,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.6228,
+   "lo": 0.5147,
+   "hi": 0.7262,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.2815,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 1,
+    "FP": 0,
+    "FN": 37,
+    "TN": 97,
+    "sensitivity": 0.0263,
+    "specificity": 1.0,
+    "PPV": 1.0,
+    "NPV": 0.7239,
+    "MCC": 0.138
+   },
+   "t_star": {
+    "threshold": 0.259,
+    "TP": 17,
+    "FP": 26,
+    "FN": 21,
+    "TN": 71,
+    "sensitivity": 0.4474,
+    "specificity": 0.732,
+    "PPV": 0.3953,
+    "NPV": 0.7717,
+    "MCC": 0.1731
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.3031·n_valid=267)"
+  },
+  "calibration": {
+   "ECE": 0.0898,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 31,
+     "conf": 0.0613,
+     "freq": 0.1613
+    },
+    {
+     "bin": 1,
+     "n": 39,
+     "conf": 0.1473,
+     "freq": 0.2308
+    },
+    {
+     "bin": 2,
+     "n": 41,
+     "conf": 0.2548,
+     "freq": 0.3659
+    },
+    {
+     "bin": 3,
+     "n": 17,
+     "conf": 0.3431,
+     "freq": 0.3529
+    },
+    {
+     "bin": 4,
+     "n": 6,
+     "conf": 0.4299,
+     "freq": 0.3333
+    },
+    {
+     "bin": 5,
+     "n": 1,
+     "conf": 0.5308,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.2003,
+   "obs_rate": 0.2815,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.2365,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.6238,
+   "auc_other": 0.627,
+   "delta": -0.0031,
+   "z": -0.083,
+   "p_value": 0.934,
+   "significant": false
+  }
+ },
+ "cyp2d6_substrate_carbonmangels": {
+  "endpoint": "cyp2d6_substrate_carbonmangels",
+  "label": "CYP2D6 기질",
+  "pillar": "M",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 134,
+  "AD": {
+   "cut_ood": 0.1777,
+   "cut_border": 0.2515,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 532,
+   "bands": {
+    "in-domain": {
+     "n": 96,
+     "frac": 0.7164,
+     "perf": 0.8455
+    },
+    "경계": {
+     "n": 36,
+     "frac": 0.2687,
+     "perf": 0.75
+    },
+    "OOD": {
+     "n": 2,
+     "frac": 0.0149,
+     "perf": null
+    }
+   },
+   "verdict": "판정 불가(OOD 표본<20)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.8195,
+   "lo": 0.7416,
+   "hi": 0.8887,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.821,
+   "lo": 0.7438,
+   "hi": 0.8893,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.3209,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 16,
+    "FP": 8,
+    "FN": 27,
+    "TN": 83,
+    "sensitivity": 0.3721,
+    "specificity": 0.9121,
+    "PPV": 0.6667,
+    "NPV": 0.7545,
+    "MCC": 0.346
+   },
+   "t_star": {
+    "threshold": 0.069,
+    "TP": 37,
+    "FP": 32,
+    "FN": 6,
+    "TN": 59,
+    "sensitivity": 0.8605,
+    "specificity": 0.6484,
+    "PPV": 0.5362,
+    "NPV": 0.9077,
+    "MCC": 0.4753
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.4018·n_valid=269)"
+  },
+  "calibration": {
+   "ECE": 0.1432,
+   "curve": [
+    {
+     "bin": 0,
+     "n": 74,
+     "conf": 0.0254,
+     "freq": 0.0946
+    },
+    {
+     "bin": 1,
+     "n": 10,
+     "conf": 0.1321,
+     "freq": 0.6
+    },
+    {
+     "bin": 2,
+     "n": 8,
+     "conf": 0.2424,
+     "freq": 0.375
+    },
+    {
+     "bin": 3,
+     "n": 12,
+     "conf": 0.3548,
+     "freq": 0.6667
+    },
+    {
+     "bin": 4,
+     "n": 6,
+     "conf": 0.4427,
+     "freq": 0.5
+    },
+    {
+     "bin": 5,
+     "n": 2,
+     "conf": 0.5429,
+     "freq": 0.0
+    },
+    {
+     "bin": 6,
+     "n": 1,
+     "conf": 0.603,
+     "freq": 0.0
+    },
+    {
+     "bin": 7,
+     "n": 3,
+     "conf": 0.7773,
+     "freq": 0.6667
+    },
+    {
+     "bin": 8,
+     "n": 10,
+     "conf": 0.8648,
+     "freq": 0.8
+    },
+    {
+     "bin": 9,
+     "n": 8,
+     "conf": 0.9463,
+     "freq": 0.75
+    }
+   ],
+   "mean_conf": 0.241,
+   "obs_rate": 0.3209,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.4648,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.8211,
+   "auc_other": 0.781,
+   "delta": 0.0401,
+   "z": 1.553,
+   "p_value": 0.12,
+   "significant": false
+  }
+ },
+ "cyp3a4_substrate_carbonmangels": {
+  "endpoint": "cyp3a4_substrate_carbonmangels",
+  "label": "CYP3A4 기질",
+  "pillar": "M",
+  "task": "cls",
+  "metric": "AUROC",
+  "higher_better": true,
+  "champion": "rf_physchem",
+  "n_test": 134,
+  "AD": {
+   "cut_ood": 0.1853,
+   "cut_border": 0.2468,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 535,
+   "bands": {
+    "in-domain": {
+     "n": 111,
+     "frac": 0.8284,
+     "perf": 0.6768
+    },
+    "경계": {
+     "n": 19,
+     "frac": 0.1418,
+     "perf": null
+    },
+    "OOD": {
+     "n": 4,
+     "frac": 0.0299,
+     "perf": null
+    }
+   },
+   "verdict": "판정 불가(OOD 표본<20)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.6562,
+   "lo": 0.5604,
+   "hi": 0.7489,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.6624,
+   "lo": 0.5658,
+   "hi": 0.7588,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "operating": {
+   "pos_rate": 0.5821,
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 61,
+    "FP": 29,
+    "FN": 17,
+    "TN": 27,
+    "sensitivity": 0.7821,
+    "specificity": 0.4821,
+    "PPV": 0.6778,
+    "NPV": 0.6136,
+    "MCC": 0.2775
+   },
+   "t_star": {
+    "threshold": 0.556,
+    "TP": 50,
+    "FP": 24,
+    "FN": 28,
+    "TN": 32,
+    "sensitivity": 0.641,
+    "specificity": 0.5714,
+    "PPV": 0.6757,
+    "NPV": 0.5333,
+    "MCC": 0.2107
+   },
+   "t_star_source": "valid MCC 최대(MCC=0.3143·n_valid=268)"
+  },
+  "calibration": {
+   "ECE": 0.0761,
+   "curve": [
+    {
+     "bin": 1,
+     "n": 3,
+     "conf": 0.1515,
+     "freq": 0.3333
+    },
+    {
+     "bin": 2,
+     "n": 4,
+     "conf": 0.2449,
+     "freq": 0.25
+    },
+    {
+     "bin": 3,
+     "n": 19,
+     "conf": 0.358,
+     "freq": 0.3158
+    },
+    {
+     "bin": 4,
+     "n": 18,
+     "conf": 0.4491,
+     "freq": 0.5
+    },
+    {
+     "bin": 5,
+     "n": 28,
+     "conf": 0.5468,
+     "freq": 0.6786
+    },
+    {
+     "bin": 6,
+     "n": 24,
+     "conf": 0.6561,
+     "freq": 0.625
+    },
+    {
+     "bin": 7,
+     "n": 28,
+     "conf": 0.75,
+     "freq": 0.6429
+    },
+    {
+     "bin": 8,
+     "n": 9,
+     "conf": 0.8451,
+     "freq": 0.8889
+    },
+    {
+     "bin": 9,
+     "n": 1,
+     "conf": 0.9228,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.5739,
+   "obs_rate": 0.5821,
+   "direction": "과소",
+   "mean_conf_on_positives": 0.6178,
+   "note": "보정은 후처리 → AUROC 등 랭킹지표 불변"
+  },
+  "delong_vs_dmpnn": {
+   "auc_champ": 0.6636,
+   "auc_other": 0.5739,
+   "delta": 0.0896,
+   "z": 2.703,
+   "p_value": 0.00687,
+   "significant": true
+  }
+ },
+ "half_life_obach": {
+  "endpoint": "half_life_obach",
+  "label": "반감기",
+  "pillar": "E",
+  "task": "reg",
+  "metric": "Spearman",
+  "higher_better": true,
+  "champion": "rf_physchem",
+  "n_test": 134,
+  "AD": {
+   "cut_ood": 0.1882,
+   "cut_border": 0.2439,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 532,
+   "bands": {
+    "in-domain": {
+     "n": 98,
+     "frac": 0.7313,
+     "perf": 0.3343
+    },
+    "경계": {
+     "n": 29,
+     "frac": 0.2164,
+     "perf": 0.2111
+    },
+    "OOD": {
+     "n": 7,
+     "frac": 0.0522,
+     "perf": null
+    }
+   },
+   "verdict": "판정 불가(OOD 표본<20)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.3119,
+   "lo": 0.1428,
+   "hi": 0.4733,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.309,
+   "lo": 0.1306,
+   "hi": 0.4711,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": -11.2973,
+   "residual_sd": 32.1377,
+   "residual_q": [
+    -57.3214,
+    -13.9401,
+    -5.9725,
+    -1.2398,
+    12.3086
+   ],
+   "systematic_bias_slope": -0.7637,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 84.41,
+   "PI90_coverage": 0.9552,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "Nc1c2c(nc3ccccc13)CCCC2",
+     "y_true": 3.3,
+     "y_pred": 229.388,
+     "abs_err": 226.088
+    },
+    {
+     "smiles": "CCc1nc(N)nc(N)c1-c1ccc(Cl)cc1",
+     "y_true": 140.0,
+     "y_pred": 11.717,
+     "abs_err": 128.283
+    },
+    {
+     "smiles": "CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1",
+     "y_true": 22.0,
+     "y_pred": 149.785,
+     "abs_err": 127.785
+    },
+    {
+     "smiles": "CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)O)CC1)c1cccc(/C=C/c2ccc3",
+     "y_true": 5.0,
+     "y_pred": 110.978,
+     "abs_err": 105.978
+    },
+    {
+     "smiles": "COc1ccc2cc1Oc1cc3c(cc1OC)CC[N+](C)(C)[C@H]3Cc1ccc(cc1)Oc1c(O",
+     "y_true": 5.1,
+     "y_pred": 97.945,
+     "abs_err": 92.845
+    }
+   ]
+  }
+ },
+ "clearance_hepatocyte_az": {
+  "endpoint": "clearance_hepatocyte_az",
+  "label": "간세포 청소율",
+  "pillar": "E",
+  "task": "reg",
+  "metric": "Spearman",
+  "higher_better": true,
+  "champion": "rf_physchem",
+  "n_test": 203,
+  "AD": {
+   "cut_ood": 0.2315,
+   "cut_border": 0.3238,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 970,
+   "bands": {
+    "in-domain": {
+     "n": 95,
+     "frac": 0.468,
+     "perf": 0.6308
+    },
+    "경계": {
+     "n": 81,
+     "frac": 0.399,
+     "perf": 0.3106
+    },
+    "OOD": {
+     "n": 27,
+     "frac": 0.133,
+     "perf": 0.2511
+    }
+   },
+   "verdict": "AD 유효(OOD서 성능 하락)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.4202,
+   "lo": 0.3097,
+   "hi": 0.5229,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.4717,
+   "lo": 0.3536,
+   "hi": 0.576,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": -3.0353,
+   "residual_sd": 44.1461,
+   "residual_q": [
+    -55.7551,
+    -28.6582,
+    -15.9466,
+    14.3396,
+    92.4717
+   ],
+   "systematic_bias_slope": 0.0329,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 78.9454,
+   "PI90_coverage": 0.9015,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc",
+     "y_true": 150.0,
+     "y_pred": 23.117,
+     "abs_err": 126.883
+    },
+    {
+     "smiles": "O=C(Nc1c(Cl)cncc1Cl)c1ccc(OC(F)F)c(OCC2CC2)c1",
+     "y_true": 150.0,
+     "y_pred": 23.62,
+     "abs_err": 126.38
+    },
+    {
+     "smiles": "O=C(Nc1nc2c(=O)[nH]cnc2s1)c1ccccc1",
+     "y_true": 150.0,
+     "y_pred": 41.524,
+     "abs_err": 108.476
+    },
+    {
+     "smiles": "Nc1ncnc2c1c(COc1cccc(Cl)c1)nn2C1CCOCC1",
+     "y_true": 150.0,
+     "y_pred": 41.664,
+     "abs_err": 108.336
+    },
+    {
+     "smiles": "CC(C)[C@H]1C(=O)N[C@H](CO)Cc2ccccc2N1C",
+     "y_true": 144.54,
+     "y_pred": 43.812,
+     "abs_err": 100.728
+    }
+   ]
+  }
+ },
+ "clearance_microsome_az": {
+  "endpoint": "clearance_microsome_az",
+  "label": "마이크로솜 청소율",
+  "pillar": "E",
+  "task": "reg",
+  "metric": "Spearman",
+  "higher_better": true,
+  "champion": "xgb_physchem",
+  "n_test": 221,
+  "AD": {
+   "cut_ood": 0.2233,
+   "cut_border": 0.2894,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "n_train_ref": 881,
+   "bands": {
+    "in-domain": {
+     "n": 174,
+     "frac": 0.7873,
+     "perf": 0.56
+    },
+    "경계": {
+     "n": 41,
+     "frac": 0.1855,
+     "perf": 0.4821
+    },
+    "OOD": {
+     "n": 6,
+     "frac": 0.0271,
+     "perf": null
+    }
+   },
+   "verdict": "판정 불가(OOD 표본<20)"
+  },
+  "ci_primary": {
+   "method": "seed별 부트스트랩 후 종합(★주 판정·학습변동 포함)",
+   "mean": 0.5486,
+   "lo": 0.4521,
+   "hi": 0.6391,
+   "n_seed": 5
+  },
+  "ci_ensemble": {
+   "mean": 0.5732,
+   "lo": 0.4767,
+   "hi": 0.6576,
+   "method": "5seed 예측평균 부트스트랩(★5-모델 앙상블 평가·변동 큰 모델에 유리)"
+  },
+  "regression": {
+   "residual_mean": -2.2225,
+   "residual_sd": 37.7269,
+   "residual_q": [
+    -44.9926,
+    -22.7706,
+    -8.6921,
+    2.2484,
+    83.5949
+   ],
+   "systematic_bias_slope": -0.1448,
+   "bias_note": "예측값 대비 잔차 회귀 기울기. 0에서 멀수록 계통 편향(음수=큰 값 과소예측)",
+   "PI90_halfwidth": 70.115,
+   "PI90_coverage": 0.905,
+   "PI_note": "valid 절대잔차 90% 분위수로 만든 분할 컨포멀 구간 → test 실제 커버리지(★test 튜닝 없음)",
+   "worst_errors": [
+    {
+     "smiles": "CCSc1ccc(-c2cc(C(F)(F)F)ccc2OCC(=O)O)cc1",
+     "y_true": 134.0,
+     "y_pred": 1.84,
+     "abs_err": 132.16
+    },
+    {
+     "smiles": "CC(C)Cn1c(=O)n(C)c(=O)c2c(C(=O)N3CCCC3)c(Cc3ccccc3C(F)(F)F)s",
+     "y_true": 150.0,
+     "y_pred": 18.49,
+     "abs_err": 131.51
+    },
+    {
+     "smiles": "COc1ccccc1C(=O)/C=C/c1ccccc1C(F)(F)F",
+     "y_true": 150.0,
+     "y_pred": 18.885,
+     "abs_err": 131.115
+    },
+    {
+     "smiles": "CCOc1ccc2oc(C(=O)NC(CCSC)c3nc4ncccc4[nH]3)c(C)c2c1",
+     "y_true": 150.0,
+     "y_pred": 25.323,
+     "abs_err": 124.677
+    },
+    {
+     "smiles": "O=C(c1cccc(Cl)c1Cl)N1CCN(c2ccccn2)CC1",
+     "y_true": 150.0,
+     "y_pred": 31.958,
+     "abs_err": 118.042
+    }
+   ]
+  }
+ }
+}

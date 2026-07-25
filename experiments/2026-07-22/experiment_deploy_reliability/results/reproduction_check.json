@@ -1,0 +1,315 @@
+{
+ "tolerance": 0.005,
+ "n": 18,
+ "n_fail": 0,
+ "reproduced_not_loaded": true,
+ "note": "모델 아티팩트가 저장돼 있지 않아 로드 불가 → 동일 config·seed·분할로 재현 학습 후 추론. 모든 예측은 ★재현본임을 flag한다.",
+ "checks": [
+  {
+   "scope": "핵심 4종",
+   "endpoint": "dili",
+   "task": "—",
+   "model": "rf_physchem",
+   "metric": "AUROC",
+   "reported": 0.9125,
+   "reproduced": 0.9125,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_test": 96,
+   "files": [
+    "dili__—__rf_physchem__test.jsonl",
+    "dili__—__rf_physchem__valid.jsonl"
+   ],
+   "source": "experiment_physchem/results/physchem.csv"
+  },
+  {
+   "scope": "핵심 4종",
+   "endpoint": "herg",
+   "task": "—",
+   "model": "rf_physchem",
+   "metric": "AUROC",
+   "reported": 0.8369,
+   "reproduced": 0.8369,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 132,
+   "files": [
+    "herg__—__rf_physchem__test.jsonl",
+    "herg__—__rf_physchem__valid.jsonl"
+   ],
+   "source": "experiment_physchem/results/physchem.csv"
+  },
+  {
+   "scope": "핵심 4종",
+   "endpoint": "ames",
+   "task": "—",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8513,
+   "reproduced": 0.8513,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1457,
+   "files": [
+    "ames__—__xgb_physchem__test.jsonl",
+    "ames__—__xgb_physchem__valid.jsonl"
+   ],
+   "source": "experiment_physchem/results/physchem.csv"
+  },
+  {
+   "scope": "핵심 4종",
+   "endpoint": "ld50_zhu",
+   "task": "—",
+   "model": "xgb_physchem",
+   "metric": "MAE",
+   "reported": 0.6071,
+   "reproduced": 0.6071,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1478,
+   "files": [
+    "ld50_zhu__—__xgb_physchem__test.jsonl",
+    "ld50_zhu__—__xgb_physchem__valid.jsonl"
+   ],
+   "source": "experiment_physchem/results/physchem.csv"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Carcinogens_Lagunin",
+   "task": "Y",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8366,
+   "reproduced": 0.8366,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 56,
+   "files": [
+    "Carcinogens_Lagunin__Y__xgb_physchem__test.jsonl",
+    "Carcinogens_Lagunin__Y__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "ClinTox",
+   "task": "Y",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8014,
+   "reproduced": 0.8014,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_test": 297,
+   "files": [
+    "ClinTox__Y__xgb_physchem__test.jsonl",
+    "ClinTox__Y__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-AR",
+   "model": "xgb_ecfp",
+   "metric": "AUROC",
+   "reported": 0.7499,
+   "reproduced": 0.7498,
+   "diff": -0.0001,
+   "within_tol": true,
+   "n_test": 1437,
+   "files": [
+    "Tox21__NR-AR__xgb_ecfp__test.jsonl",
+    "Tox21__NR-AR__xgb_ecfp__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-AR-LBD",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8101,
+   "reproduced": 0.8101,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1305,
+   "files": [
+    "Tox21__NR-AR-LBD__xgb_physchem__test.jsonl",
+    "Tox21__NR-AR-LBD__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-AhR",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8692,
+   "reproduced": 0.8692,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1268,
+   "files": [
+    "Tox21__NR-AhR__xgb_physchem__test.jsonl",
+    "Tox21__NR-AhR__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-Aromatase",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8027,
+   "reproduced": 0.8027,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1051,
+   "files": [
+    "Tox21__NR-Aromatase__xgb_physchem__test.jsonl",
+    "Tox21__NR-Aromatase__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-ER",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.7531,
+   "reproduced": 0.7531,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1152,
+   "files": [
+    "Tox21__NR-ER__xgb_physchem__test.jsonl",
+    "Tox21__NR-ER__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-ER-LBD",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8414,
+   "reproduced": 0.8414,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1335,
+   "files": [
+    "Tox21__NR-ER-LBD__xgb_physchem__test.jsonl",
+    "Tox21__NR-ER-LBD__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "NR-PPAR-gamma",
+   "model": "rf_physchem",
+   "metric": "AUROC",
+   "reported": 0.8362,
+   "reproduced": 0.8362,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_test": 1209,
+   "files": [
+    "Tox21__NR-PPAR-gamma__rf_physchem__test.jsonl",
+    "Tox21__NR-PPAR-gamma__rf_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "SR-ARE",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.7949,
+   "reproduced": 0.7949,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_test": 1056,
+   "files": [
+    "Tox21__SR-ARE__xgb_physchem__test.jsonl",
+    "Tox21__SR-ARE__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "SR-ATAD5",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.7598,
+   "reproduced": 0.7598,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_test": 1372,
+   "files": [
+    "Tox21__SR-ATAD5__xgb_physchem__test.jsonl",
+    "Tox21__SR-ATAD5__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "SR-HSE",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.8028,
+   "reproduced": 0.8029,
+   "diff": 0.0001,
+   "within_tol": true,
+   "n_test": 1213,
+   "files": [
+    "Tox21__SR-HSE__xgb_physchem__test.jsonl",
+    "Tox21__SR-HSE__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "SR-MMP",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.9041,
+   "reproduced": 0.9041,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_test": 1052,
+   "files": [
+    "Tox21__SR-MMP__xgb_physchem__test.jsonl",
+    "Tox21__SR-MMP__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  },
+  {
+   "scope": "확장",
+   "endpoint": "Tox21",
+   "task": "SR-p53",
+   "model": "xgb_physchem",
+   "metric": "AUROC",
+   "reported": 0.819,
+   "reproduced": 0.819,
+   "diff": -0.0,
+   "within_tol": true,
+   "n_test": 1294,
+   "files": [
+    "Tox21__SR-p53__xgb_physchem__test.jsonl",
+    "Tox21__SR-p53__xgb_physchem__valid.jsonl"
+   ],
+   "source": "expansion_metrics.json"
+  }
+ ]
+}

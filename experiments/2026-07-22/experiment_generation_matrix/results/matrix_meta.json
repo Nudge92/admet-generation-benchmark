@@ -1,0 +1,438 @@
+{
+ "split": "TDC 공식 scaffold split (seed=42) · 5 seed",
+ "split_verified": "T_toxicity(seed=1) vs 본 분할 test 교집합 28%/25% → 다른 분할. seed=42는 100% 일치(실측)",
+ "leak_ours": {
+  "dili": {
+   "n_test": 96,
+   "n_train_val": 379,
+   "exact_canonical_overlap": 0,
+   "full_inchikey_overlap": 0,
+   "inchikey14_overlap": 0,
+   "exact_overlap_pct": 0.0
+  },
+  "herg": {
+   "n_test": 132,
+   "n_train_val": 523,
+   "exact_canonical_overlap": 0,
+   "full_inchikey_overlap": 1,
+   "inchikey14_overlap": 6,
+   "exact_overlap_pct": 0.0
+  },
+  "ames": {
+   "n_test": 1457,
+   "n_train_val": 5821,
+   "exact_canonical_overlap": 0,
+   "full_inchikey_overlap": 1,
+   "inchikey14_overlap": 3,
+   "exact_overlap_pct": 0.0
+  },
+  "ld50_zhu": {
+   "n_test": 1478,
+   "n_train_val": 5907,
+   "exact_canonical_overlap": 0,
+   "full_inchikey_overlap": 0,
+   "inchikey14_overlap": 0,
+   "exact_overlap_pct": 0.0
+  }
+ },
+ "admetai_leak_evidence": {
+  "출처": "admet_ai 패키지 resources/data/admet.csv (모델이 학습에 쓴 데이터셋 크기)",
+  "DILI": {
+   "admetai_train_size": 475,
+   "our_train_val+test": 475,
+   "일치": true
+  },
+  "hERG": {
+   "admetai_train_size": 648,
+   "our_train_val+test": 655
+  },
+  "AMES": {
+   "admetai_train_size": 7255,
+   "our_train_val+test": 7278
+  },
+  "LD50_Zhu": {
+   "admetai_train_size": 7342,
+   "our_train_val+test": 7385
+  },
+  "결론": "ADMET-AI 학습셋 크기 ≈ TDC 전체(train+valid+test) → 우리 test 분자가 학습에 포함됨. 따라서 '학습셋에 없는 분자'로 만든 누수 제거 하위셋 = 공집합 → ★누수 보정 불가(실측 근거).",
+  "admetai_자체보고_성능": {
+   "hERG": 0.8388,
+   "AMES": 0.8816,
+   "DILI": 0.8815,
+   "LD50_R2": 0.5959,
+   "LD50_MAE": 0.4515
+  }
+ },
+ "uncertainty": {
+  "dili": {
+   "kind": "AUROC",
+   "n_test": 96,
+   "n_pos": 47,
+   "n_neg": 49,
+   "se_at_auroc_085": 0.0401,
+   "resolvable_gap_95": 0.1112
+  },
+  "herg": {
+   "kind": "AUROC",
+   "n_test": 132,
+   "n_pos": 89,
+   "n_neg": 43,
+   "se_at_auroc_085": 0.0325,
+   "resolvable_gap_95": 0.0902
+  },
+  "ames": {
+   "kind": "AUROC",
+   "n_test": 1457,
+   "n_pos": 777,
+   "n_neg": 680,
+   "se_at_auroc_085": 0.01,
+   "resolvable_gap_95": 0.0277
+  },
+  "ld50_zhu": {
+   "kind": "MAE",
+   "n_test": 1478,
+   "se_mae_admetai_ref": 0.0083,
+   "admetai_MAE": 0.3361,
+   "ours_MAE_mean": 0.6229,
+   "scale_applied": 1.853,
+   "se_scaled": 0.0154,
+   "resolvable_gap_95": 0.0426,
+   "note": "ADMET-AI 잔차 SE를 우리 모델 MAE 수준으로 스케일한 ★근사치. 우리 모델의 분자별 예측이 저장돼 있지 않아 직접 계산은 불가(재학습 금지)."
+  }
+ },
+ "uncertainty_caveat": "분자별 예측이 원본에 저장돼 있지 않고 재학습은 금지 → 부트스트랩 CI 산출 불가. seed SD는 ★고정 test셋 위의 변동이라 일반화 불확실성이 아님(분자 재표집 오차가 훨씬 큼). Hanley-McNeil SE는 독립표본 가정의 보수적 참고선.",
+ "overfit": [
+  {
+   "model": "chemberta",
+   "endpoint": "dili",
+   "metric": "AUROC",
+   "train": 0.8847,
+   "valid": 0.8071,
+   "test": 0.8406,
+   "gap": 0.0776,
+   "mean_best_epoch": 22.6,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "herg",
+   "metric": "AUROC",
+   "train": 0.8632,
+   "valid": 0.805,
+   "test": 0.7388,
+   "gap": 0.0582,
+   "mean_best_epoch": 26.0,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "ames",
+   "metric": "AUROC",
+   "train": 0.8914,
+   "valid": 0.8189,
+   "test": 0.8022,
+   "gap": 0.0725,
+   "mean_best_epoch": 23.0,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "ld50_zhu",
+   "metric": "MAE",
+   "train": 0.4758,
+   "valid": 0.5504,
+   "test": 0.7012,
+   "gap": 0.0746,
+   "mean_best_epoch": 21.0,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "dili",
+   "metric": "AUROC",
+   "train": 0.949,
+   "valid": 0.8573,
+   "test": 0.881,
+   "gap": 0.0917,
+   "mean_best_epoch": 10.4,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "herg",
+   "metric": "AUROC",
+   "train": 0.9272,
+   "valid": 0.8668,
+   "test": 0.8169,
+   "gap": 0.0604,
+   "mean_best_epoch": 7.4,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "ames",
+   "metric": "AUROC",
+   "train": 0.9397,
+   "valid": 0.8493,
+   "test": 0.8352,
+   "gap": 0.0904,
+   "mean_best_epoch": 8.4,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "ld50_zhu",
+   "metric": "MAE",
+   "train": 0.3411,
+   "valid": 0.5191,
+   "test": 0.6412,
+   "gap": 0.178,
+   "mean_best_epoch": 11.6,
+   "n_seed": 5
+  },
+  {
+   "model": "unimol",
+   "endpoint": "dili",
+   "metric": "AUROC",
+   "train": 1.0,
+   "test": 0.8705,
+   "gap": 0.1295,
+   "n_seed": 5
+  },
+  {
+   "model": "unimol",
+   "endpoint": "herg",
+   "metric": "AUROC",
+   "train": 1.0,
+   "test": 0.8047,
+   "gap": 0.1953,
+   "n_seed": 5
+  },
+  {
+   "model": "unimol",
+   "endpoint": "ames",
+   "metric": "AUROC",
+   "train": 1.0,
+   "test": 0.8228,
+   "gap": 0.1772,
+   "n_seed": 5
+  },
+  {
+   "model": "unimol",
+   "endpoint": "ld50_zhu",
+   "metric": "MAE",
+   "train": 0.0936,
+   "test": 0.5939,
+   "gap": 0.5003,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "dili",
+   "metric": "AUROC",
+   "train": 0.8847,
+   "test": 0.8406,
+   "gap": 0.0776,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "herg",
+   "metric": "AUROC",
+   "train": 0.8632,
+   "test": 0.7388,
+   "gap": 0.0582,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "ames",
+   "metric": "AUROC",
+   "train": 0.8914,
+   "test": 0.8022,
+   "gap": 0.0725,
+   "n_seed": 5
+  },
+  {
+   "model": "chemberta",
+   "endpoint": "ld50_zhu",
+   "metric": "MAE",
+   "train": 0.4758,
+   "test": 0.7012,
+   "gap": 0.0746,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "dili",
+   "metric": "AUROC",
+   "train": 0.949,
+   "test": 0.881,
+   "gap": 0.0917,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "herg",
+   "metric": "AUROC",
+   "train": 0.9272,
+   "test": 0.8169,
+   "gap": 0.0604,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "ames",
+   "metric": "AUROC",
+   "train": 0.9397,
+   "test": 0.8352,
+   "gap": 0.0904,
+   "n_seed": 5
+  },
+  {
+   "model": "molformer",
+   "endpoint": "ld50_zhu",
+   "metric": "MAE",
+   "train": 0.3411,
+   "test": 0.6412,
+   "gap": 0.178,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "dili",
+   "metric": "AUROC",
+   "train": 0.869,
+   "test": 0.9039,
+   "gap": -0.0349,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "dili",
+   "metric": "AUPRC",
+   "train": 0.8636,
+   "test": 0.8825,
+   "gap": -0.0188,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "herg",
+   "metric": "AUROC",
+   "train": 0.8751,
+   "test": 0.7972,
+   "gap": 0.0779,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "herg",
+   "metric": "AUPRC",
+   "train": 0.9081,
+   "test": 0.9112,
+   "gap": -0.003,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "ames",
+   "metric": "AUROC",
+   "train": 0.9024,
+   "test": 0.8333,
+   "gap": 0.0692,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "ames",
+   "metric": "AUPRC",
+   "train": 0.9036,
+   "test": 0.8601,
+   "gap": 0.0435,
+   "n_seed": 5
+  },
+  {
+   "model": "dmpnn_ours",
+   "endpoint": "ld50_zhu",
+   "metric": "MAE",
+   "train": 0.4199,
+   "test": 0.6398,
+   "gap": 0.2199,
+   "n_seed": 5
+  }
+ ],
+ "g3_dmpnn": {
+  "config": {
+   "model": "Chemprop D-MPNN (v2 CLI, 순수 — RDKit 등 외부 특징 미사용)",
+   "config_source": "T_toxicity/surface/src/models.py:g3_chemprop 와 동일",
+   "epochs": 50,
+   "batch_size": 50,
+   "num_workers": 0,
+   "class_balance": "분류만 --class-balance",
+   "metric_for_early_stop": "roc(분류)/mae(회귀) · valid로만 · test는 마지막 1회 예측",
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "split": "TDC admet_group 공식 (test 고정) + get_train_valid_split(split_type='default', seed=s)",
+   "accelerator": "gpu (RTX 4060 Ti)",
+   "chemprop_bin": "/home/nudge/miniforge3/envs/ADMET_AI/bin/chemprop"
+  },
+  "failed": [],
+  "split_identity": {
+   "dili": {
+    "n_ours": 96,
+    "n_report": 96,
+    "intersection": 96,
+    "jaccard": 1.0
+   },
+   "herg": {
+    "n_ours": 128,
+    "n_report": 128,
+    "intersection": 128,
+    "jaccard": 1.0
+   },
+   "ames": {
+    "n_ours": 1453,
+    "n_report": 1453,
+    "intersection": 1453,
+    "jaccard": 1.0
+   },
+   "ld50_zhu": {
+    "n_ours": 1466,
+    "n_report": 1466,
+    "intersection": 1466,
+    "jaccard": 1.0
+   }
+  },
+  "leak": {
+   "dili": {
+    "exact_canonical_overlap": 0,
+    "full_inchikey_overlap": 0,
+    "inchikey14_overlap": 0
+   },
+   "herg": {
+    "exact_canonical_overlap": 0,
+    "full_inchikey_overlap": 1,
+    "inchikey14_overlap": 6
+   },
+   "ames": {
+    "exact_canonical_overlap": 0,
+    "full_inchikey_overlap": 1,
+    "inchikey14_overlap": 3
+   },
+   "ld50_zhu": {
+    "exact_canonical_overlap": 0,
+    "full_inchikey_overlap": 0,
+    "inchikey14_overlap": 0
+   }
+  },
+  "note": "ADMET-AI와 같은 D-MPNN 계열을 ★train만 보고 학습한 누수 없는 G3. 둘의 격차 = 누수(암기) 프리미엄."
+ },
+ "n_cells": 67,
+ "n_filled": 60
+}

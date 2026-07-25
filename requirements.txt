@@ -1,0 +1,5 @@
+# 그림 재생성 · 지표 재계산에 필요한 최소 구성
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+scipy>=1.10

@@ -1,0 +1,3198 @@
+{
+ "dili|—": {
+  "scope": "핵심 4종",
+  "endpoint": "dili",
+  "task": "—",
+  "model": "rf_physchem",
+  "n_test": 96,
+  "reproduced": true,
+  "reported": 0.9125,
+  "reproduced_value": 0.9125,
+  "AD": {
+   "cut_ood": 0.169,
+   "cut_borderline": 0.2213,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "train_val(5 seed의 train 파티션 합집합 ≈ 배포 앙상블이 본 전체)",
+   "n_train": 379,
+   "sim_mean": 0.258,
+   "bands": {
+    "in-domain": {
+     "n": 64,
+     "frac": 0.6667,
+     "perf": 0.9844
+    },
+    "경계": {
+     "n": 27,
+     "frac": 0.2812,
+     "perf": 0.5682
+    },
+    "OOD": {
+     "n": 5,
+     "frac": 0.0521,
+     "perf": null,
+     "note": "표본/클래스 부족으로 산출 불가"
+    }
+   },
+   "verdict": "판정 불가(구간 표본 부족)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 47,
+    "FP": 14,
+    "FN": 3,
+    "TN": 32,
+    "sensitivity": 0.94,
+    "specificity": 0.6957,
+    "PPV": 0.7705,
+    "NPV": 0.9143,
+    "MCC": 0.6598
+   },
+   "t_star": {
+    "threshold": 0.712,
+    "TP": 33,
+    "FP": 4,
+    "FN": 17,
+    "TN": 42,
+    "sensitivity": 0.66,
+    "specificity": 0.913,
+    "PPV": 0.8919,
+    "NPV": 0.7119,
+    "MCC": 0.5882
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.6455, n_valid=200)",
+   "pos_rate": 0.5208
+  },
+  "calibration": {
+   "ECE": 0.1305,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 2,
+     "conf": 0.0938,
+     "freq": 0.0
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 3,
+     "conf": 0.1609,
+     "freq": 0.0
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 12,
+     "conf": 0.2676,
+     "freq": 0.0
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 8,
+     "conf": 0.3532,
+     "freq": 0.0
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 10,
+     "conf": 0.4475,
+     "freq": 0.3
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 15,
+     "conf": 0.5538,
+     "freq": 0.5333
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 8,
+     "conf": 0.6487,
+     "freq": 0.625
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 22,
+     "conf": 0.755,
+     "freq": 0.8636
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 13,
+     "conf": 0.8285,
+     "freq": 0.9231
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 3,
+     "conf": 0.9229,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.5711,
+   "obs_rate": 0.5208,
+   "direction": "과신(예측확률>실제빈도)",
+   "mean_conf_on_positives": 0.7261,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.9196,
+   "AUROC_CI95": [
+    0.8594,
+    0.9652
+   ],
+   "AUPRC": 0.9215,
+   "AUPRC_CI95": [
+    0.8529,
+    0.9717
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 96,
+    "auc_champion": 0.9196,
+    "auc_other": 0.9196,
+    "delta": 0.0,
+    "z": 0.0,
+    "p_value": 1.0,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 96,
+    "auc_champion": 0.9196,
+    "auc_other": 0.9557,
+    "delta": -0.0361,
+    "z": -1.558,
+    "p_value": 0.119,
+    "significant": false,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "herg|—": {
+  "scope": "핵심 4종",
+  "endpoint": "herg",
+  "task": "—",
+  "model": "rf_physchem",
+  "n_test": 128,
+  "reproduced": true,
+  "reported": 0.8369,
+  "reproduced_value": 0.8369,
+  "AD": {
+   "cut_ood": 0.1889,
+   "cut_borderline": 0.2673,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "train_val(5 seed의 train 파티션 합집합 ≈ 배포 앙상블이 본 전체)",
+   "n_train": 523,
+   "sim_mean": 0.3987,
+   "bands": {
+    "in-domain": {
+     "n": 89,
+     "frac": 0.6953,
+     "perf": 0.7676
+    },
+    "경계": {
+     "n": 29,
+     "frac": 0.2266,
+     "perf": 0.9747
+    },
+    "OOD": {
+     "n": 10,
+     "frac": 0.0781,
+     "perf": null,
+     "note": "표본/클래스 부족으로 산출 불가"
+    }
+   },
+   "verdict": "판정 불가(구간 표본 부족)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 90,
+    "FP": 17,
+    "FN": 4,
+    "TN": 17,
+    "sensitivity": 0.9574,
+    "specificity": 0.5,
+    "PPV": 0.8411,
+    "NPV": 0.8095,
+    "MCC": 0.5456
+   },
+   "t_star": {
+    "threshold": 0.604,
+    "TP": 87,
+    "FP": 14,
+    "FN": 7,
+    "TN": 20,
+    "sensitivity": 0.9255,
+    "specificity": 0.5882,
+    "PPV": 0.8614,
+    "NPV": 0.7407,
+    "MCC": 0.5562
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.6954, n_valid=246)",
+   "pos_rate": 0.7344
+  },
+  "calibration": {
+   "ECE": 0.0697,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1,
+     "conf": 0.0216,
+     "freq": 0.0
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 5,
+     "conf": 0.1552,
+     "freq": 0.2
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 4,
+     "conf": 0.2481,
+     "freq": 0.0
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 4,
+     "conf": 0.3782,
+     "freq": 0.25
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 7,
+     "conf": 0.451,
+     "freq": 0.2857
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 6,
+     "conf": 0.5438,
+     "freq": 0.5
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 11,
+     "conf": 0.6605,
+     "freq": 0.5455
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 13,
+     "conf": 0.7541,
+     "freq": 0.8462
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 34,
+     "conf": 0.8507,
+     "freq": 0.9118
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 43,
+     "conf": 0.9353,
+     "freq": 0.907
+    }
+   ],
+   "mean_conf": 0.7495,
+   "obs_rate": 0.7344,
+   "direction": "과신(예측확률>실제빈도)",
+   "mean_conf_on_positives": 0.833,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8448,
+   "AUROC_CI95": [
+    0.7547,
+    0.9249
+   ],
+   "AUPRC": 0.91,
+   "AUPRC_CI95": [
+    0.8358,
+    0.972
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 128,
+    "auc_champion": 0.8448,
+    "auc_other": 0.8101,
+    "delta": 0.0347,
+    "z": 0.847,
+    "p_value": 0.397,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 128,
+    "auc_champion": 0.8448,
+    "auc_other": 0.9171,
+    "delta": -0.0723,
+    "z": -1.742,
+    "p_value": 0.0815,
+    "significant": false,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "ames|—": {
+  "scope": "핵심 4종",
+  "endpoint": "ames",
+  "task": "—",
+  "model": "xgb_physchem",
+  "n_test": 1453,
+  "reproduced": true,
+  "reported": 0.8513,
+  "reproduced_value": 0.8513,
+  "AD": {
+   "cut_ood": 0.3085,
+   "cut_borderline": 0.441,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "train_val(5 seed의 train 파티션 합집합 ≈ 배포 앙상블이 본 전체)",
+   "n_train": 5821,
+   "sim_mean": 0.4376,
+   "bands": {
+    "in-domain": {
+     "n": 717,
+     "frac": 0.4935,
+     "perf": 0.8806
+    },
+    "경계": {
+     "n": 493,
+     "frac": 0.3393,
+     "perf": 0.8352
+    },
+    "OOD": {
+     "n": 243,
+     "frac": 0.1672,
+     "perf": 0.7518
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 726,
+    "FP": 155,
+    "FN": 140,
+    "TN": 432,
+    "sensitivity": 0.8383,
+    "specificity": 0.7359,
+    "PPV": 0.8241,
+    "NPV": 0.7552,
+    "MCC": 0.5768
+   },
+   "t_star": {
+    "threshold": 0.534,
+    "TP": 712,
+    "FP": 139,
+    "FN": 154,
+    "TN": 448,
+    "sensitivity": 0.8222,
+    "specificity": 0.7632,
+    "PPV": 0.8367,
+    "NPV": 0.7442,
+    "MCC": 0.5831
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.5623, n_valid=3351)",
+   "pos_rate": 0.596
+  },
+  "calibration": {
+   "ECE": 0.0297,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 154,
+     "conf": 0.0599,
+     "freq": 0.1299
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 146,
+     "conf": 0.1449,
+     "freq": 0.137
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 104,
+     "conf": 0.2457,
+     "freq": 0.2981
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 78,
+     "conf": 0.3537,
+     "freq": 0.359
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 90,
+     "conf": 0.4528,
+     "freq": 0.4556
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 103,
+     "conf": 0.5532,
+     "freq": 0.5825
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 98,
+     "conf": 0.6555,
+     "freq": 0.6633
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 118,
+     "conf": 0.7471,
+     "freq": 0.822
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 195,
+     "conf": 0.853,
+     "freq": 0.8359
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 367,
+     "conf": 0.9542,
+     "freq": 0.9292
+    }
+   ],
+   "mean_conf": 0.5851,
+   "obs_rate": 0.596,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.7549,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8607,
+   "AUROC_CI95": [
+    0.8412,
+    0.8798
+   ],
+   "AUPRC": 0.8937,
+   "AUPRC_CI95": [
+    0.8733,
+    0.9125
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1453,
+    "auc_champion": 0.8607,
+    "auc_other": 0.8461,
+    "delta": 0.0146,
+    "z": 1.904,
+    "p_value": 0.0569,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1453,
+    "auc_champion": 0.8607,
+    "auc_other": 0.93,
+    "delta": -0.0692,
+    "z": -9.752,
+    "p_value": 1.81e-22,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "ld50_zhu|—": {
+  "scope": "핵심 4종",
+  "endpoint": "ld50_zhu",
+  "task": "—",
+  "model": "xgb_physchem",
+  "n_test": 1466,
+  "reproduced": true,
+  "reported": 0.6071,
+  "reproduced_value": 0.6071,
+  "AD": {
+   "cut_ood": 0.2774,
+   "cut_borderline": 0.393,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "train_val(5 seed의 train 파티션 합집합 ≈ 배포 앙상블이 본 전체)",
+   "n_train": 5907,
+   "sim_mean": 0.3666,
+   "bands": {
+    "in-domain": {
+     "n": 531,
+     "frac": 0.3622,
+     "perf": 0.4845
+    },
+    "경계": {
+     "n": 632,
+     "frac": 0.4311,
+     "perf": 0.6284
+    },
+    "OOD": {
+     "n": 303,
+     "frac": 0.2067,
+     "perf": 0.7304
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "regression": {
+   "MAE": 0.5974,
+   "MAE_CI95": [
+    0.5661,
+    0.6287
+   ],
+   "residual_mean": 0.1568,
+   "residual_sd": 0.8416,
+   "PI90_halfwidth": 1.095,
+   "PI90_coverage": 0.8431,
+   "PI_note": "valid 잔차의 90% 분위로 구간을 만들고 test에서 실제 커버리지 측정(등각예측 방식·test 튜닝 없음)"
+  }
+ },
+ "Carcinogens_Lagunin|Y": {
+  "scope": "확장",
+  "endpoint": "Carcinogens_Lagunin",
+  "task": "Y",
+  "model": "xgb_physchem",
+  "n_test": 55,
+  "reproduced": true,
+  "reported": 0.8366,
+  "reproduced_value": 0.8366,
+  "AD": {
+   "cut_ood": 0.1503,
+   "cut_borderline": 0.2068,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 196,
+   "sim_mean": 0.2601,
+   "bands": {
+    "in-domain": {
+     "n": 38,
+     "frac": 0.6909,
+     "perf": 0.8854
+    },
+    "경계": {
+     "n": 16,
+     "frac": 0.2909,
+     "perf": null,
+     "note": "표본/클래스 부족으로 산출 불가"
+    },
+    "OOD": {
+     "n": 1,
+     "frac": 0.0182,
+     "perf": null,
+     "note": "표본/클래스 부족으로 산출 불가"
+    }
+   },
+   "verdict": "판정 불가(구간 표본 부족)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 3,
+    "FP": 2,
+    "FN": 7,
+    "TN": 43,
+    "sensitivity": 0.3,
+    "specificity": 0.9556,
+    "PPV": 0.6,
+    "NPV": 0.86,
+    "MCC": 0.3429
+   },
+   "t_star": {
+    "threshold": 0.675,
+    "TP": 3,
+    "FP": 2,
+    "FN": 7,
+    "TN": 43,
+    "sensitivity": 0.3,
+    "specificity": 0.9556,
+    "PPV": 0.6,
+    "NPV": 0.86,
+    "MCC": 0.3429
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.7430, n_valid=28)",
+   "pos_rate": 0.1818
+  },
+  "calibration": {
+   "ECE": 0.15,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 47,
+     "conf": 0.0108,
+     "freq": 0.1277
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 2,
+     "conf": 0.1125,
+     "freq": 0.5
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 1,
+     "conf": 0.237,
+     "freq": 0.0
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1,
+     "conf": 0.8346,
+     "freq": 0.0
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 4,
+     "conf": 0.9779,
+     "freq": 0.75
+    }
+   ],
+   "mean_conf": 0.1039,
+   "obs_rate": 0.1818,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.3153,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8289,
+   "AUROC_CI95": [
+    0.6995,
+    0.9388
+   ],
+   "AUPRC": 0.4891,
+   "AUPRC_CI95": [
+    0.2544,
+    0.8133
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 55,
+    "auc_champion": 0.8289,
+    "auc_other": 0.7333,
+    "delta": 0.0956,
+    "z": 1.402,
+    "p_value": 0.161,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "status": "예측 없음"
+   }
+  }
+ },
+ "ClinTox|Y": {
+  "scope": "확장",
+  "endpoint": "ClinTox",
+  "task": "Y",
+  "model": "xgb_physchem",
+  "n_test": 292,
+  "reproduced": true,
+  "reported": 0.8014,
+  "reproduced_value": 0.8014,
+  "AD": {
+   "cut_ood": 0.1831,
+   "cut_borderline": 0.2639,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 1034,
+   "sim_mean": 0.3144,
+   "bands": {
+    "in-domain": {
+     "n": 187,
+     "frac": 0.6404,
+     "perf": 0.822
+    },
+    "경계": {
+     "n": 89,
+     "frac": 0.3048,
+     "perf": 0.7955
+    },
+    "OOD": {
+     "n": 16,
+     "frac": 0.0548,
+     "perf": null,
+     "note": "표본/클래스 부족으로 산출 불가"
+    }
+   },
+   "verdict": "판정 불가(구간 표본 부족)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 4,
+    "FP": 4,
+    "FN": 17,
+    "TN": 267,
+    "sensitivity": 0.1905,
+    "specificity": 0.9852,
+    "PPV": 0.5,
+    "NPV": 0.9401,
+    "MCC": 0.2781
+   },
+   "t_star": {
+    "threshold": 0.052,
+    "TP": 9,
+    "FP": 31,
+    "FN": 12,
+    "TN": 240,
+    "sensitivity": 0.4286,
+    "specificity": 0.8856,
+    "PPV": 0.225,
+    "NPV": 0.9524,
+    "MCC": 0.2361
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.6080, n_valid=144)",
+   "pos_rate": 0.0719
+  },
+  "calibration": {
+   "ECE": 0.0487,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 262,
+     "conf": 0.0086,
+     "freq": 0.0458
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 11,
+     "conf": 0.1392,
+     "freq": 0.1818
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 5,
+     "conf": 0.2535,
+     "freq": 0.2
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 2,
+     "conf": 0.342,
+     "freq": 0.5
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 4,
+     "conf": 0.4568,
+     "freq": 0.25
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 1,
+     "conf": 0.5762,
+     "freq": 0.0
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 2,
+     "conf": 0.6682,
+     "freq": 0.0
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 2,
+     "conf": 0.7146,
+     "freq": 0.5
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1,
+     "conf": 0.8263,
+     "freq": 1.0
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 2,
+     "conf": 0.9612,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.0468,
+   "obs_rate": 0.0719,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.2329,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.7804,
+   "AUROC_CI95": [
+    0.6813,
+    0.8741
+   ],
+   "AUPRC": 0.3615,
+   "AUPRC_CI95": [
+    0.1753,
+    0.5631
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 292,
+    "auc_champion": 0.7804,
+    "auc_other": 0.6951,
+    "delta": 0.0853,
+    "z": 2.003,
+    "p_value": 0.0452,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "status": "예측 없음"
+   }
+  }
+ },
+ "Tox21|NR-AR": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-AR",
+  "model": "xgb_ecfp",
+  "n_test": 1437,
+  "reproduced": true,
+  "reported": 0.7499,
+  "reproduced_value": 0.7498,
+  "AD": {
+   "cut_ood": 0.2531,
+   "cut_borderline": 0.3861,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 5103,
+   "sim_mean": 0.3719,
+   "bands": {
+    "in-domain": {
+     "n": 568,
+     "frac": 0.3953,
+     "perf": 0.8486
+    },
+    "경계": {
+     "n": 712,
+     "frac": 0.4955,
+     "perf": 0.6677
+    },
+    "OOD": {
+     "n": 157,
+     "frac": 0.1093,
+     "perf": 0.7749
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 18,
+    "FP": 9,
+    "FN": 42,
+    "TN": 1368,
+    "sensitivity": 0.3,
+    "specificity": 0.9935,
+    "PPV": 0.6667,
+    "NPV": 0.9702,
+    "MCC": 0.4323
+   },
+   "t_star": {
+    "threshold": 0.196,
+    "TP": 24,
+    "FP": 27,
+    "FN": 36,
+    "TN": 1350,
+    "sensitivity": 0.4,
+    "specificity": 0.9804,
+    "PPV": 0.4706,
+    "NPV": 0.974,
+    "MCC": 0.4113
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.6782, n_valid=718)",
+   "pos_rate": 0.0418
+  },
+  "calibration": {
+   "ECE": 0.015,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1352,
+     "conf": 0.0152,
+     "freq": 0.0251
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 35,
+     "conf": 0.1304,
+     "freq": 0.0857
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 16,
+     "conf": 0.2427,
+     "freq": 0.1875
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 5,
+     "conf": 0.3274,
+     "freq": 0.2
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 2,
+     "conf": 0.449,
+     "freq": 0.5
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 5,
+     "conf": 0.5774,
+     "freq": 0.2
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 2,
+     "conf": 0.6483,
+     "freq": 0.5
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 2,
+     "conf": 0.7729,
+     "freq": 1.0
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 7,
+     "conf": 0.8373,
+     "freq": 0.5714
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 11,
+     "conf": 0.9485,
+     "freq": 0.9091
+    }
+   ],
+   "mean_conf": 0.0373,
+   "obs_rate": 0.0418,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.3052,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.7515,
+   "AUROC_CI95": [
+    0.6745,
+    0.8264
+   ],
+   "AUPRC": 0.3956,
+   "AUPRC_CI95": [
+    0.2687,
+    0.5192
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1437,
+    "auc_champion": 0.7515,
+    "auc_other": 0.6677,
+    "delta": 0.0838,
+    "z": 2.073,
+    "p_value": 0.0382,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1437,
+    "auc_champion": 0.7515,
+    "auc_other": 0.8535,
+    "delta": -0.102,
+    "z": -2.86,
+    "p_value": 0.00423,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|NR-AR-LBD": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-AR-LBD",
+  "model": "xgb_physchem",
+  "n_test": 1305,
+  "reproduced": true,
+  "reported": 0.8101,
+  "reproduced_value": 0.8101,
+  "AD": {
+   "cut_ood": 0.2543,
+   "cut_borderline": 0.3882,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4799,
+   "sim_mean": 0.3706,
+   "bands": {
+    "in-domain": {
+     "n": 513,
+     "frac": 0.3931,
+     "perf": 0.895
+    },
+    "경계": {
+     "n": 637,
+     "frac": 0.4881,
+     "perf": 0.7627
+    },
+    "OOD": {
+     "n": 155,
+     "frac": 0.1188,
+     "perf": 0.6275
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 8,
+    "FP": 17,
+    "FN": 26,
+    "TN": 1254,
+    "sensitivity": 0.2353,
+    "specificity": 0.9866,
+    "PPV": 0.32,
+    "NPV": 0.9797,
+    "MCC": 0.2579
+   },
+   "t_star": {
+    "threshold": 0.5,
+    "TP": 8,
+    "FP": 17,
+    "FN": 26,
+    "TN": 1254,
+    "sensitivity": 0.2353,
+    "specificity": 0.9866,
+    "PPV": 0.32,
+    "NPV": 0.9797,
+    "MCC": 0.2579
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.8294, n_valid=647)",
+   "pos_rate": 0.0261
+  },
+  "calibration": {
+   "ECE": 0.0261,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1266,
+     "conf": 0.0028,
+     "freq": 0.0174
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1,
+     "conf": 0.1691,
+     "freq": 1.0
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 5,
+     "conf": 0.2368,
+     "freq": 0.2
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 4,
+     "conf": 0.332,
+     "freq": 0.0
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 4,
+     "conf": 0.4414,
+     "freq": 0.5
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 1,
+     "conf": 0.5268,
+     "freq": 0.0
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 3,
+     "conf": 0.6616,
+     "freq": 0.3333
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 4,
+     "conf": 0.7658,
+     "freq": 0.0
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 8,
+     "conf": 0.8546,
+     "freq": 0.625
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 9,
+     "conf": 0.9663,
+     "freq": 0.2222
+    }
+   ],
+   "mean_conf": 0.0223,
+   "obs_rate": 0.0261,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.2449,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8123,
+   "AUROC_CI95": [
+    0.7307,
+    0.8833
+   ],
+   "AUPRC": 0.1802,
+   "AUPRC_CI95": [
+    0.0988,
+    0.3309
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1305,
+    "auc_champion": 0.8123,
+    "auc_other": 0.7216,
+    "delta": 0.0907,
+    "z": 2.456,
+    "p_value": 0.014,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1305,
+    "auc_champion": 0.8123,
+    "auc_other": 0.8945,
+    "delta": -0.0822,
+    "z": -3.186,
+    "p_value": 0.00144,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|NR-AhR": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-AhR",
+  "model": "xgb_physchem",
+  "n_test": 1268,
+  "reproduced": true,
+  "reported": 0.8692,
+  "reproduced_value": 0.8692,
+  "AD": {
+   "cut_ood": 0.2517,
+   "cut_borderline": 0.3797,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4663,
+   "sim_mean": 0.3672,
+   "bands": {
+    "in-domain": {
+     "n": 510,
+     "frac": 0.4022,
+     "perf": 0.911
+    },
+    "경계": {
+     "n": 614,
+     "frac": 0.4842,
+     "perf": 0.8474
+    },
+    "OOD": {
+     "n": 144,
+     "frac": 0.1136,
+     "perf": 0.7697
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 88,
+    "FP": 18,
+    "FN": 141,
+    "TN": 1021,
+    "sensitivity": 0.3843,
+    "specificity": 0.9827,
+    "PPV": 0.8302,
+    "NPV": 0.8787,
+    "MCC": 0.51
+   },
+   "t_star": {
+    "threshold": 0.13,
+    "TP": 142,
+    "FP": 101,
+    "FN": 87,
+    "TN": 938,
+    "sensitivity": 0.6201,
+    "specificity": 0.9028,
+    "PPV": 0.5844,
+    "NPV": 0.9151,
+    "MCC": 0.511
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.3977, n_valid=611)",
+   "pos_rate": 0.1806
+  },
+  "calibration": {
+   "ECE": 0.072,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 984,
+     "conf": 0.0173,
+     "freq": 0.0752
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 89,
+     "conf": 0.1383,
+     "freq": 0.2472
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 45,
+     "conf": 0.2473,
+     "freq": 0.4444
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 24,
+     "conf": 0.346,
+     "freq": 0.5833
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 20,
+     "conf": 0.4425,
+     "freq": 0.55
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 22,
+     "conf": 0.5436,
+     "freq": 0.6364
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 17,
+     "conf": 0.6528,
+     "freq": 0.8235
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 20,
+     "conf": 0.7563,
+     "freq": 0.8
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 24,
+     "conf": 0.8476,
+     "freq": 0.875
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 23,
+     "conf": 0.9348,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.1086,
+   "obs_rate": 0.1806,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.3855,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8726,
+   "AUROC_CI95": [
+    0.8454,
+    0.8974
+   ],
+   "AUPRC": 0.6895,
+   "AUPRC_CI95": [
+    0.6285,
+    0.7449
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1268,
+    "auc_champion": 0.8726,
+    "auc_other": 0.8326,
+    "delta": 0.0399,
+    "z": 4.166,
+    "p_value": 3.11e-05,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1268,
+    "auc_champion": 0.8726,
+    "auc_other": 0.9353,
+    "delta": -0.0627,
+    "z": -6.984,
+    "p_value": 2.87e-12,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|NR-Aromatase": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-Aromatase",
+  "model": "xgb_physchem",
+  "n_test": 1051,
+  "reproduced": true,
+  "reported": 0.8027,
+  "reproduced_value": 0.8027,
+  "AD": {
+   "cut_ood": 0.2529,
+   "cut_borderline": 0.3814,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4234,
+   "sim_mean": 0.3584,
+   "bands": {
+    "in-domain": {
+     "n": 381,
+     "frac": 0.3625,
+     "perf": 0.7174
+    },
+    "경계": {
+     "n": 529,
+     "frac": 0.5033,
+     "perf": 0.8596
+    },
+    "OOD": {
+     "n": 141,
+     "frac": 0.1342,
+     "perf": 0.7366
+    }
+   },
+   "verdict": "★AD가 신뢰도를 예측하지 못함(OOD에서 성능이 떨어지지 않음)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 8,
+    "FP": 5,
+    "FN": 87,
+    "TN": 951,
+    "sensitivity": 0.0842,
+    "specificity": 0.9948,
+    "PPV": 0.6154,
+    "NPV": 0.9162,
+    "MCC": 0.2049
+   },
+   "t_star": {
+    "threshold": 0.248,
+    "TP": 15,
+    "FP": 14,
+    "FN": 80,
+    "TN": 942,
+    "sensitivity": 0.1579,
+    "specificity": 0.9854,
+    "PPV": 0.5172,
+    "NPV": 0.9217,
+    "MCC": 0.2508
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.3565, n_valid=530)",
+   "pos_rate": 0.0904
+  },
+  "calibration": {
+   "ECE": 0.065,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 984,
+     "conf": 0.0102,
+     "freq": 0.0681
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 31,
+     "conf": 0.1378,
+     "freq": 0.3871
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 13,
+     "conf": 0.2446,
+     "freq": 0.2308
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 8,
+     "conf": 0.3444,
+     "freq": 0.375
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 2,
+     "conf": 0.4166,
+     "freq": 1.0
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 2,
+     "conf": 0.5439,
+     "freq": 0.5
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 2,
+     "conf": 0.6637,
+     "freq": 0.5
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 4,
+     "conf": 0.7587,
+     "freq": 0.5
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 3,
+     "conf": 0.8319,
+     "freq": 0.6667
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 2,
+     "conf": 0.9415,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.0294,
+   "obs_rate": 0.0904,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.1301,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8075,
+   "AUROC_CI95": [
+    0.7603,
+    0.8507
+   ],
+   "AUPRC": 0.3605,
+   "AUPRC_CI95": [
+    0.2753,
+    0.4641
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1051,
+    "auc_champion": 0.8075,
+    "auc_other": 0.7073,
+    "delta": 0.1002,
+    "z": 3.638,
+    "p_value": 0.000275,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1051,
+    "auc_champion": 0.8075,
+    "auc_other": 0.9138,
+    "delta": -0.1063,
+    "z": -6.33,
+    "p_value": 2.45e-10,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|NR-ER": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-ER",
+  "model": "xgb_physchem",
+  "n_test": 1152,
+  "reproduced": true,
+  "reported": 0.7531,
+  "reproduced_value": 0.7531,
+  "AD": {
+   "cut_ood": 0.252,
+   "cut_borderline": 0.3836,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4442,
+   "sim_mean": 0.3668,
+   "bands": {
+    "in-domain": {
+     "n": 451,
+     "frac": 0.3915,
+     "perf": 0.8294
+    },
+    "경계": {
+     "n": 554,
+     "frac": 0.4809,
+     "perf": 0.6943
+    },
+    "OOD": {
+     "n": 147,
+     "frac": 0.1276,
+     "perf": 0.6091
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 55,
+    "FP": 23,
+    "FN": 144,
+    "TN": 930,
+    "sensitivity": 0.2764,
+    "specificity": 0.9759,
+    "PPV": 0.7051,
+    "NPV": 0.8659,
+    "MCC": 0.3795
+   },
+   "t_star": {
+    "threshold": 0.774,
+    "TP": 40,
+    "FP": 1,
+    "FN": 159,
+    "TN": 952,
+    "sensitivity": 0.201,
+    "specificity": 0.999,
+    "PPV": 0.9756,
+    "NPV": 0.8569,
+    "MCC": 0.408
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.3846, n_valid=592)",
+   "pos_rate": 0.1727
+  },
+  "calibration": {
+   "ECE": 0.0676,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 854,
+     "conf": 0.0287,
+     "freq": 0.0948
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 95,
+     "conf": 0.1406,
+     "freq": 0.2105
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 56,
+     "conf": 0.2493,
+     "freq": 0.3036
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 41,
+     "conf": 0.3541,
+     "freq": 0.3415
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 28,
+     "conf": 0.4461,
+     "freq": 0.4286
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 18,
+     "conf": 0.5472,
+     "freq": 0.3333
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 12,
+     "conf": 0.644,
+     "freq": 0.3333
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 12,
+     "conf": 0.7636,
+     "freq": 0.8333
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 17,
+     "conf": 0.8589,
+     "freq": 0.9412
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 19,
+     "conf": 0.9528,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.12,
+   "obs_rate": 0.1727,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.3302,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.7558,
+   "AUROC_CI95": [
+    0.7146,
+    0.7961
+   ],
+   "AUPRC": 0.54,
+   "AUPRC_CI95": [
+    0.475,
+    0.6027
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1152,
+    "auc_champion": 0.7558,
+    "auc_other": 0.711,
+    "delta": 0.0447,
+    "z": 2.615,
+    "p_value": 0.00891,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1152,
+    "auc_champion": 0.7558,
+    "auc_other": 0.8237,
+    "delta": -0.0679,
+    "z": -4.429,
+    "p_value": 9.48e-06,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|NR-ER-LBD": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-ER-LBD",
+  "model": "xgb_physchem",
+  "n_test": 1335,
+  "reproduced": true,
+  "reported": 0.8414,
+  "reproduced_value": 0.8414,
+  "AD": {
+   "cut_ood": 0.2557,
+   "cut_borderline": 0.3861,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4943,
+   "sim_mean": 0.3703,
+   "bands": {
+    "in-domain": {
+     "n": 525,
+     "frac": 0.3933,
+     "perf": 0.9141
+    },
+    "경계": {
+     "n": 645,
+     "frac": 0.4831,
+     "perf": 0.7866
+    },
+    "OOD": {
+     "n": 165,
+     "frac": 0.1236,
+     "perf": 0.6505
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 28,
+    "FP": 7,
+    "FN": 63,
+    "TN": 1237,
+    "sensitivity": 0.3077,
+    "specificity": 0.9944,
+    "PPV": 0.8,
+    "NPV": 0.9515,
+    "MCC": 0.4765
+   },
+   "t_star": {
+    "threshold": 0.112,
+    "TP": 38,
+    "FP": 36,
+    "FN": 53,
+    "TN": 1208,
+    "sensitivity": 0.4176,
+    "specificity": 0.9711,
+    "PPV": 0.5135,
+    "NPV": 0.958,
+    "MCC": 0.4281
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.4991, n_valid=670)",
+   "pos_rate": 0.0682
+  },
+  "calibration": {
+   "ECE": 0.0384,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1255,
+     "conf": 0.0067,
+     "freq": 0.0414
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 22,
+     "conf": 0.1379,
+     "freq": 0.1364
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 15,
+     "conf": 0.2506,
+     "freq": 0.4
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 4,
+     "conf": 0.3278,
+     "freq": 0.25
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 4,
+     "conf": 0.4456,
+     "freq": 0.25
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 6,
+     "conf": 0.5351,
+     "freq": 0.6667
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 4,
+     "conf": 0.6642,
+     "freq": 0.75
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 5,
+     "conf": 0.7533,
+     "freq": 1.0
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 9,
+     "conf": 0.8397,
+     "freq": 0.7778
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 11,
+     "conf": 0.9456,
+     "freq": 0.8182
+    }
+   ],
+   "mean_conf": 0.0344,
+   "obs_rate": 0.0682,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.2859,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8446,
+   "AUROC_CI95": [
+    0.7939,
+    0.8898
+   ],
+   "AUPRC": 0.4696,
+   "AUPRC_CI95": [
+    0.3611,
+    0.5805
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1335,
+    "auc_champion": 0.8446,
+    "auc_other": 0.8095,
+    "delta": 0.0351,
+    "z": 1.454,
+    "p_value": 0.146,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1335,
+    "auc_champion": 0.8446,
+    "auc_other": 0.909,
+    "delta": -0.0644,
+    "z": -3.827,
+    "p_value": 0.00013,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|NR-PPAR-gamma": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "NR-PPAR-gamma",
+  "model": "rf_physchem",
+  "n_test": 1209,
+  "reproduced": true,
+  "reported": 0.8362,
+  "reproduced_value": 0.8362,
+  "AD": {
+   "cut_ood": 0.2556,
+   "cut_borderline": 0.3878,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4633,
+   "sim_mean": 0.3668,
+   "bands": {
+    "in-domain": {
+     "n": 464,
+     "frac": 0.3838,
+     "perf": 0.7993
+    },
+    "경계": {
+     "n": 579,
+     "frac": 0.4789,
+     "perf": 0.859
+    },
+    "OOD": {
+     "n": 166,
+     "frac": 0.1373,
+     "perf": 0.8279
+    }
+   },
+   "verdict": "★AD가 신뢰도를 예측하지 못함(OOD에서 성능이 떨어지지 않음)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 0,
+    "FP": 0,
+    "FN": 46,
+    "TN": 1163,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "PPV": null,
+    "NPV": 0.962,
+    "MCC": 0.0
+   },
+   "t_star": {
+    "threshold": 0.157,
+    "TP": 14,
+    "FP": 41,
+    "FN": 32,
+    "TN": 1122,
+    "sensitivity": 0.3043,
+    "specificity": 0.9647,
+    "PPV": 0.2545,
+    "NPV": 0.9723,
+    "MCC": 0.2471
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.2693, n_valid=601)",
+   "pos_rate": 0.038
+  },
+  "calibration": {
+   "ECE": 0.0164,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1095,
+     "conf": 0.0263,
+     "freq": 0.0164
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 85,
+     "conf": 0.14,
+     "freq": 0.2
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 22,
+     "conf": 0.2343,
+     "freq": 0.3636
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 4,
+     "conf": 0.3338,
+     "freq": 0.5
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 3,
+     "conf": 0.4598,
+     "freq": 0.3333
+    }
+   ],
+   "mean_conf": 0.0402,
+   "obs_rate": 0.038,
+   "direction": "과신(예측확률>실제빈도)",
+   "mean_conf_on_positives": 0.1277,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.839,
+   "AUROC_CI95": [
+    0.7661,
+    0.8987
+   ],
+   "AUPRC": 0.2323,
+   "AUPRC_CI95": [
+    0.1512,
+    0.3629
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1209,
+    "auc_champion": 0.839,
+    "auc_other": 0.7311,
+    "delta": 0.1079,
+    "z": 2.652,
+    "p_value": 0.00801,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1209,
+    "auc_champion": 0.839,
+    "auc_other": 0.9314,
+    "delta": -0.0924,
+    "z": -4.096,
+    "p_value": 4.2e-05,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|SR-ARE": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "SR-ARE",
+  "model": "xgb_physchem",
+  "n_test": 1056,
+  "reproduced": true,
+  "reported": 0.7949,
+  "reproduced_value": 0.7949,
+  "AD": {
+   "cut_ood": 0.2515,
+   "cut_borderline": 0.3805,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4256,
+   "sim_mean": 0.3617,
+   "bands": {
+    "in-domain": {
+     "n": 392,
+     "frac": 0.3712,
+     "perf": 0.8139
+    },
+    "경계": {
+     "n": 534,
+     "frac": 0.5057,
+     "perf": 0.8003
+    },
+    "OOD": {
+     "n": 130,
+     "frac": 0.1231,
+     "perf": 0.7111
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 51,
+    "FP": 34,
+    "FN": 169,
+    "TN": 802,
+    "sensitivity": 0.2318,
+    "specificity": 0.9593,
+    "PPV": 0.6,
+    "NPV": 0.826,
+    "MCC": 0.2853
+   },
+   "t_star": {
+    "threshold": 0.17,
+    "TP": 143,
+    "FP": 176,
+    "FN": 77,
+    "TN": 660,
+    "sensitivity": 0.65,
+    "specificity": 0.7895,
+    "PPV": 0.4483,
+    "NPV": 0.8955,
+    "MCC": 0.3887
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.4497, n_valid=513)",
+   "pos_rate": 0.2083
+  },
+  "calibration": {
+   "ECE": 0.0728,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 606,
+     "conf": 0.0352,
+     "freq": 0.0776
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 165,
+     "conf": 0.1402,
+     "freq": 0.2606
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 95,
+     "conf": 0.2472,
+     "freq": 0.3263
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 68,
+     "conf": 0.3457,
+     "freq": 0.5
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 37,
+     "conf": 0.4441,
+     "freq": 0.3784
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 26,
+     "conf": 0.5525,
+     "freq": 0.5769
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 16,
+     "conf": 0.6477,
+     "freq": 0.375
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 16,
+     "conf": 0.7552,
+     "freq": 0.625
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 16,
+     "conf": 0.8418,
+     "freq": 0.625
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 11,
+     "conf": 0.9349,
+     "freq": 0.9091
+    }
+   ],
+   "mean_conf": 0.1595,
+   "obs_rate": 0.2083,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.329,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8,
+   "AUROC_CI95": [
+    0.7675,
+    0.8301
+   ],
+   "AUPRC": 0.5074,
+   "AUPRC_CI95": [
+    0.4391,
+    0.5777
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1056,
+    "auc_champion": 0.8,
+    "auc_other": 0.7334,
+    "delta": 0.0666,
+    "z": 3.952,
+    "p_value": 7.76e-05,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1056,
+    "auc_champion": 0.8,
+    "auc_other": 0.8799,
+    "delta": -0.0799,
+    "z": -5.704,
+    "p_value": 1.17e-08,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|SR-ATAD5": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "SR-ATAD5",
+  "model": "xgb_physchem",
+  "n_test": 1372,
+  "reproduced": true,
+  "reported": 0.7598,
+  "reproduced_value": 0.7598,
+  "AD": {
+   "cut_ood": 0.2571,
+   "cut_borderline": 0.3883,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4997,
+   "sim_mean": 0.3711,
+   "bands": {
+    "in-domain": {
+     "n": 536,
+     "frac": 0.3907,
+     "perf": 0.8424
+    },
+    "경계": {
+     "n": 662,
+     "frac": 0.4825,
+     "perf": 0.7755
+    },
+    "OOD": {
+     "n": 174,
+     "frac": 0.1268,
+     "perf": 0.638
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 6,
+    "FP": 11,
+    "FN": 55,
+    "TN": 1300,
+    "sensitivity": 0.0984,
+    "specificity": 0.9916,
+    "PPV": 0.3529,
+    "NPV": 0.9594,
+    "MCC": 0.1676
+   },
+   "t_star": {
+    "threshold": 0.161,
+    "TP": 14,
+    "FP": 38,
+    "FN": 47,
+    "TN": 1273,
+    "sensitivity": 0.2295,
+    "specificity": 0.971,
+    "PPV": 0.2692,
+    "NPV": 0.9644,
+    "MCC": 0.2164
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.3611, n_valid=696)",
+   "pos_rate": 0.0445
+  },
+  "calibration": {
+   "ECE": 0.0335,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1291,
+     "conf": 0.0059,
+     "freq": 0.0333
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 39,
+     "conf": 0.1352,
+     "freq": 0.1795
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 11,
+     "conf": 0.2626,
+     "freq": 0.2727
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 9,
+     "conf": 0.3475,
+     "freq": 0.1111
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 5,
+     "conf": 0.4577,
+     "freq": 0.2
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 7,
+     "conf": 0.5487,
+     "freq": 0.1429
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 2,
+     "conf": 0.6161,
+     "freq": 0.5
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 6,
+     "conf": 0.7489,
+     "freq": 0.5
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 2,
+     "conf": 0.8403,
+     "freq": 0.5
+    }
+   ],
+   "mean_conf": 0.0236,
+   "obs_rate": 0.0445,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.1245,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.7628,
+   "AUROC_CI95": [
+    0.6864,
+    0.8327
+   ],
+   "AUPRC": 0.1999,
+   "AUPRC_CI95": [
+    0.1266,
+    0.3106
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1372,
+    "auc_champion": 0.7628,
+    "auc_other": 0.761,
+    "delta": 0.0018,
+    "z": 0.061,
+    "p_value": 0.951,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1372,
+    "auc_champion": 0.7628,
+    "auc_other": 0.903,
+    "delta": -0.1402,
+    "z": -4.493,
+    "p_value": 7.03e-06,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|SR-HSE": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "SR-HSE",
+  "model": "xgb_physchem",
+  "n_test": 1213,
+  "reproduced": true,
+  "reported": 0.8028,
+  "reproduced_value": 0.8029,
+  "AD": {
+   "cut_ood": 0.2519,
+   "cut_borderline": 0.3807,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4667,
+   "sim_mean": 0.365,
+   "bands": {
+    "in-domain": {
+     "n": 478,
+     "frac": 0.3941,
+     "perf": 0.8992
+    },
+    "경계": {
+     "n": 600,
+     "frac": 0.4946,
+     "perf": 0.7714
+    },
+    "OOD": {
+     "n": 135,
+     "frac": 0.1113,
+     "perf": 0.7254
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 14,
+    "FP": 4,
+    "FN": 70,
+    "TN": 1125,
+    "sensitivity": 0.1667,
+    "specificity": 0.9965,
+    "PPV": 0.7778,
+    "NPV": 0.9414,
+    "MCC": 0.3425
+   },
+   "t_star": {
+    "threshold": 0.428,
+    "TP": 16,
+    "FP": 4,
+    "FN": 68,
+    "TN": 1125,
+    "sensitivity": 0.1905,
+    "specificity": 0.9965,
+    "PPV": 0.8,
+    "NPV": 0.943,
+    "MCC": 0.3727
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.2649, n_valid=580)",
+   "pos_rate": 0.0692
+  },
+  "calibration": {
+   "ECE": 0.0434,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1129,
+     "conf": 0.0104,
+     "freq": 0.0469
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 38,
+     "conf": 0.1412,
+     "freq": 0.1579
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 17,
+     "conf": 0.2466,
+     "freq": 0.1765
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 6,
+     "conf": 0.36,
+     "freq": 0.6667
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 5,
+     "conf": 0.4398,
+     "freq": 0.8
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 5,
+     "conf": 0.5355,
+     "freq": 0.8
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 4,
+     "conf": 0.6429,
+     "freq": 1.0
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 3,
+     "conf": 0.776,
+     "freq": 1.0
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1,
+     "conf": 0.8263,
+     "freq": 0.0
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 5,
+     "conf": 0.9294,
+     "freq": 0.6
+    }
+   ],
+   "mean_conf": 0.0319,
+   "obs_rate": 0.0692,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.1909,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8085,
+   "AUROC_CI95": [
+    0.7514,
+    0.8584
+   ],
+   "AUPRC": 0.3753,
+   "AUPRC_CI95": [
+    0.2773,
+    0.5061
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1213,
+    "auc_champion": 0.8085,
+    "auc_other": 0.7736,
+    "delta": 0.0349,
+    "z": 1.534,
+    "p_value": 0.125,
+    "significant": false,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1213,
+    "auc_champion": 0.8085,
+    "auc_other": 0.9075,
+    "delta": -0.099,
+    "z": -5.097,
+    "p_value": 3.45e-07,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|SR-MMP": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "SR-MMP",
+  "model": "xgb_physchem",
+  "n_test": 1052,
+  "reproduced": true,
+  "reported": 0.9041,
+  "reproduced_value": 0.9041,
+  "AD": {
+   "cut_ood": 0.249,
+   "cut_borderline": 0.3821,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4193,
+   "sim_mean": 0.3628,
+   "bands": {
+    "in-domain": {
+     "n": 417,
+     "frac": 0.3964,
+     "perf": 0.9137
+    },
+    "경계": {
+     "n": 501,
+     "frac": 0.4762,
+     "perf": 0.8935
+    },
+    "OOD": {
+     "n": 134,
+     "frac": 0.1274,
+     "perf": 0.8958
+    }
+   },
+   "verdict": "★AD가 신뢰도를 예측하지 못함(OOD에서 성능이 떨어지지 않음)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 157,
+    "FP": 40,
+    "FN": 111,
+    "TN": 744,
+    "sensitivity": 0.5858,
+    "specificity": 0.949,
+    "PPV": 0.797,
+    "NPV": 0.8702,
+    "MCC": 0.5973
+   },
+   "t_star": {
+    "threshold": 0.251,
+    "TP": 191,
+    "FP": 77,
+    "FN": 77,
+    "TN": 707,
+    "sensitivity": 0.7127,
+    "specificity": 0.9018,
+    "PPV": 0.7127,
+    "NPV": 0.9018,
+    "MCC": 0.6145
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.5755, n_valid=559)",
+   "pos_rate": 0.2548
+  },
+  "calibration": {
+   "ECE": 0.0599,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 680,
+     "conf": 0.0168,
+     "freq": 0.0721
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 75,
+     "conf": 0.1433,
+     "freq": 0.2133
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 42,
+     "conf": 0.2409,
+     "freq": 0.3571
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 34,
+     "conf": 0.3475,
+     "freq": 0.5294
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 24,
+     "conf": 0.4536,
+     "freq": 0.5417
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 21,
+     "conf": 0.5532,
+     "freq": 0.619
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 25,
+     "conf": 0.6569,
+     "freq": 0.64
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 37,
+     "conf": 0.7502,
+     "freq": 0.7297
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 36,
+     "conf": 0.8553,
+     "freq": 0.7778
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 78,
+     "conf": 0.9566,
+     "freq": 0.9359
+    }
+   ],
+   "mean_conf": 0.2055,
+   "obs_rate": 0.2548,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.5674,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.9063,
+   "AUROC_CI95": [
+    0.8845,
+    0.9256
+   ],
+   "AUPRC": 0.7865,
+   "AUPRC_CI95": [
+    0.7367,
+    0.8342
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1052,
+    "auc_champion": 0.9063,
+    "auc_other": 0.8382,
+    "delta": 0.0682,
+    "z": 5.977,
+    "p_value": 2.27e-09,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1052,
+    "auc_champion": 0.9063,
+    "auc_other": 0.9563,
+    "delta": -0.05,
+    "z": -6.432,
+    "p_value": 1.26e-10,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ },
+ "Tox21|SR-p53": {
+  "scope": "확장",
+  "endpoint": "Tox21",
+  "task": "SR-p53",
+  "model": "xgb_physchem",
+  "n_test": 1294,
+  "reproduced": true,
+  "reported": 0.819,
+  "reproduced_value": 0.819,
+  "AD": {
+   "cut_ood": 0.2545,
+   "cut_borderline": 0.3853,
+   "cutoff_basis": "학습셋 자기 5-NN Tanimoto 분포의 5%·25% 백분위(★절대선 아님)",
+   "train_ref": "고정 train 파티션(해당 과제 라벨 있는 분자만)",
+   "n_train": 4817,
+   "sim_mean": 0.3698,
+   "bands": {
+    "in-domain": {
+     "n": 514,
+     "frac": 0.3972,
+     "perf": 0.8362
+    },
+    "경계": {
+     "n": 625,
+     "frac": 0.483,
+     "perf": 0.8181
+    },
+    "OOD": {
+     "n": 155,
+     "frac": 0.1198,
+     "perf": 0.7945
+    }
+   },
+   "verdict": "★AD 유효(OOD에서 실제로 성능 하락)"
+  },
+  "operating": {
+   "t_fixed": {
+    "threshold": 0.5,
+    "TP": 10,
+    "FP": 13,
+    "FN": 110,
+    "TN": 1161,
+    "sensitivity": 0.0833,
+    "specificity": 0.9889,
+    "PPV": 0.4348,
+    "NPV": 0.9135,
+    "MCC": 0.1586
+   },
+   "t_star": {
+    "threshold": 0.089,
+    "TP": 54,
+    "FP": 74,
+    "FN": 66,
+    "TN": 1100,
+    "sensitivity": 0.45,
+    "specificity": 0.937,
+    "PPV": 0.4219,
+    "NPV": 0.9434,
+    "MCC": 0.376
+   },
+   "t_star_source": "valid에서 MCC 최대(MCC=0.3445, n_valid=656)",
+   "pos_rate": 0.0927
+  },
+  "calibration": {
+   "ECE": 0.0633,
+   "curve": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1179,
+     "conf": 0.0116,
+     "freq": 0.0585
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 48,
+     "conf": 0.1442,
+     "freq": 0.3958
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 25,
+     "conf": 0.2407,
+     "freq": 0.44
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 10,
+     "conf": 0.3568,
+     "freq": 0.5
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 9,
+     "conf": 0.4598,
+     "freq": 0.6667
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 9,
+     "conf": 0.557,
+     "freq": 0.0
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 6,
+     "conf": 0.6153,
+     "freq": 0.5
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 4,
+     "conf": 0.7428,
+     "freq": 0.75
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 3,
+     "conf": 0.8823,
+     "freq": 1.0
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 1,
+     "conf": 0.9199,
+     "freq": 1.0
+    }
+   ],
+   "mean_conf": 0.0383,
+   "obs_rate": 0.0927,
+   "direction": "과소(예측확률<실제빈도)",
+   "mean_conf_on_positives": 0.1617,
+   "note": "보정은 후처리라 AUROC 등 랭킹 지표는 불변"
+  },
+  "ci": {
+   "AUROC": 0.8223,
+   "AUROC_CI95": [
+    0.786,
+    0.8566
+   ],
+   "AUPRC": 0.3794,
+   "AUPRC_CI95": [
+    0.2943,
+    0.4692
+   ],
+   "n_boot": 2000
+  },
+  "delong": {
+   "dmpnn_ours": {
+    "label": "G3 정직 D-MPNN",
+    "n_aligned": 1294,
+    "auc_champion": 0.8223,
+    "auc_other": 0.7746,
+    "delta": 0.0478,
+    "z": 2.515,
+    "p_value": 0.0119,
+    "significant": true,
+    "leak_flag": "누수 없음"
+   },
+   "admetai": {
+    "label": "ADMET-AI",
+    "n_aligned": 1294,
+    "auc_champion": 0.8223,
+    "auc_other": 0.9032,
+    "delta": -0.0809,
+    "z": -5.087,
+    "p_value": 3.63e-07,
+    "significant": true,
+    "leak_flag": "★누수 값과의 비교 — 정확 CI라도 실력 비교가 아님"
+   }
+  }
+ }
+}

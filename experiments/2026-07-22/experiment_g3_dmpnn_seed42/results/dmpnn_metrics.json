@@ -1,0 +1,145 @@
+{
+ "dili": {
+  "task": "cls",
+  "n_ok": 5,
+  "n_train": 325,
+  "n_valid": 54,
+  "n_test": 96,
+  "seconds_mean": 13.5,
+  "AUROC": {
+   "test_mean": 0.9039,
+   "test_std": 0.0119,
+   "test_seeds": [
+    0.92,
+    0.8839,
+    0.9004,
+    0.9057,
+    0.9096
+   ],
+   "train_mean": 0.869,
+   "train_std": 0.0382
+  },
+  "AUPRC": {
+   "test_mean": 0.8825,
+   "test_std": 0.0182,
+   "test_seeds": [
+    0.9151,
+    0.8804,
+    0.859,
+    0.8778,
+    0.88
+   ],
+   "train_mean": 0.8636,
+   "train_std": 0.0307
+  }
+ },
+ "herg": {
+  "task": "cls",
+  "n_ok": 5,
+  "n_train": 457,
+  "n_valid": 66,
+  "n_test": 132,
+  "seconds_mean": 13.9,
+  "AUROC": {
+   "test_mean": 0.7972,
+   "test_std": 0.0101,
+   "test_seeds": [
+    0.8108,
+    0.8028,
+    0.7965,
+    0.7957,
+    0.7801
+   ],
+   "train_mean": 0.8751,
+   "train_std": 0.0067
+  },
+  "AUPRC": {
+   "test_mean": 0.9112,
+   "test_std": 0.0063,
+   "test_seeds": [
+    0.9189,
+    0.909,
+    0.9105,
+    0.9164,
+    0.901
+   ],
+   "train_mean": 0.9081,
+   "train_std": 0.0068
+  }
+ },
+ "ames": {
+  "task": "cls",
+  "n_ok": 5,
+  "n_train": 5093,
+  "n_valid": 728,
+  "n_test": 1457,
+  "seconds_mean": 43.4,
+  "AUROC": {
+   "test_mean": 0.8333,
+   "test_std": 0.0089,
+   "test_seeds": [
+    0.8191,
+    0.8295,
+    0.8454,
+    0.8389,
+    0.8335
+   ],
+   "train_mean": 0.9024,
+   "train_std": 0.015
+  },
+  "AUPRC": {
+   "test_mean": 0.8601,
+   "test_std": 0.0115,
+   "test_seeds": [
+    0.8488,
+    0.8474,
+    0.8768,
+    0.8697,
+    0.8576
+   ],
+   "train_mean": 0.9036,
+   "train_std": 0.0151
+  }
+ },
+ "ld50_zhu": {
+  "task": "reg",
+  "n_ok": 5,
+  "n_train": 5168,
+  "n_valid": 739,
+  "n_test": 1478,
+  "seconds_mean": 43.9,
+  "MAE": {
+   "test_mean": 0.6398,
+   "test_std": 0.0212,
+   "test_seeds": [
+    0.6583,
+    0.6263,
+    0.6106,
+    0.6688,
+    0.635
+   ],
+   "train_mean": 0.4199,
+   "train_std": 0.0425
+  }
+ },
+ "_config": {
+  "model": "Chemprop D-MPNN (v2 CLI, 순수 — RDKit 등 외부 특징 미사용)",
+  "config_source": "T_toxicity/surface/src/models.py:g3_chemprop 와 동일",
+  "epochs": 50,
+  "batch_size": 50,
+  "num_workers": 0,
+  "class_balance": "분류만 --class-balance",
+  "metric_for_early_stop": "roc(분류)/mae(회귀) · valid로만 · test는 마지막 1회 예측",
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "split": "TDC admet_group 공식 (test 고정) + get_train_valid_split(split_type='default', seed=s)",
+  "accelerator": "gpu (RTX 4060 Ti)",
+  "chemprop_bin": "/home/nudge/miniforge3/envs/ADMET_AI/bin/chemprop"
+ },
+ "_failed": []
+}

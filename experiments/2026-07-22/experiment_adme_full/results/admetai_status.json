@@ -1,0 +1,74 @@
+{
+ "caco2_wang": {
+  "status": "ok",
+  "n": 182
+ },
+ "hia_hou": {
+  "status": "ok",
+  "n": 117
+ },
+ "bioavailability_ma": {
+  "status": "ok",
+  "n": 128
+ },
+ "pgp_broccatelli": {
+  "status": "ok",
+  "n": 245
+ },
+ "lipophilicity_astrazeneca": {
+  "status": "ok",
+  "n": 840
+ },
+ "solubility_aqsoldb": {
+  "status": "ok",
+  "n": 1995
+ },
+ "bbb_martins": {
+  "status": "ok",
+  "n": 406
+ },
+ "ppbr_az": {
+  "status": "ok",
+  "n": 559
+ },
+ "vdss_lombardo": {
+  "status": "ok",
+  "n": 226
+ },
+ "cyp2c9_veith": {
+  "status": "ok",
+  "n": 2419
+ },
+ "cyp2d6_veith": {
+  "status": "ok",
+  "n": 2626
+ },
+ "cyp3a4_veith": {
+  "status": "ok",
+  "n": 2467
+ },
+ "cyp2c9_substrate_carbonmangels": {
+  "status": "ok",
+  "n": 135
+ },
+ "cyp2d6_substrate_carbonmangels": {
+  "status": "ok",
+  "n": 135
+ },
+ "cyp3a4_substrate_carbonmangels": {
+  "status": "ok",
+  "n": 135
+ },
+ "half_life_obach": {
+  "status": "ok",
+  "n": 135
+ },
+ "clearance_hepatocyte_az": {
+  "status": "ok",
+  "n": 243
+ },
+ "clearance_microsome_az": {
+  "status": "ok",
+  "n": 221
+ }
+}

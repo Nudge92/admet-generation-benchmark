@@ -1,0 +1,54 @@
+====================================================================
+test set 역산 — 확정 예측 파일에서 추출
+====================================================================
+예측 파일 발견: 234개
+대상 endpoint: 36개
+
+  Carcinogens_Lagunin          n_test=55     models=3   seeds=0,1,2,3,4,5
+  ClinTox                      n_test=292    models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-AR                 n_test=1437   models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-AR-LBD             n_test=1305   models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-AhR                n_test=1268   models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-Aromatase          n_test=1051   models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-ER                 n_test=1152   models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-ER-LBD             n_test=1335   models=3   seeds=0,1,2,3,4,5
+  Tox21__NR-PPAR-gamma         n_test=1209   models=3   seeds=0,1,2,3,4,5
+  Tox21__SR-ARE                n_test=1056   models=3   seeds=0,1,2,3,4,5
+  Tox21__SR-ATAD5              n_test=1372   models=3   seeds=0,1,2,3,4,5
+  Tox21__SR-HSE                n_test=1213   models=3   seeds=0,1,2,3,4,5
+  Tox21__SR-MMP                n_test=1052   models=3   seeds=0,1,2,3,4,5
+  Tox21__SR-p53                n_test=1294   models=3   seeds=0,1,2,3,4,5
+  ames                         n_test=1453   models=3   seeds=0,1,2,3,4,5
+  bbb_martins                  n_test=394    models=6   seeds=0,1,2,3,4,5
+  bioavailability_ma           n_test=128    models=6   seeds=0,1,2,3,4,5
+  caco2_wang                   n_test=181    models=6   seeds=0,1,2,3,4,5
+  clearance_hepatocyte_az      n_test=203    models=6   seeds=0,1,2,3,4,5
+  clearance_microsome_az       n_test=221    models=6   seeds=0,1,2,3,4,5
+  cyp2c9_substrate_carbonmangels n_test=135    models=6   seeds=0,1,2,3,4,5
+  cyp2c9_veith                 n_test=2419   models=6   seeds=0,1,2,3,4,5
+  cyp2d6_substrate_carbonmangels n_test=134    models=6   seeds=0,1,2,3,4,5
+  cyp2d6_veith                 n_test=2626   models=6   seeds=0,1,2,3,4,5
+  cyp3a4_substrate_carbonmangels n_test=134    models=6   seeds=0,1,2,3,4,5
+  cyp3a4_veith                 n_test=2467   models=6   seeds=0,1,2,3,4,5
+  dili                         n_test=96     models=3   seeds=0,1,2,3,4,5
+  half_life_obach              n_test=134    models=6   seeds=0,1,2,3,4,5
+  herg                         n_test=128    models=3   seeds=0,1,2,3,4,5
+  hia_hou                      n_test=117    models=6   seeds=0,1,2,3,4,5
+  ld50_zhu                     n_test=1466   models=3   seeds=0,1,2,3,4,5
+  lipophilicity_astrazeneca    n_test=840    models=6   seeds=0,1,2,3,4,5
+  pgp_broccatelli              n_test=245    models=6   seeds=0,1,2,3,4,5
+  ppbr_az                      n_test=343    models=6   seeds=0,1,2,3,4,5
+  solubility_aqsoldb           n_test=1995   models=6   seeds=0,1,2,3,4,5
+  vdss_lombardo                n_test=221    models=6   seeds=0,1,2,3,4,5
+
+--------------------------------------------------------------------
+✓ 파일 내부 seed 간 test set 일치 (test 고정 확인)
+
+✓ 모델 간 test set 일치 (동일 분할 전제 확인)
+
+====================================================================
+endpoint 36개 · 예측파일 234개 → _repo_build/splits
+⚠ 불일치: seed간 0건 · 모델간 0개 endpoint
+manifest: _repo_build/splits/_manifest.csv
+판정: 문제 없음 — splits/ 그대로 커밋 가능
+====================================================================

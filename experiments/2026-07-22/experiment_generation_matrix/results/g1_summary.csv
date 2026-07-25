@@ -1,0 +1,5 @@
+endpoint,task,n_test,n_parse_fail,fire_rate_any,nomatch_rate,fire_rate_mutagen,nomatch_rate_mutagen,pos_rate,rule_precision,rule_recall,rule_MCC,LD50_delta
+dili,cls,96,0,0.5625,0.4375,0.3542,0.6458,0.5208,0.7647,0.52,0.3615,
+herg,cls,132,0,0.4015,0.5985,0.1818,0.8182,0.7348,0.7083,0.1753,-0.0283,
+ames,cls,1457,0,0.79,0.21,0.5278,0.4722,0.5971,0.7178,0.6345,0.2602,
+ld50_zhu,reg,1478,0,0.6049,0.3951,0.2936,0.7064,,,,,-0.2427

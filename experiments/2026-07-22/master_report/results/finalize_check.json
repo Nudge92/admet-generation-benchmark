@@ -1,0 +1,16 @@
+{
+ "sections_1_6_identical": true,
+ "sections_7_10_identical": true,
+ "n_numbers_before": 464,
+ "n_numbers_after": 464,
+ "numbers_identical": true,
+ "delong_significant": 10,
+ "delong_champion_wins": 10,
+ "delong_n_compared": 17,
+ "ad_valid": 11,
+ "ad_ineffective": 3,
+ "ad_undetermined": 4,
+ "backup": "master_report_before_final.html",
+ "size_before": 541225,
+ "size_after": 554584
+}

@@ -1,0 +1,53 @@
+endpoint,alert,n_fired,fire_rate,precision,base_rate,lift,mean_LD50_fired,mean_LD50_notfired
+dili,nitroaromatic,4,0.0417,1.0,0.5208,1.92,,
+dili,aromatic_amine,19,0.1979,0.8421,0.5208,1.617,,
+dili,three_membered_NO,0,0.0,,0.5208,,,
+dili,N_nitroso,0,0.0,,0.5208,,,
+dili,azo,0,0.0,,0.5208,,,
+dili,aldehyde,0,0.0,,0.5208,,,
+dili,michael_acceptor,14,0.1458,0.6429,0.5208,1.234,,
+dili,alkyl_halide,3,0.0312,0.3333,0.5208,0.64,,
+dili,aromatic_nitroso,0,0.0,,0.5208,,,
+dili,hydrazine,1,0.0104,1.0,0.5208,1.92,,
+dili,★변이원 알림 ≥1(순수규칙),34,0.3542,0.7647,0.5208,1.468,,
+dili,BRENK/NIH 알림 ≥1,38,0.3958,0.5526,0.5208,1.061,,
+dili,★전체 알림 ≥1,54,0.5625,0.6111,0.5208,1.173,,
+herg,nitroaromatic,1,0.0076,1.0,0.7348,1.361,,
+herg,aromatic_amine,20,0.1515,0.7,0.7348,0.953,,
+herg,three_membered_NO,0,0.0,,0.7348,,,
+herg,N_nitroso,0,0.0,,0.7348,,,
+herg,azo,0,0.0,,0.7348,,,
+herg,aldehyde,0,0.0,,0.7348,,,
+herg,michael_acceptor,4,0.0303,0.5,0.7348,0.68,,
+herg,alkyl_halide,0,0.0,,0.7348,,,
+herg,aromatic_nitroso,0,0.0,,0.7348,,,
+herg,hydrazine,0,0.0,,0.7348,,,
+herg,★변이원 알림 ≥1(순수규칙),24,0.1818,0.7083,0.7348,0.964,,
+herg,BRENK/NIH 알림 ≥1,36,0.2727,0.6389,0.7348,0.869,,
+herg,★전체 알림 ≥1,53,0.4015,0.6604,0.7348,0.899,,
+ames,nitroaromatic,207,0.1421,0.8937,0.5971,1.497,,
+ames,aromatic_amine,181,0.1242,0.6685,0.5971,1.12,,
+ames,three_membered_NO,218,0.1496,0.7661,0.5971,1.283,,
+ames,N_nitroso,31,0.0213,0.9032,0.5971,1.513,,
+ames,azo,43,0.0295,0.4419,0.5971,0.74,,
+ames,aldehyde,24,0.0165,0.6667,0.5971,1.116,,
+ames,michael_acceptor,124,0.0851,0.5887,0.5971,0.986,,
+ames,alkyl_halide,63,0.0432,0.7937,0.5971,1.329,,
+ames,aromatic_nitroso,10,0.0069,0.9,0.5971,1.507,,
+ames,hydrazine,11,0.0075,0.6364,0.5971,1.066,,
+ames,★변이원 알림 ≥1(순수규칙),769,0.5278,0.7178,0.5971,1.202,,
+ames,BRENK/NIH 알림 ≥1,1082,0.7426,0.6848,0.5971,1.147,,
+ames,★전체 알림 ≥1,1151,0.79,0.6664,0.5971,1.116,,
+ld50_zhu,nitroaromatic,69,0.0467,,,,3.1333,2.7833
+ld50_zhu,aromatic_amine,132,0.0893,,,,2.4658,2.8323
+ld50_zhu,three_membered_NO,64,0.0433,,,,2.4788,2.8141
+ld50_zhu,N_nitroso,12,0.0081,,,,3.0856,2.7973
+ld50_zhu,azo,2,0.0014,,,,2.9135,2.7994
+ld50_zhu,aldehyde,15,0.0101,,,,2.1942,2.8058
+ld50_zhu,michael_acceptor,93,0.0629,,,,2.5388,2.8171
+ld50_zhu,alkyl_halide,82,0.0555,,,,2.8426,2.7971
+ld50_zhu,aromatic_nitroso,0,0.0,,,,,2.7996
+ld50_zhu,hydrazine,13,0.0088,,,,2.6432,2.801
+ld50_zhu,★변이원 알림 ≥1(순수규칙),434,0.2936,,,,2.6282,2.8709
+ld50_zhu,BRENK/NIH 알림 ≥1,815,0.5514,,,,2.9716,2.5882
+ld50_zhu,★전체 알림 ≥1,894,0.6049,,,,2.934,2.5939

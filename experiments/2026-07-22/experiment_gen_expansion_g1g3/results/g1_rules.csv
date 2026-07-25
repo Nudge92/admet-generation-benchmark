@@ -1,0 +1,183 @@
+endpoint,task,alert,n_eval,n_fired,fire_rate,precision,base_rate,lift
+Carcinogens_Lagunin,Y,nitroaromatic,56,0,0.0,,0.1964,
+Carcinogens_Lagunin,Y,aromatic_amine,56,4,0.0714,0.5,0.1964,2.545
+Carcinogens_Lagunin,Y,three_membered_NO,56,2,0.0357,0.0,0.1964,0.0
+Carcinogens_Lagunin,Y,N_nitroso,56,0,0.0,,0.1964,
+Carcinogens_Lagunin,Y,azo,56,5,0.0893,0.8,0.1964,4.073
+Carcinogens_Lagunin,Y,aldehyde,56,0,0.0,,0.1964,
+Carcinogens_Lagunin,Y,michael_acceptor,56,5,0.0893,0.0,0.1964,0.0
+Carcinogens_Lagunin,Y,alkyl_halide,56,2,0.0357,0.5,0.1964,2.545
+Carcinogens_Lagunin,Y,aromatic_nitroso,56,0,0.0,,0.1964,
+Carcinogens_Lagunin,Y,hydrazine,56,0,0.0,,0.1964,
+Carcinogens_Lagunin,Y,★변이원 알림 ≥1(순수규칙),56,17,0.3036,0.4118,0.1964,2.096
+Carcinogens_Lagunin,Y,BRENK/NIH 알림 ≥1,56,31,0.5536,0.3548,0.1964,1.806
+Carcinogens_Lagunin,Y,★전체 알림 ≥1,56,31,0.5536,0.3548,0.1964,1.806
+ClinTox,Y,nitroaromatic,297,10,0.0337,0.0,0.0808,0.0
+ClinTox,Y,aromatic_amine,297,51,0.1717,0.1569,0.0808,1.941
+ClinTox,Y,three_membered_NO,297,5,0.0168,0.0,0.0808,0.0
+ClinTox,Y,N_nitroso,297,1,0.0034,0.0,0.0808,0.0
+ClinTox,Y,azo,297,1,0.0034,0.0,0.0808,0.0
+ClinTox,Y,aldehyde,297,0,0.0,,0.0808,
+ClinTox,Y,michael_acceptor,297,38,0.1279,0.0263,0.0808,0.326
+ClinTox,Y,alkyl_halide,297,7,0.0236,0.2857,0.0808,3.536
+ClinTox,Y,aromatic_nitroso,297,0,0.0,,0.0808,
+ClinTox,Y,hydrazine,297,2,0.0067,0.5,0.0808,6.187
+ClinTox,Y,★변이원 알림 ≥1(순수규칙),297,104,0.3502,0.1154,0.0808,1.428
+ClinTox,Y,BRENK/NIH 알림 ≥1,297,165,0.5556,0.0727,0.0808,0.9
+ClinTox,Y,★전체 알림 ≥1,297,202,0.6801,0.0842,0.0808,1.041
+Tox21,NR-AR,nitroaromatic,1437,55,0.0383,0.0,0.0418,0.0
+Tox21,NR-AR,aromatic_amine,1437,172,0.1197,0.0407,0.0418,0.975
+Tox21,NR-AR,three_membered_NO,1437,38,0.0264,0.0,0.0418,0.0
+Tox21,NR-AR,N_nitroso,1437,1,0.0007,0.0,0.0418,0.0
+Tox21,NR-AR,azo,1437,17,0.0118,0.0,0.0418,0.0
+Tox21,NR-AR,aldehyde,1437,11,0.0077,0.0,0.0418,0.0
+Tox21,NR-AR,michael_acceptor,1437,110,0.0765,0.1182,0.0418,2.83
+Tox21,NR-AR,alkyl_halide,1437,39,0.0271,0.0256,0.0418,0.614
+Tox21,NR-AR,aromatic_nitroso,1437,1,0.0007,0.0,0.0418,0.0
+Tox21,NR-AR,hydrazine,1437,9,0.0063,0.0,0.0418,0.0
+Tox21,NR-AR,★변이원 알림 ≥1(순수규칙),1437,407,0.2832,0.0491,0.0418,1.177
+Tox21,NR-AR,BRENK/NIH 알림 ≥1,1437,751,0.5226,0.036,0.0418,0.861
+Tox21,NR-AR,★전체 알림 ≥1,1437,851,0.5922,0.0458,0.0418,1.098
+Tox21,NR-AR-LBD,nitroaromatic,1305,43,0.033,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,aromatic_amine,1305,162,0.1241,0.037,0.0261,1.422
+Tox21,NR-AR-LBD,three_membered_NO,1305,37,0.0284,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,N_nitroso,1305,1,0.0008,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,azo,1305,17,0.013,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,aldehyde,1305,9,0.0069,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,michael_acceptor,1305,96,0.0736,0.0729,0.0261,2.799
+Tox21,NR-AR-LBD,alkyl_halide,1305,36,0.0276,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,aromatic_nitroso,1305,1,0.0008,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,hydrazine,1305,8,0.0061,0.0,0.0261,0.0
+Tox21,NR-AR-LBD,★변이원 알림 ≥1(순수규칙),1305,372,0.2851,0.0349,0.0261,1.341
+Tox21,NR-AR-LBD,BRENK/NIH 알림 ≥1,1305,675,0.5172,0.0311,0.0261,1.194
+Tox21,NR-AR-LBD,★전체 알림 ≥1,1305,770,0.59,0.0325,0.0261,1.246
+Tox21,NR-AhR,nitroaromatic,1268,42,0.0331,0.3333,0.1806,1.846
+Tox21,NR-AhR,aromatic_amine,1268,152,0.1199,0.3553,0.1806,1.967
+Tox21,NR-AhR,three_membered_NO,1268,39,0.0308,0.0,0.1806,0.0
+Tox21,NR-AhR,N_nitroso,1268,1,0.0008,0.0,0.1806,0.0
+Tox21,NR-AhR,azo,1268,15,0.0118,0.4667,0.1806,2.584
+Tox21,NR-AhR,aldehyde,1268,11,0.0087,0.0,0.1806,0.0
+Tox21,NR-AhR,michael_acceptor,1268,97,0.0765,0.0928,0.1806,0.514
+Tox21,NR-AhR,alkyl_halide,1268,37,0.0292,0.0,0.1806,0.0
+Tox21,NR-AhR,aromatic_nitroso,1268,1,0.0008,1.0,0.1806,5.537
+Tox21,NR-AhR,hydrazine,1268,6,0.0047,0.1667,0.1806,0.923
+Tox21,NR-AhR,★변이원 알림 ≥1(순수규칙),1268,363,0.2863,0.2094,0.1806,1.159
+Tox21,NR-AhR,BRENK/NIH 알림 ≥1,1268,668,0.5268,0.1647,0.1806,0.912
+Tox21,NR-AhR,★전체 알림 ≥1,1268,756,0.5962,0.1786,0.1806,0.989
+Tox21,NR-Aromatase,nitroaromatic,1051,37,0.0352,0.1622,0.0904,1.794
+Tox21,NR-Aromatase,aromatic_amine,1051,128,0.1218,0.1094,0.0904,1.21
+Tox21,NR-Aromatase,three_membered_NO,1051,33,0.0314,0.0909,0.0904,1.006
+Tox21,NR-Aromatase,N_nitroso,1051,1,0.001,0.0,0.0904,0.0
+Tox21,NR-Aromatase,azo,1051,6,0.0057,0.0,0.0904,0.0
+Tox21,NR-Aromatase,aldehyde,1051,9,0.0086,0.1111,0.0904,1.229
+Tox21,NR-Aromatase,michael_acceptor,1051,68,0.0647,0.0735,0.0904,0.813
+Tox21,NR-Aromatase,alkyl_halide,1051,26,0.0247,0.0385,0.0904,0.426
+Tox21,NR-Aromatase,aromatic_nitroso,1051,0,0.0,,0.0904,
+Tox21,NR-Aromatase,hydrazine,1051,6,0.0057,0.0,0.0904,0.0
+Tox21,NR-Aromatase,★변이원 알림 ≥1(순수규칙),1051,289,0.275,0.09,0.0904,0.995
+Tox21,NR-Aromatase,BRENK/NIH 알림 ≥1,1051,566,0.5385,0.0972,0.0904,1.075
+Tox21,NR-Aromatase,★전체 알림 ≥1,1051,630,0.5994,0.0921,0.0904,1.019
+Tox21,NR-ER,nitroaromatic,1152,36,0.0312,0.1111,0.1727,0.643
+Tox21,NR-ER,aromatic_amine,1152,154,0.1337,0.1688,0.1727,0.977
+Tox21,NR-ER,three_membered_NO,1152,36,0.0312,0.0833,0.1727,0.482
+Tox21,NR-ER,N_nitroso,1152,1,0.0009,0.0,0.1727,0.0
+Tox21,NR-ER,azo,1152,12,0.0104,0.1667,0.1727,0.965
+Tox21,NR-ER,aldehyde,1152,7,0.0061,0.1429,0.1727,0.827
+Tox21,NR-ER,michael_acceptor,1152,79,0.0686,0.1139,0.1727,0.66
+Tox21,NR-ER,alkyl_halide,1152,30,0.026,0.3333,0.1727,1.93
+Tox21,NR-ER,aromatic_nitroso,1152,1,0.0009,0.0,0.1727,0.0
+Tox21,NR-ER,hydrazine,1152,7,0.0061,0.2857,0.1727,1.654
+Tox21,NR-ER,★변이원 알림 ≥1(순수규칙),1152,329,0.2856,0.1641,0.1727,0.95
+Tox21,NR-ER,BRENK/NIH 알림 ≥1,1152,586,0.5087,0.1655,0.1727,0.958
+Tox21,NR-ER,★전체 알림 ≥1,1152,675,0.5859,0.1659,0.1727,0.961
+Tox21,NR-ER-LBD,nitroaromatic,1335,52,0.039,0.0577,0.0682,0.846
+Tox21,NR-ER-LBD,aromatic_amine,1335,166,0.1243,0.0422,0.0682,0.619
+Tox21,NR-ER-LBD,three_membered_NO,1335,39,0.0292,0.0,0.0682,0.0
+Tox21,NR-ER-LBD,N_nitroso,1335,1,0.0007,0.0,0.0682,0.0
+Tox21,NR-ER-LBD,azo,1335,17,0.0127,0.0588,0.0682,0.863
+Tox21,NR-ER-LBD,aldehyde,1335,11,0.0082,0.1818,0.0682,2.667
+Tox21,NR-ER-LBD,michael_acceptor,1335,101,0.0757,0.0792,0.0682,1.162
+Tox21,NR-ER-LBD,alkyl_halide,1335,32,0.024,0.125,0.0682,1.834
+Tox21,NR-ER-LBD,aromatic_nitroso,1335,1,0.0007,0.0,0.0682,0.0
+Tox21,NR-ER-LBD,hydrazine,1335,7,0.0052,0.0,0.0682,0.0
+Tox21,NR-ER-LBD,★변이원 알림 ≥1(순수규칙),1335,386,0.2891,0.057,0.0682,0.836
+Tox21,NR-ER-LBD,BRENK/NIH 알림 ≥1,1335,690,0.5169,0.0739,0.0682,1.084
+Tox21,NR-ER-LBD,★전체 알림 ≥1,1335,786,0.5888,0.0687,0.0682,1.008
+Tox21,NR-PPAR-gamma,nitroaromatic,1209,39,0.0323,0.0256,0.038,0.674
+Tox21,NR-PPAR-gamma,aromatic_amine,1209,153,0.1266,0.0392,0.038,1.031
+Tox21,NR-PPAR-gamma,three_membered_NO,1209,35,0.0289,0.0286,0.038,0.751
+Tox21,NR-PPAR-gamma,N_nitroso,1209,1,0.0008,0.0,0.038,0.0
+Tox21,NR-PPAR-gamma,azo,1209,16,0.0132,0.0,0.038,0.0
+Tox21,NR-PPAR-gamma,aldehyde,1209,8,0.0066,0.0,0.038,0.0
+Tox21,NR-PPAR-gamma,michael_acceptor,1209,83,0.0687,0.0723,0.038,1.9
+Tox21,NR-PPAR-gamma,alkyl_halide,1209,36,0.0298,0.0278,0.038,0.73
+Tox21,NR-PPAR-gamma,aromatic_nitroso,1209,1,0.0008,0.0,0.038,0.0
+Tox21,NR-PPAR-gamma,hydrazine,1209,7,0.0058,0.0,0.038,0.0
+Tox21,NR-PPAR-gamma,★변이원 알림 ≥1(순수규칙),1209,348,0.2878,0.0402,0.038,1.057
+Tox21,NR-PPAR-gamma,BRENK/NIH 알림 ≥1,1209,627,0.5186,0.0447,0.038,1.174
+Tox21,NR-PPAR-gamma,★전체 알림 ≥1,1209,721,0.5964,0.043,0.038,1.13
+Tox21,SR-ARE,nitroaromatic,1056,35,0.0331,0.3429,0.2083,1.646
+Tox21,SR-ARE,aromatic_amine,1056,131,0.1241,0.2061,0.2083,0.989
+Tox21,SR-ARE,three_membered_NO,1056,35,0.0331,0.1143,0.2083,0.549
+Tox21,SR-ARE,N_nitroso,1056,1,0.0009,0.0,0.2083,0.0
+Tox21,SR-ARE,azo,1056,12,0.0114,0.3333,0.2083,1.6
+Tox21,SR-ARE,aldehyde,1056,7,0.0066,0.0,0.2083,0.0
+Tox21,SR-ARE,michael_acceptor,1056,67,0.0634,0.3284,0.2083,1.576
+Tox21,SR-ARE,alkyl_halide,1056,23,0.0218,0.3478,0.2083,1.67
+Tox21,SR-ARE,aromatic_nitroso,1056,0,0.0,,0.2083,
+Tox21,SR-ARE,hydrazine,1056,9,0.0085,0.2222,0.2083,1.067
+Tox21,SR-ARE,★변이원 알림 ≥1(순수규칙),1056,295,0.2794,0.2407,0.2083,1.155
+Tox21,SR-ARE,BRENK/NIH 알림 ≥1,1056,533,0.5047,0.2383,0.2083,1.144
+Tox21,SR-ARE,★전체 알림 ≥1,1056,612,0.5795,0.2304,0.2083,1.106
+Tox21,SR-ATAD5,nitroaromatic,1372,49,0.0357,0.0204,0.0445,0.459
+Tox21,SR-ATAD5,aromatic_amine,1372,166,0.121,0.0602,0.0445,1.355
+Tox21,SR-ATAD5,three_membered_NO,1372,38,0.0277,0.0,0.0445,0.0
+Tox21,SR-ATAD5,N_nitroso,1372,1,0.0007,0.0,0.0445,0.0
+Tox21,SR-ATAD5,azo,1372,16,0.0117,0.0625,0.0445,1.406
+Tox21,SR-ATAD5,aldehyde,1372,10,0.0073,0.0,0.0445,0.0
+Tox21,SR-ATAD5,michael_acceptor,1372,96,0.07,0.0729,0.0445,1.64
+Tox21,SR-ATAD5,alkyl_halide,1372,38,0.0277,0.0,0.0445,0.0
+Tox21,SR-ATAD5,aromatic_nitroso,1372,1,0.0007,0.0,0.0445,0.0
+Tox21,SR-ATAD5,hydrazine,1372,9,0.0066,0.0,0.0445,0.0
+Tox21,SR-ATAD5,★변이원 알림 ≥1(순수규칙),1372,385,0.2806,0.0468,0.0445,1.052
+Tox21,SR-ATAD5,BRENK/NIH 알림 ≥1,1372,704,0.5131,0.0327,0.0445,0.735
+Tox21,SR-ATAD5,★전체 알림 ≥1,1372,800,0.5831,0.0387,0.0445,0.872
+Tox21,SR-HSE,nitroaromatic,1213,41,0.0338,0.0732,0.0692,1.057
+Tox21,SR-HSE,aromatic_amine,1213,153,0.1261,0.0392,0.0692,0.566
+Tox21,SR-HSE,three_membered_NO,1213,36,0.0297,0.0833,0.0692,1.203
+Tox21,SR-HSE,N_nitroso,1213,1,0.0008,0.0,0.0692,0.0
+Tox21,SR-HSE,azo,1213,14,0.0115,0.0,0.0692,0.0
+Tox21,SR-HSE,aldehyde,1213,10,0.0082,0.0,0.0692,0.0
+Tox21,SR-HSE,michael_acceptor,1213,82,0.0676,0.1098,0.0692,1.585
+Tox21,SR-HSE,alkyl_halide,1213,27,0.0223,0.0741,0.0692,1.07
+Tox21,SR-HSE,aromatic_nitroso,1213,1,0.0008,0.0,0.0692,0.0
+Tox21,SR-HSE,hydrazine,1213,8,0.0066,0.125,0.0692,1.805
+Tox21,SR-HSE,★변이원 알림 ≥1(순수규칙),1213,340,0.2803,0.0618,0.0692,0.892
+Tox21,SR-HSE,BRENK/NIH 알림 ≥1,1213,601,0.4955,0.0965,0.0692,1.394
+Tox21,SR-HSE,★전체 알림 ≥1,1213,691,0.5697,0.0854,0.0692,1.233
+Tox21,SR-MMP,nitroaromatic,1052,37,0.0352,0.7297,0.2548,2.864
+Tox21,SR-MMP,aromatic_amine,1052,134,0.1274,0.2164,0.2548,0.85
+Tox21,SR-MMP,three_membered_NO,1052,34,0.0323,0.0588,0.2548,0.231
+Tox21,SR-MMP,N_nitroso,1052,1,0.001,0.0,0.2548,0.0
+Tox21,SR-MMP,azo,1052,5,0.0048,0.4,0.2548,1.57
+Tox21,SR-MMP,aldehyde,1052,9,0.0086,0.1111,0.2548,0.436
+Tox21,SR-MMP,michael_acceptor,1052,73,0.0694,0.3014,0.2548,1.183
+Tox21,SR-MMP,alkyl_halide,1052,34,0.0323,0.4118,0.2548,1.616
+Tox21,SR-MMP,aromatic_nitroso,1052,1,0.001,0.0,0.2548,0.0
+Tox21,SR-MMP,hydrazine,1052,8,0.0076,0.125,0.2548,0.491
+Tox21,SR-MMP,★변이원 알림 ≥1(순수규칙),1052,304,0.289,0.2763,0.2548,1.085
+Tox21,SR-MMP,BRENK/NIH 알림 ≥1,1052,565,0.5371,0.2779,0.2548,1.091
+Tox21,SR-MMP,★전체 알림 ≥1,1052,638,0.6065,0.2633,0.2548,1.034
+Tox21,SR-p53,nitroaromatic,1294,47,0.0363,0.0638,0.0927,0.688
+Tox21,SR-p53,aromatic_amine,1294,164,0.1267,0.1098,0.0927,1.184
+Tox21,SR-p53,three_membered_NO,1294,40,0.0309,0.075,0.0927,0.809
+Tox21,SR-p53,N_nitroso,1294,1,0.0008,0.0,0.0927,0.0
+Tox21,SR-p53,azo,1294,16,0.0124,0.0625,0.0927,0.674
+Tox21,SR-p53,aldehyde,1294,9,0.007,0.1111,0.0927,1.198
+Tox21,SR-p53,michael_acceptor,1294,91,0.0703,0.0989,0.0927,1.066
+Tox21,SR-p53,alkyl_halide,1294,29,0.0224,0.1034,0.0927,1.116
+Tox21,SR-p53,aromatic_nitroso,1294,1,0.0008,0.0,0.0927,0.0
+Tox21,SR-p53,hydrazine,1294,8,0.0062,0.0,0.0927,0.0
+Tox21,SR-p53,★변이원 알림 ≥1(순수규칙),1294,367,0.2836,0.0954,0.0927,1.028
+Tox21,SR-p53,BRENK/NIH 알림 ≥1,1294,664,0.5131,0.0964,0.0927,1.039
+Tox21,SR-p53,★전체 알림 ≥1,1294,762,0.5889,0.0932,0.0927,1.005

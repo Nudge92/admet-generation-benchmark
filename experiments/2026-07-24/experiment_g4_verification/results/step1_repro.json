@@ -1,0 +1,42 @@
+{
+ "tolerance": 0.005,
+ "config": {
+  "epochs": 20,
+  "batch": 8,
+  "lr": 0.0001,
+  "model_size": "84m"
+ },
+ "checks": [
+  {
+   "endpoint": "half_life_obach",
+   "metric": "Spearman",
+   "reported": 0.4697,
+   "reproduced": 0.4697,
+   "diff": 0.0,
+   "within_tol": true,
+   "n_seed": 5,
+   "per_seed": [
+    0.4614,
+    0.5147,
+    0.508,
+    0.4326,
+    0.4318
+   ]
+  },
+  {
+   "endpoint": "solubility_aqsoldb",
+   "metric": "MAE",
+   "reported": 0.7358,
+   "reproduced": 0.7363,
+   "diff": 0.0005,
+   "within_tol": true,
+   "n_seed": 3,
+   "per_seed": [
+    0.7311,
+    0.7338,
+    0.7441
+   ]
+  }
+ ],
+ "note": "step1 스크립트가 json.dump encoding 누락으로 종료 직전 죽어, 원자료 g4_raw.jsonl에서 재구성(재학습 없음)"
+}

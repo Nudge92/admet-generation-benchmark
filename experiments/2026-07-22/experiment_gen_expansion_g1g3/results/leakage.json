@@ -1,0 +1,44 @@
+{
+ "Carcinogens_Lagunin": {
+  "n_train": 196,
+  "n_valid": 28,
+  "n_test": 56,
+  "chemprop_incompatible_dropped": {
+   "train": 0,
+   "valid": 0,
+   "test": 0
+  },
+  "n_bad_smiles_total": 0,
+  "exact_canonical_overlap_trainval_test": 0,
+  "n_test_unique_canonical": 55,
+  "deterministic_regeneration": true
+ },
+ "ClinTox": {
+  "n_train": 1034,
+  "n_valid": 147,
+  "n_test": 297,
+  "chemprop_incompatible_dropped": {
+   "train": 0,
+   "valid": 0,
+   "test": 0
+  },
+  "n_bad_smiles_total": 0,
+  "exact_canonical_overlap_trainval_test": 0,
+  "n_test_unique_canonical": 292,
+  "deterministic_regeneration": true
+ },
+ "Tox21": {
+  "n_train": 5474,
+  "n_valid": 783,
+  "n_test": 1566,
+  "chemprop_incompatible_dropped": {
+   "train": 7,
+   "valid": 0,
+   "test": 1
+  },
+  "n_bad_smiles_total": 8,
+  "exact_canonical_overlap_trainval_test": 0,
+  "n_test_unique_canonical": 1566,
+  "deterministic_regeneration": true
+ }
+}

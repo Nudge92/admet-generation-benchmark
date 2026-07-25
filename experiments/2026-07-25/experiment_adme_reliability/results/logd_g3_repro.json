@@ -1,0 +1,18 @@
+{
+ "endpoint": "lipophilicity_astrazeneca",
+ "model": "dmpnn_ours",
+ "metric": "MAE",
+ "reported": 0.4406,
+ "reproduced": 0.4406,
+ "diff": 0.0,
+ "within_tol": true,
+ "n_seed": 5,
+ "per_seed": [
+  0.4392,
+  0.4374,
+  0.4533,
+  0.424,
+  0.4492
+ ],
+ "n_chemprop_bad": 0
+}

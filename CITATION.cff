@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "ADMET Generation Benchmark"
+message: "If you use this benchmark, please cite it as below."
+type: dataset
+authors:
+  - alias: Nudge92
+repository-code: "https://github.com/Nudge92/admet-generation-benchmark"
+abstract: >-
+  A controlled benchmark of five model generations (rule-based, classical ML,
+  GNN, 3D, foundation models) across 36 ADMET endpoints (18 toxicity,
+  18 ADME) under identical splits and identical metrics, with adversarial
+  verification and a full record of eight self-corrections.
+keywords:
+  - ADMET
+  - molecular property prediction
+  - benchmark
+  - data leakage
+  - graph neural networks
+  - QSAR
+license: MIT
+date-released: 2026-07-26

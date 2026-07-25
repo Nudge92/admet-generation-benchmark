@@ -1,0 +1,117 @@
+{
+ "n_tasks": 18,
+ "best_gen_dist": {
+  "G2": 17,
+  "G4": 1
+ },
+ "resolvable": [
+  "Tox21 NR-Aromatase",
+  "Tox21 SR-ARE",
+  "Tox21 SR-MMP"
+ ],
+ "g3_first_place": 0,
+ "leak_ub_core_mean": 0.0876,
+ "leak_ub_exp_mean": 0.1491,
+ "checks": [
+  {
+   "task": "DILI 간독성 —",
+   "best_value": "0.9125",
+   "found_in_source": true
+  },
+  {
+   "task": "hERG 차단 —",
+   "best_value": "0.8369",
+   "found_in_source": true
+  },
+  {
+   "task": "AMES 변이원성 —",
+   "best_value": "0.8513",
+   "found_in_source": true
+  },
+  {
+   "task": "LD50 급성독성 —",
+   "best_value": "0.5939",
+   "found_in_source": true
+  },
+  {
+   "task": "발암성 (Carcinogens) —",
+   "best_value": "0.8366",
+   "found_in_source": true
+  },
+  {
+   "task": "ClinTox 임상독성 —",
+   "best_value": "0.8014",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-AR",
+   "best_value": "0.7499",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-AR-LBD",
+   "best_value": "0.8101",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-AhR",
+   "best_value": "0.8692",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-Aromatase",
+   "best_value": "0.8027",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-ER",
+   "best_value": "0.7531",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-ER-LBD",
+   "best_value": "0.8414",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 NR-PPAR-gamma",
+   "best_value": "0.8362",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 SR-ARE",
+   "best_value": "0.7949",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 SR-ATAD5",
+   "best_value": "0.7598",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 SR-HSE",
+   "best_value": "0.8028",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 SR-MMP",
+   "best_value": "0.9041",
+   "found_in_source": true
+  },
+  {
+   "task": "Tox21 SR-p53",
+   "best_value": "0.8190",
+   "found_in_source": true
+  },
+  {
+   "item": "핵심 누수 상한 평균",
+   "value": 0.0876,
+   "found_in_source": true
+  },
+  {
+   "item": "확장 누수 상한 평균",
+   "value": 0.1491,
+   "found_in_source": true
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+  "caco2_wang_s1": {
+    "n_imputed": 16,
+    "total_cells": 171990,
+    "pct": 0.009
+  },
+  "caco2_wang_s2": {
+    "n_imputed": 16,
+    "total_cells": 171990,
+    "pct": 0.009
+  },
+  "caco2_wang_s3": {
+    "n_imputed": 16,
+    "total_cells": 171990,
+    "pct": 0.009
+  },
+  "caco2_wang_s4": {
+    "n_imputed": 16,
+    "total_cells": 171990,
+    "pct": 0.009
+  },
+  "caco2_wang_s5": {
+    "n_imputed": 16,
+    "total_cells": 171990,
+    "pct": 0.009
+  },
+  "bbb_martins_s1": {
+    "n_imputed": 112,
+    "total_cells": 383670,
+    "pct": 0.029
+  },
+  "bbb_martins_s2": {
+    "n_imputed": 136,
+    "total_cells": 383670,
+    "pct": 0.035
+  },
+  "bbb_martins_s3": {
+    "n_imputed": 128,
+    "total_cells": 383670,
+    "pct": 0.033
+  },
+  "bbb_martins_s4": {
+    "n_imputed": 136,
+    "total_cells": 383670,
+    "pct": 0.035
+  },
+  "bbb_martins_s5": {
+    "n_imputed": 120,
+    "total_cells": 383670,
+    "pct": 0.031
+  },
+  "cyp2c9_veith_s1": {
+    "n_imputed": 1312,
+    "total_cells": 2285220,
+    "pct": 0.057
+  },
+  "cyp2c9_veith_s2": {
+    "n_imputed": 1352,
+    "total_cells": 2285220,
+    "pct": 0.059
+  },
+  "cyp2c9_veith_s3": {
+    "n_imputed": 1272,
+    "total_cells": 2285220,
+    "pct": 0.056
+  },
+  "cyp2c9_veith_s4": {
+    "n_imputed": 1292,
+    "total_cells": 2285220,
+    "pct": 0.057
+  },
+  "cyp2c9_veith_s5": {
+    "n_imputed": 1260,
+    "total_cells": 2285220,
+    "pct": 0.055
+  },
+  "solubility_aqsoldb_s1": {
+    "n_imputed": 7018,
+    "total_cells": 1886010,
+    "pct": 0.372
+  },
+  "solubility_aqsoldb_s2": {
+    "n_imputed": 7090,
+    "total_cells": 1886010,
+    "pct": 0.376
+  },
+  "solubility_aqsoldb_s3": {
+    "n_imputed": 6946,
+    "total_cells": 1886010,
+    "pct": 0.368
+  },
+  "solubility_aqsoldb_s4": {
+    "n_imputed": 6998,
+    "total_cells": 1886010,
+    "pct": 0.371
+  },
+  "solubility_aqsoldb_s5": {
+    "n_imputed": 2676,
+    "total_cells": 1478400,
+    "pct": 0.181
+  }
+}

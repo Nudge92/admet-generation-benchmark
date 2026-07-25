@@ -1,0 +1,10 @@
+{"endpoint": "half_life_obach", "seed": 1, "status": "ok", "metric": "Spearman", "value": 0.4614, "batch_size": 8, "sec": 76.6}
+{"endpoint": "half_life_obach", "seed": 2, "status": "ok", "metric": "Spearman", "value": 0.5147, "batch_size": 8, "sec": 105.4}
+{"endpoint": "half_life_obach", "seed": 3, "status": "ok", "metric": "Spearman", "value": 0.508, "batch_size": 8, "sec": 112.9}
+{"endpoint": "half_life_obach", "seed": 4, "status": "ok", "metric": "Spearman", "value": 0.4326, "batch_size": 8, "sec": 86.3}
+{"endpoint": "half_life_obach", "seed": 5, "status": "ok", "metric": "Spearman", "value": 0.4318, "batch_size": 8, "sec": 89.4}
+{"endpoint": "solubility_aqsoldb", "seed": 1, "status": "failed", "reason": "OOM 재시도(batch=4) 실패: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.61 GiB of which 32.25 MiB is free. Including non-PyTorch memory, this process h", "oom_retry": true}
+{"endpoint": "solubility_aqsoldb", "seed": 2, "status": "failed", "reason": "OOM 재시도(batch=4) 실패: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 7.61 GiB of which 28.31 MiB is free. Including non-PyTorch memory, this process ha", "oom_retry": true}
+{"endpoint": "solubility_aqsoldb", "seed": 3, "status": "ok", "metric": "MAE", "value": 0.7311, "batch_size": 8, "sec": 1192.9}
+{"endpoint": "solubility_aqsoldb", "seed": 4, "status": "ok", "metric": "MAE", "value": 0.7338, "batch_size": 8, "sec": 1196.2}
+{"endpoint": "solubility_aqsoldb", "seed": 5, "status": "ok", "metric": "MAE", "value": 0.7441, "batch_size": 8, "sec": 878.3}
