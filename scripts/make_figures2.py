@@ -124,11 +124,37 @@ def fig4_endpoint_map():
                    facecolor=c if r["resolved"] else "white",
                    edgecolor=c, linewidth=1.7, zorder=3)
 
+    # ★분자 단위 부트스트랩(방법 B = 07-25 이후 주 판정)이 "구분 안 됨"을 내놓은 곳.
+    #   이 그림의 채움 기준은 seed SD인데, 이 둘은 더 강한 검정에서 CI가 0을 걸친다.
+    #   자기정정 ⑧이 못박은 "G4 우세는 통계적으로 확립되지 않았다"를 그림이 뒤집지 않도록
+    #   속 찬 원 위에 빨간 고리를 덧그려 유보를 표시한다.
+    #   출처: results/g4_verification.json — half_life bootstrap_B CI[-0.0184, 0.3247] ·
+    #         solubility bootstrap_B CI[-0.0017, 0.0479] 둘 다 distinguishable=False
+    B_UNRESOLVED = {"반감기": (0.1525, -0.0184, 0.3247),
+                    "수용해도": (0.0234, -0.0017, 0.0479)}
+    for yy, r in plot:
+        if r["name"] in B_UNRESOLVED:
+            ax.scatter(r["n_total"], yy, s=msize(r["n_test"]) * 2.6,
+                       facecolor="none", edgecolor=RED, linewidth=1.6,
+                       linestyle=(0, (2, 1.4)), zorder=4)
+    hl_y = [yy for yy, r in plot if r["name"] == "반감기"][0]
+    hl_x = [r["n_total"] for yy, r in plot if r["name"] == "반감기"][0]
+    ax.annotate("★분자 부트스트랩(주 판정)에서는 구분 안 됨\n"
+                "반감기 CI[−0.018, 0.325] · 수용해도 CI[−0.002, 0.048]",
+                xy=(hl_x, hl_y), xytext=(hl_x * 4.2, hl_y + 0.75),
+                fontsize=8.4, color=RED, va="center",
+                bbox=dict(boxstyle="round,pad=.42", fc="#ffebe9", ec="#ffb3ab", lw=.8),
+                arrowprops=dict(arrowstyle="->", color=RED, lw=.9))
+
     # 유일하게 확정된 세대 효과
     logd_y = [yy for yy, r in plot if r["name"] == "친유성 logD"][0]
     logd_x = [r["n_total"] for yy, r in plot if r["name"] == "친유성 logD"][0]
     ax.axhspan(logd_y - .45, logd_y + .45, color="#fff8c5", zorder=0)
-    ax.annotate("부트스트랩 3/3 — 36개 중 유일하게\n재표집을 견딘 세대 효과",
+    # ★"36개 중 유일"은 틀렸다 — 분자 부트스트랩은 ADME 18과제만 돌렸고(독성 18은 미실시),
+    #   caco2도 3/3이다(단 승자가 G2라 "새 세대가 이긴" 3/3은 logD 하나뿐).
+    #   README:96의 한정어 "새 세대가 이긴 경우로"를 그림에서도 유지한다.
+    ax.annotate("분자 부트스트랩 3/3 — ADME 18과제 중\n★새 세대(G3)가 이긴 유일한 경우\n"
+                "(caco2도 3/3이나 승자는 G2 · 독성 18은 부트스트랩 미실시)",
                 xy=(logd_x, logd_y), xytext=(logd_x * 2.7, logd_y - 2.4),
                 fontsize=8.8, color=INK,
                 bbox=dict(boxstyle="round,pad=.42", fc="#fff8c5", ec="#d4a72c", lw=.8),
@@ -147,15 +173,27 @@ def fig4_endpoint_map():
 
     gens = [g for g in ["G2", "G3", "G4"] if g in set(D["gen"])]
     h = [Line2D([], [], marker="o", ls="", ms=8, mfc=GC[g], mec=GC[g], label=GL[g]) for g in gens]
-    h += [Line2D([], [], marker="o", ls="", ms=8, mfc=INK, mec=INK, label="1·2위 구분 가능"),
+    h += [Line2D([], [], marker="o", ls="", ms=8, mfc=INK, mec=INK,
+                 label="모델 1·2위 구분 가능 (격차 ≥ seed SD)"),
           Line2D([], [], marker="o", ls="", ms=8, mfc="white", mec=INK, mew=1.7,
-                 label="구분 불가 (격차 < seed SD)")]
-    ax.legend(handles=h, loc="lower right", frameon=True, fontsize=8.8,
-              facecolor="white", edgecolor="#d0d7de", ncol=1)
+                 label="구분 불가 (격차 < seed SD)"),
+          Line2D([], [], marker="o", ls="", ms=9, mfc="none", mec=RED, mew=1.6,
+                 label="★더 강한 검정에서는 구분 안 됨")]
+    # ★범례를 우하단에 두면 E 배설 블록의 빨간 유보 주석과 겹친다.
+    #   독성 블록 왼쪽(x<600)은 점이 하나도 없어 비어 있으므로 그쪽으로 옮긴다.
+    ax.legend(handles=h, loc="upper left", bbox_to_anchor=(0.012, 0.965),
+              frameon=True, fontsize=8.8, facecolor="white",
+              edgecolor="#d0d7de", ncol=1)
 
     n_open = int((~D["resolved"]).sum())
+    # ★색(세대)과 테두리(모델 1·2위)를 같은 문장에 두면 속 찬 원이 "세대가 구분된다"로 읽힌다.
+    #   실제로는 36개 중 23개에서 1·2위가 같은 세대의 두 모델(대부분 물성×XGB vs 물성×RF)이다.
+    #   제목을 위로 밀고 그 아래에 별도 줄로 둔다(겹침 방지).
     ax.set_title("36개 전부 — 색은 1위 세대, 속 빈 원은 1위·2위를 구분할 수 없는 곳 (%d개)" % n_open,
-                 fontsize=12.5, fontweight="bold", loc="left", pad=14)
+                 fontsize=12.5, fontweight="bold", loc="left", pad=32)
+    ax.text(0, 1.006, "★테두리는 <모델> 1·2위 차이다 — 36개 중 23개는 1·2위가 같은 세대라 "
+                      "세대 구분을 뜻하지 않는다", transform=ax.transAxes,
+            fontsize=9.0, color=RED, va="bottom")
     fig.text(.005, -.018,
              "점 크기 ∝ test 집합 크기.  세로는 기둥별 묶음이고 각 묶음 안에서는 데이터가 큰 순서다.  "
              "누수 기준선(ADMET-AI)은 순위에서 제외돼 있다.",
@@ -210,7 +248,12 @@ def fig5_operating_point():
                 bbox=dict(boxstyle="round,pad=.4", fc="#fff8c5", ec="#d4a72c", lw=.8),
                 arrowprops=dict(arrowstyle="->", color="#8b949e", lw=.9))
     i_dili = int(np.where(r["name"] == "DILI 간독성")[0][0])
-    ax.annotate("DILI는 반대로 악화된다 0.94→0.66\nvalid 54~65분자라 t* 자체가 불안정",
+    # ★"valid 54~65분자"는 출처가 확인되지 않는다 — reliability.json의 t_star_source는
+    #   "valid에서 MCC 최대(MCC=0.6455, n_valid=200)"이고, seed별 분할도 48~54라 65는 없다.
+    #   게다가 설명 자체가 성립하지 않는다: 발암성(n_valid=28)·ClinTox(144)는 DILI(200)보다
+    #   작은데도 t*에서 개선된다. ⇒ 실측된 사실만 남기고 원인 주장은 뺀다.
+    ax.annotate("DILI는 반대로 악화된다 0.94→0.66 (놓친 양성 3→17)\n"
+                "t*=0.712는 valid(n=200)에서 MCC 최대로 고른 값 — 악화 원인은 미규명",
                 xy=(0.72, i_dili + .18), xytext=(.30, i_dili + 3.0), fontsize=8.6, color=RED,
                 va="center", ha="center",
                 bbox=dict(boxstyle="round,pad=.4", fc="#ffebe9", ec="#ffb3ab", lw=.8),

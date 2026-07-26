@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>ADMET 세대 벤치마크 — 전체 문서</title><style>
+:root{--bg:#ffffff;--fg:#1f2328;--muted:#59636e;--line:#d1d9e0;
+      --accent:#0969da;--soft:#f6f8fa;--warn:#d1242f;}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0d1117;--fg:#e6edf3;--muted:#9198a1;--line:#3d444d;
+        --accent:#4493f8;--soft:#151b23;--warn:#ff7b72;}
+}
+:root[data-theme="dark"]{--bg:#0d1117;--fg:#e6edf3;--muted:#9198a1;--line:#3d444d;
+        --accent:#4493f8;--soft:#151b23;--warn:#ff7b72;}
+:root[data-theme="light"]{--bg:#ffffff;--fg:#1f2328;--muted:#59636e;--line:#d1d9e0;
+        --accent:#0969da;--soft:#f6f8fa;--warn:#d1242f;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",
+          "Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+.wrap{max-width:920px;margin:0 auto;padding:48px 24px 96px}
+h1{font-size:29px;line-height:1.3;margin:44px 0 14px;letter-spacing:-.02em}
+h2{font-size:23px;margin:40px 0 12px;padding-top:10px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 10px}
+h4{font-size:16px;margin:22px 0 8px;color:var(--muted)}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+code{background:var(--soft);border:1px solid var(--line);border-radius:5px;
+     padding:1px 5px;font-size:13.5px;
+     font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+pre{background:var(--soft);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;overflow-x:auto}
+pre code{background:none;border:0;padding:0}
+img{max-width:100%;height:auto;display:block;margin:18px 0;
+    border:1px solid var(--line);border-radius:8px;background:#fff}
+blockquote{margin:16px 0;padding:2px 18px;border-left:3px solid var(--line);
+           color:var(--muted)}
+.tablewrap{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid var(--line);padding:7px 11px;text-align:left;
+      vertical-align:top;white-space:nowrap}
+th{background:var(--soft);font-weight:600}
+details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;
+        margin:0 0 16px;background:var(--soft)}
+details summary{cursor:pointer;font-size:14px;color:var(--muted);
+                font-weight:600;user-select:none}
+details[open] summary{margin-bottom:10px}
+details .tablewrap{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+.doc{scroll-margin-top:20px}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:10px;
+     padding:16px 20px;margin:0 0 20px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+       color:var(--muted);margin-bottom:8px}
+.toc ol{margin:0;padding-left:20px}
+.src{font-size:13px;color:var(--muted);margin:0 0 24px}
+</style></head><body><div class='wrap'><div class='toc'><b>이 페이지에 든 것</b><ol><li><a href='#overview'>개요와 핵심 결과</a> <span style='color:var(--muted)'>— <code>README.md</code></span></li><li><a href='#selfcorrection'>자기정정 8건</a> <span style='color:var(--muted)'>— <code>notes/self_corrections.md</code></span></li><li><a href='#evidence'>근거</a> <span style='color:var(--muted)'>— <code>notes/evidence.md</code></span></li><li><a href='#methods'>방법</a> <span style='color:var(--muted)'>— <code>notes/methods.md</code></span></li></ol><p class='src' style='margin:10px 0 0'>★마크다운이 원본이다. 이 파일을 직접 고치면 다음 빌드에서 사라진다 — <code>python3 scripts/build_docs.py</code></p></div><section class='doc' id='overview'><h1>개요와 핵심 결과</h1><p class='src'>원본: <code>README.md</code></p><h1>ADMET 세대 벤치마크</h1>
+<blockquote>
+<p><strong>규칙 기반 → 고전 ML → GNN → 3D → 파운데이션 모델.</strong>
+5개 모델 세대를 36개 ADMET 엔드포인트(독성 18 + ADME 18)에서 <strong>동일 분할·동일 지표</strong>로 다시 재본 결과,
+세대가 올라간다고 성능이 따라 올라가지는 않았다 — 그리고 <strong>언제 올라가는지는 측정할 수 있었다.</strong></p>
+</blockquote>
+<p><strong>In three lines (EN)</strong></p>
+<ol>
+<li>Across 36 ADMET endpoints under identical splits and identical metrics, newer model generations did not reliably beat older ones: classical ML topped 17 of 18 toxicity tasks, while ADME split four ways (gen-2: 9, gen-4: 5, gen-3: 4, gen-5: 0).</li>
+<li>Only 1 of 36 endpoints showed a generation effect that survived resampling (lipophilicity/logD → gen-3 GNN, 3/3 bootstrap comparisons); in 17 of 36 the first and second place could not be told apart at all.</li>
+<li>A widely used public ADMET predictor scored <strong>higher on our held-out test set than the figure reported in its own paper</strong> — one of three contamination signatures — so it was removed from the ranking and kept only as a reference line.</li>
+</ol>
+<p>📊 <strong><a href="https://Nudge92.github.io/admet-generation-benchmark/">보고서 전체 보기 (GitHub Pages)</a></strong></p>
+<hr />
+<h2>왜 이걸 만들었나</h2>
+<h3>① 자를 대보니, 자가 고장나 있었다</h3>
+<p>공개 배포된 ADMET 예측기를 기준선으로 삼으려 했다. 그런데 이상한 일이 생겼다.</p>
+<blockquote>
+<p><strong>그 도구가 자기 논문에 보고한 성능보다, 내 test set에서 더 잘했다.</strong></p>
+</blockquote>
+<p>보통은 반대여야 한다. 남의 데이터, 남의 분할에서는 성능이 <strong>떨어지는</strong> 게 정상이다. 올라간다는 건 그 도구의 학습 데이터가 내 평가셋 안에 들어와 있다는 뜻이다.</p>
+<p>누수 증거는 셋이었다 — ⑴ TDC 전체로 사전학습 ⑵ 자체보고 성능 초과 ⑶ 누수 없이 학습한 동종 모델과의 격차(핵심 4종 0.088 · 확장 0.149). 기준선으로 쓸 수 없어서 순위 판정에서 빼고, 참고선으로만 남겼다.</p>
+<p><img alt="누수 3증거" src="assets/fig7_leakage_evidence.png" /></p>
+<p><strong>세 증거가 하는 일이 다르다.</strong> 증거 ②만 누수 크기를 추정하고(+0.049~0.074), 증거 ③이 만든 0.088·0.149는 <strong>크기가 아니라 상한</strong>이다 — 그 안에 앙상블·멀티태스크·튜닝이 함께 들어 있다. 처음엔 이걸 "누수 프리미엄"이라고 불렀고, 그 이름이 틀렸다(→ 자기정정 ①).</p>
+<h3>② 그래서 자를 직접 만들었다</h3>
+<p>기준선이 없으면 만들어야 한다. 모델을 다섯 세대로 나누고 —</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th style="text-align: center;">세대</th>
+<th>접근</th>
+<th>이 벤치마크에서 쓴 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">G1</td>
+<td>규칙 기반</td>
+<td>구조 경보 (BRENK + NIH + Benigni-Bossa SMARTS)</td>
+</tr>
+<tr>
+<td style="text-align: center;">G2</td>
+<td>고전 ML</td>
+<td>물리화학 서술자 / ECFP4 지문 × XGBoost · RandomForest</td>
+</tr>
+<tr>
+<td style="text-align: center;">G3</td>
+<td>GNN</td>
+<td>chemprop D-MPNN (누수 없이 자체 학습)</td>
+</tr>
+<tr>
+<td style="text-align: center;">G4</td>
+<td>3D</td>
+<td>Uni-Mol (3D conformer, 2억 분자 사전학습)</td>
+</tr>
+<tr>
+<td style="text-align: center;">G5</td>
+<td>파운데이션</td>
+<td>ChemBERTa-2 · MoLFormer (fine-tune)</td>
+</tr>
+</tbody>
+</table></div>
+<p>— 36개 엔드포인트에서 <strong>분할·지표·평가 절차를 완전히 고정한 채</strong> 다시 쟀다. test set 정의는 이 저장소에 들어 있고(<a href="splits/"><code>splits/</code></a>), 확정된 예측 파일에서 역산한 뒤 두 번 대조했다(<a href="scripts/extract_splits.py"><code>scripts/extract_splits.py</code></a> — seed 간 0건 · 모델 간 0건 불일치).</p>
+<h3>③ 내가 만든 자도 의심했다</h3>
+<p>자를 직접 만들었다고 그 자가 정확하다는 보장은 없다. 그래서 적대적 검증을 걸었다 — 같은 알고리즘으로 표현만 바꿔보기, seed 재현 반복, 부트스트랩, DeLong 정확검정, 집계 방식 민감도 분석.</p>
+<p>그 결과 <strong>내 초기 결론 중 8건이 뒤집히거나 철회됐다.</strong> 그중 하나(⑤ 멀티태스크 이득)는 나에게 유리한 결론을 내 손으로 기각한 것이다. 8건 전부를 아래에 공개한다. (<a href="#자기정정-8건">→ 자기정정 8건</a>)</p>
+<h3>④ 재는 것과 쓰는 것은 다르다</h3>
+<p>순위를 매기는 일과 실제로 배포하는 일은 다른 문제다. AUROC 0.836짜리 모델도 기본 임계값 0.5에서는 <strong>양성을 하나도 못 잡았다</strong>(Tox21 NR-PPAR-gamma: 민감도 0.000 · 특이도 1.000). 권고 작동점 t*=0.157로 내려야 민감도 0.304가 되고 놓친 양성이 46→32건으로 준다. ADME CYP2C9 기질은 0.5에서 민감도 0.026 — 양성 37건 중 36건을 놓친다.</p>
+<p><strong>다만 t*도 만능이 아니다.</strong> DILI는 t*가 0.712로 올라가면서 민감도가 0.94→0.66으로 <strong>악화</strong>된다(놓친 양성 3→17건). ★이 t*는 valid 200분자에서 MCC 최대로 고른 값이고, <strong>악화 원인은 규명되지 않았다</strong> — "valid가 작아서"로는 설명되지 않는다(발암성은 valid 28분자, ClinTox는 144분자로 더 작은데 둘 다 개선된다). ADME에서도 t*가 악화시키는 엔드포인트가 4개 있다(BBB 0.95→0.76 등). <strong>소표본에서는 임계값 튜닝도 믿을 수 없다.</strong></p>
+<p><img alt="기본 임계값과 권고 작동점" src="assets/fig5_operating_point.png" /></p>
+<p>독성 17개 분류 과제 중 t*가 개선시킨 곳이 11개, 악화시킨 곳이 4개, 변화 없는 곳이 2개다. 화살표가 양방향인 것이 요점이다 — "t*를 쓰면 된다"가 아니라 <strong>작동점은 엔드포인트마다 따로 정해야 한다</strong>.</p>
+<p>적용 도메인(AD)도 만능이 아니었다.</p>
+<p><img alt="AD 판정 분포" src="assets/fig6_ad_verdict.png" /></p>
+<p>"판정 불가"는 OOD 구간 표본이 20개 미만이라 판단 자체를 못 한 경우다. <strong>AD는 자동 안전장치가 아니다.</strong></p>
+
+<details>
+<summary>값 표 보기</summary>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">AD 유효</th>
+<th style="text-align: right;">성능 예측 못함</th>
+<th style="text-align: right;">판정 불가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>독성 18</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>ADME 18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table></div>
+</details>
+<p>그래서 이 저장소에는 순위표만이 아니라 <strong>엔드포인트별 권고 작동점과 AD 유효 여부</strong>가 함께 들어 있다(<a href="results/reliability.csv"><code>results/reliability.csv</code></a>).</p>
+<hr />
+<h2>핵심 발견</h2>
+<h3>0. 36개를 한 장에</h3>
+<p><img alt="36 엔드포인트 지도" src="assets/fig4_endpoint_map.png" /></p>
+<p>가로가 데이터 크기, 색이 1위 세대, <strong>속이 빈 원은 1위와 2위를 구분할 수 없는 곳</strong>이다. 이 한 장에서 아래 세 절이 전부 보인다 — 파란색(2세대)이 대부분이고, 속 빈 원이 절반 가까이(17/36)이며, 노란 줄(친유성 logD)만이 재표집을 견딘 세대 효과다.</p>
+<h3>1. 세대는 단조롭게 좋아지지 않는다</h3>
+<p><img alt="세대별 1위 획득 분포" src="assets/fig1_generation_wins.png" /></p>
+<p><strong>독성 18과제</strong> — 2세대(고전 ML)가 17개에서 1위. 누수 없이 학습한 3세대 GNN의 1위는 <strong>0개</strong>, 5세대도 <strong>0개</strong>. DeLong 대응비교에서 유의한 차이는 17건 중 10건이었고 <strong>전부 2세대 우세</strong>였다(LD50은 회귀 과제라 DeLong 대상이 아니어서 분모가 17이다). 남은 1개는 4세대가 LD50에서 가져갔지만 — <strong>그 1승은 통계 검정에서 철회됐다</strong>(→ 자기정정 ③). 4세대가 독성에서 평가된 기회는 애초에 4회뿐이었고, 순위상 1/4, 검정 후 <strong>0/4</strong>다.</p>
+<p><strong>ADME 18과제</strong> — 결과가 갈렸다. 2세대 9 · 4세대 5 · 3세대 4 · 5세대 0.</p>
+<p>즉 "세대 ↑ = 성능 ↑"는 두 영역 어디에서도 성립하지 않았고, <strong>영역에 따라 승자 분포 자체가 달라졌다.</strong></p>
+<h3>2. 36개 중 17개는 1위와 2위를 구분할 수 없다</h3>
+<p><img alt="격차 대 불확실성" src="assets/fig2_gap_vs_uncertainty.png" /></p>
+<p>순위표에서 1위가 바뀌는 것과, 그 차이가 흔들림보다 큰 것은 다르다. <strong>36개 중 17개에서 1위–2위 격차가 1위 자신의 seed 표준편차보다 작았다.</strong> 순위는 있지만 그 순위를 근거로 쓸 수 없다는 뜻이다.</p>
+<p><strong>새 세대가 이긴 경우로 재표집을 통과한 것은 친유성(logD) 하나뿐이다.</strong> 3세대 GNN이 2세대 세 모델 전부를 이겼고 부트스트랩 신뢰구간이 셋 다 0을 넘지 않았다(<strong>3/3</strong>).</p>
+<p>반대 방향으로는 더 있다. Tox21 3개 assay(NR-Aromatase · SR-ARE · SR-MMP)에서 격차가 구분 가능선을 넘었고 <strong>셋 다 2세대 &gt; 3세대</strong>다. 즉 통계적으로 구분되는 세대 효과는 4건이고, 그중 3건이 통념과 반대 방향이다.</p>
+<p><img alt="DeLong 대응비교" src="assets/fig8_delong.png" /></p>
+<p>DeLong 대응비교 17건에서 <strong>점추정이 왼쪽(GNN 우세)으로 간 과제는 하나도 없다.</strong> 유의한 10건은 전부 고전 ML 쪽이었고, 그중 3건은 구분 가능선까지 넘었다. 처음에는 Hanley-McNeil 근사로 유의 3건이었는데, 그 근사가 같은 test를 쓰는 두 모델의 예측 상관을 무시해 검정력을 잃고 있었다(→ 자기정정 ④).</p>
+<h3>3. GNN의 성패를 가른 건 아키텍처가 아니라 <strong>데이터 크기</strong></h3>
+<p><img alt="데이터 크기와 GNN 상대 성능" src="assets/fig3_datasize_gnn.png" /></p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>데이터셋 전체 크기</th>
+<th style="text-align: right;">2세대 최고 대비 GNN 평균 성능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n &lt; 1500 (11개)</td>
+<td style="text-align: right;"><strong>−13.5%</strong></td>
+</tr>
+<tr>
+<td>n ≥ 2000 (5개)</td>
+<td style="text-align: right;"><code>【확인 중】</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>작은 데이터에서 GNN이 진 것은 GNN이 나빠서가 아니라 <strong>데이터가 모자라서</strong>로 읽는 게 자연스럽다. 그리고 위의 유일한 확실한 세대 효과(logD, +20.9%)도 큰 데이터 쪽에서 나왔다.</p>
+<hr />
+<blockquote>
+<h3>이 결과가 말하는 것 / 말하지 않는 것</h3>
+<p><strong>말한다</strong> — 세대가 올라간다고 성능이 자동으로 올라가지는 않는다. 데이터 규모와 엔드포인트의 성격이 세대보다 큰 변수였다. 그리고 대부분의 순위 차이는 통계적으로 얇다.</p>
+<p><strong>말하지 않는다</strong> — "딥러닝은 별로다". 이 저장소는 반대 방향의 증거도 직접 만들었다. 데이터가 충분한 logD에서는 3세대 GNN이 부트스트랩 3/3으로 이겼고, ADME 18과제 중 5개에서는 4세대가 1위다. 5세대의 0승도 "모델의 한계"가 아니라 <strong>이 예산·이 튜닝 조건에서의 결과</strong>로 읽어야 한다(→ <a href="#한계">한계</a>).</p>
+<p>결론의 정확한 형태는 <strong>"조건에 따라 다르다"</strong> 이고, 이 저장소가 하려는 일은 그 <strong>조건이 무엇인지를 재는 것</strong>이다.</p>
+</blockquote>
+<hr />
+<h2>보고서</h2>
+<p>HTML 보고서는 GitHub Pages로 공개되어 있다. (저장소에서 <code>.html</code>을 클릭하면 소스가 보이므로 아래 링크로 볼 것)</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>보고서</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://Nudge92.github.io/admet-generation-benchmark/master_integrated_report.html">통합 보고서 ★</a></strong></td>
+<td>36과제 전부 · 배포 가이드 · 자기정정 8건 — <strong>여기부터 보면 된다</strong></td>
+</tr>
+<tr>
+<td><a href="https://Nudge92.github.io/admet-generation-benchmark/master_report.html">독성 세대 벤치마크</a></td>
+<td>독성 18과제 · §11 배포 가이드</td>
+</tr>
+<tr>
+<td><a href="https://Nudge92.github.io/admet-generation-benchmark/reliability_report.html">독성 배포 신뢰도</a></td>
+<td>작동점 · AD · 보정</td>
+</tr>
+<tr>
+<td><a href="https://Nudge92.github.io/admet-generation-benchmark/report_adme_full.html">ADME 3축 보고서</a></td>
+<td>ADME 18과제 (세대 · 특징 · 학습방식)</td>
+</tr>
+<tr>
+<td><a href="https://Nudge92.github.io/admet-generation-benchmark/adme_reliability_report.html">ADME 배포 신뢰도</a></td>
+<td>§7 배포 가이드</td>
+</tr>
+<tr>
+<td><a href="https://Nudge92.github.io/admet-generation-benchmark/g4_verification.html">G4 검증</a></td>
+<td>반감기 · 수용해도 4세대 재검증</td>
+</tr>
+</tbody>
+</table></div>
+<p>📄 학회 초록: IEIE 2026 (ADME 세대 벤치마크) — <a href="notes/abstract_IEIE2026/"><code>notes/abstract_IEIE2026/</code></a></p>
+<hr />
+<h2>재현 방법</h2>
+<p>원본 데이터셋은 저장소에 넣지 않았다(TDC에서 재다운로드). 대신 <strong>어느 분자가 test set인지에 대한 정의는 전부 커밋되어 있다.</strong></p>
+<pre><code class="language-bash">git clone https://github.com/Nudge92/admet-generation-benchmark.git
+cd admet-generation-benchmark
+pip install -r requirements.txt
+
+# 1. 커밋된 test set 정의 확인 (36개 · sha256 지문 포함)
+head splits/_manifest.csv
+
+# 2. 예측 원자료에서 지표 재계산
+python scripts/verify_results.py --predictions predictions/ --against results/
+
+# 3. 그림 재생성 (14장 — 확정된 CSV/JSON만 읽는다. 새 학습·새 계산 없음)
+python scripts/make_figures.py    # 그림 1~3 · sc03 · sc06 · sc08
+python scripts/make_figures2.py   # 그림 4~8 · sc00 · sc05 · sc07
+</code></pre>
+<h3>무엇이 어디까지 재현 가능한가</h3>
+<p>이 저장소가 재현을 보장하는 범위는 층마다 다르다. 정확히 적어둔다.</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>층</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>test set 정의</strong></td>
+<td>36개 전부 커밋. 확정 예측 파일에서 역산했고 seed 간·모델 간 대조 0건 불일치</td>
+</tr>
+<tr>
+<td><strong>집계 지표</strong></td>
+<td><code>results/*.csv</code>가 보고서에 실린 확정 수치. 보고서 HTML은 여기서 생성됨</td>
+</tr>
+<tr>
+<td><strong>예측 원자료</strong></td>
+<td><strong>G2·G3 구간은 전부, G4·G5는 일부.</strong> 독성은 챔피언 재현 학습으로 18/18을 메웠고, ADME는 logD만 메웠으며 G4·G5는 한계로 남겼다</td>
+</tr>
+<tr>
+<td><strong>예측의 성격</strong></td>
+<td>★모델 아티팩트를 저장하지 않아 <strong>동일 config·seed·분할로 재현 학습 후 추론한 재현본</strong>이다. 18/18이 허용오차 0.005 안에서 통과(<code>reproduction_check.json</code>, <code>n_fail: 0</code>)</td>
+</tr>
+<tr>
+<td><strong>DeLong·부트스트랩 재계산</strong></td>
+<td>예측 원자료가 있는 구간에 한해 가능</td>
+</tr>
+<tr>
+<td><strong>모델 재학습</strong></td>
+<td>보장하지 않음. 체크포인트·원본 데이터 미포함</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>configs/</code>에 seed가 명시되어 있다. <strong>seed 집계 방식(예측 평균 vs seed별)에 따라 결론이 뒤집힌 사례가 실제로 있으므로</strong>(→ 자기정정 ⑧), 비교하려면 집계 방식을 먼저 맞춰야 한다.</p>
+<h3>"동일 분할"의 정확한 의미</h3>
+<p>엔드포인트 <strong>안에서</strong> 모든 모델이 같은 test set을 쓴다는 뜻이다. 엔드포인트 <strong>사이</strong>에 같은 분자를 쓴다는 뜻이 아니다(Tox21만 해도 assay별 n_test가 1051~1437로 다르다 — 라벨이 희소해서 정상이다).</p>
+<p>예외가 하나 있다. <strong>Uni-Mol(G4)은 3D conformer 생성에 실패하는 분자를 평가할 수 없다.</strong> 반감기 134개 중 6개, 수용해도 1995개 중 17개가 여기 해당한다. G4 비교에서는 같은 분자를 G2에서도 제외해 짝을 맞췄지만(교집합 Jaccard 1.0), <strong>G4 비교만 약간 작은 test set 위에서 이뤄진다.</strong></p>
+<hr />
+<h2>예측기 사용법</h2>
+<blockquote>
+<p>🚧 <strong>작성 예정</strong> — 통합 파이프라인 v2 완성 후 채웁니다.</p>
+<p>예정 기능: SMILES 입력 → 36개 엔드포인트 예측 → 엔드포인트별 권고 작동점 적용 → AD 밖일 경우 경고.</p>
+<p>임계값 0.5는 이 벤치마크에서 사용 불가로 판정된 엔드포인트가 있으므로, 파이프라인은 <code>results/reliability.csv</code>의 <code>t_star</code> 열을 기본 작동점으로 쓸 예정입니다.</p>
+</blockquote>
+<hr />
+<h2>자기정정 8건</h2>
+<p>벤치마크를 만드는 과정에서 내 초기 결론 8건이 뒤집히거나 철회됐다. <strong>"무엇이 잡아냈나" 열이 이 표의 핵심이다</strong> — 각 항목은 실수의 목록이 아니라, 걸어둔 검증 장치가 실제로 작동한 기록이다.</p>
+<p><img alt="자기정정 타임라인" src="assets/selfcorrection/sc00_timeline.png" /></p>
+<p><code>experiments/</code>의 날짜 폴더를 그대로 둔 이유가 이 그림이다. 7건은 07-22 하룻밤 실행과 그 뒤의 적대검증에서 한꺼번에 나왔고, ⑧만 <strong>07-24에 발견해 07-25에 주 판정을 바꿨다.</strong></p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>처음 주장</th>
+<th>정정 후</th>
+<th>★ 무엇이 잡아냈나</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">①</td>
+<td>공개 도구의 초과분 = "누수 프리미엄"</td>
+<td><strong>"누수 상한"으로 격하</strong> — 5모델 앙상블 × 31과제 멀티태스크가 교락되어 누수 단독 효과를 분리할 수 없음. 깨끗한 추정치는 +0.049~0.074</td>
+<td>배포 패키지 실측 (적대검증 CRITICAL)</td>
+<td><code>generation_matrix/notes.md:81</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">②</td>
+<td>세대 구분선을 "세대 최고 − 세대 최저" 폭으로 측정</td>
+<td><strong>"1위 vs 2위 격차"로 변경</strong> — 폭은 최하위 세대가 만드는 값이라 1위의 우위를 함의하지 않음. 바꾸자 핵심 4종이 4/4 구분 불가</td>
+<td>지표 정의 감사 (적대검증 CRITICAL)</td>
+<td><code>generation_matrix/notes.md:86</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">③</td>
+<td>"LD50은 4세대 승 — 유일한 세대 효과"</td>
+<td><strong>철회</strong> — 격차 0.013 &lt; 구분 가능선 0.043. 핵심 4종 <strong>0/4</strong>. ★그 구분 가능선 자체도 누수된 값으로 계산돼 있어 0.023→0.043으로 정정됨</td>
+<td>②의 직접 결과</td>
+<td><code>generation_matrix/notes.md:86</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">④</td>
+<td>Hanley-McNeil 근사로 AUC 비교 (유의 3건)</td>
+<td><strong>DeLong 대응비교로 교체 (유의 10/17건)</strong>. 먼저 챔피언의 분자별 예측을 새로 만들어 검정 자체를 가능하게 했다</td>
+<td>검정 방법 교체</td>
+<td><code>master_report/notes.md:47-48</code> · 정정 전 HTML 보존</td>
+</tr>
+<tr>
+<td style="text-align: center;">⑤</td>
+<td>"멀티태스크 학습에 이득이 있다 (9/10)"</td>
+<td><strong>가설 기각</strong> — CYP 3종이 같은 분자 라이브러리라 합집합 train에 <strong>test 분자의 88.9%가 섞임</strong>. 차단 후 CYP 억제 +0.0004 · 기질 −0.024</td>
+<td>누수 대조 분석 · <strong>자체 발견</strong></td>
+<td><code>adme_full/notes.md</code> 축③ · <code>learning_axis.csv</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">⑥</td>
+<td>"물성 기술자 18/18" <em>(철회된 표현)</em></td>
+<td><strong>17/18 (동일 XGB) · 16/18 (동일 RF)</strong> — 빠져 있던 <code>rf_ecfp</code>를 실제로 돌려 2×2 대칭으로 재집계</td>
+<td>적대검증 HIGH → <strong>재실행</strong></td>
+<td><code>src/rf_ecfp_symmetric.py</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">⑦</td>
+<td>"배설 3종 4세대 우세" <em>(철회된 표현)</em></td>
+<td><strong>반감기만 뚜렷</strong>(Δ0.156 &gt; SD). 간세포 청소율 Δ0.0025 ≪ SD 0.017~0.051, 마이크로솜 Δ0.0258 &lt; SD 0.0288 → 동률. 원문 자기평가: <em>"방향은 진짜 · 표현 과했음"</em></td>
+<td>효과크기 vs 표준편차 대조</td>
+<td><code>adme_full/notes.md</code> 축①</td>
+</tr>
+<tr>
+<td style="text-align: center;">⑧</td>
+<td>G4 검증 판정 "구분됨" 확정</td>
+<td><strong>판정이 seed 처리 방식에 의존</strong> — 예측평균(A) 구분됨 / seed별(B) 구분 안 됨. 앙상블이 설명하는 몫 수용해도 45% · 반감기 22%. ★이후 <strong>주 판정을 B로 교체</strong></td>
+<td>집계 방식 민감도 분석</td>
+<td><code>g4_verification/notes.md</code> · <code>adme_reliability/notes.md:75</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>📎 8건 전부의 상세 경위·수치: <strong><a href="notes/self_corrections.md"><code>notes/self_corrections.md</code></a></strong>
+📎 각 정정이 <strong>어느 파일 어느 줄</strong>에서 일어났는지: <strong><a href="notes/evidence.md"><code>notes/evidence.md</code></a></strong> — 정정 전 보고서 HTML과 실행 코드까지 저장소에 들어 있다</p>
+<h3>그림으로 보는 3건</h3>
+<p><strong>③ LD50 4세대 승 → 철회.</strong> 판정 기준을 세대 범위에서 1위·2위 격차로 바꾸자 핵심 4종이 전부 구분 가능선 안으로 들어왔다. LD50의 구분 가능선 자체도 누수된 값으로 계산돼 있어 0.023→0.043으로 정정됐다.</p>
+<p><img alt="자기정정 ③" src="assets/selfcorrection/sc03_ld50_withdrawn.png" /></p>
+<p><strong>⑥ "18/18"의 정체는 비대칭 로스터.</strong> 물성 쪽에 2개 모델, ECFP 쪽에 1개 모델이 들어가 있었다. 알고리즘을 맞추자 17/18 · 16/18로 내려갔다.</p>
+<p><img alt="자기정정 ⑥" src="assets/selfcorrection/sc06_asymmetric_roster.png" /></p>
+<p><strong>⑧ seed를 어떻게 묶느냐로 결론이 뒤집힌다.</strong> 예측을 먼저 평균내면 변동이 큰 Uni-Mol이 더 이득을 본다.</p>
+<p><img alt="자기정정 ⑧" src="assets/selfcorrection/sc08_seed_flip.png" /></p>
+<p>⑤ 멀티태스크와 ⑦ 배설 3종의 그림은 <a href="notes/self_corrections.md"><code>notes/self_corrections.md</code></a>에 있다.</p>
+<hr />
+<h2>한계</h2>
+<ul>
+<li><strong>세대 승수는 다중비교 비대칭을 안고 있다.</strong> G2는 3개 모델 중 최고를 뽑고, G3·G4는 각 1개 모델이다. 자기정정 ⑥이 특징 축에서 잡아낸 것과 같은 구조의 편향이 <strong>세대 축 전체에 남아 있다.</strong> 승수 표를 읽을 때 이걸 먼저 감안해야 한다.</li>
+<li><strong>전향적 검증이 없다.</strong> 모든 평가는 TDC scaffold 분할 안의 회고적 평가다. 새로 합성·측정한 화합물에 대한 예측 검증은 하지 않았다. 이 벤치마크의 결론은 "실험실에서 쓸 수 있다"를 뜻하지 않는다.</li>
+<li><strong>G2·G3는 튜닝하지 않았다.</strong> 5세대의 0승, 3세대의 독성 0승은 "모델의 한계"가 아니라 이 예산 하의 결과다.</li>
+<li><strong>4세대(3D) 우세는 통계적으로 확립되지 않았다.</strong> ADME에서 5개 1위를 기록했지만, 재표집·seed 처리 방식을 견딘다는 확인은 없다(→ 자기정정 ③, ⑧). ADME의 G4·G5 분자별 예측이 없어 VDss·청소율 2종은 검증 자체를 못 했다.</li>
+<li><strong>독성 확장 14과제는 G4·G5를 아예 돌리지 않았다.</strong> 그래서 "독성에서 G4가 1승"은 4회의 기회 중 1승이다.</li>
+<li><strong>소표본 엔드포인트가 있다.</strong> 발암성 56 · ClinTox 292 · CYP 기질 134~135 등은 신뢰구간이 넓고 보정 지표(ECE)가 불안정해 확정 판정이 불가능하다.</li>
+<li><strong>AD 판정 불가</strong>: 독성 4건 · ADME 6건. OOD 구간 표본이 모자랐다.</li>
+<li><strong>ADMET-AI는 절대 성능 비교 대상이 아니다.</strong> 누수가 확인되어 순위에서 제외했다. 그 도구가 실제로 얼마나 좋은지는 이 벤치마크가 답하지 않는다.</li>
+<li><strong>수용해도 G4는 seed 3개다.</strong> seed 1·2가 GPU 메모리 부족으로 실패했다(<code>results/g4_verification.json</code>의 <code>primary_method</code> 라벨이 "5seed"로 잘못 적혀 있다 — 반감기에만 해당).</li>
+<li><strong>후속으로 남긴 축</strong> — G4·G5 분자별 예측 확보, GNN 아키텍처 비교, 분할 난이도 축(random vs scaffold), 라벨 노이즈 강건 학습, 세대 간 예산 정규화.</li>
+</ul>
+<hr />
+<h2>저장소 구조</h2>
+<pre><code>.
+├── docs/           # HTML 보고서 6개 (GitHub Pages) + 그림
+├── results/        # 확정 집계 지표 · 통계 판정 (CSV/JSON)
+├── splits/         # ★ test set 정의 36개 + sha256 지문
+├── predictions/    # 예측 원자료 (.jsonl.gz) — DeLong·부트스트랩 재계산용
+├── notes/          # 자기정정 8건 상세 · 방법 · 학회 초록
+├── experiments/    # 원본 실험 트리 (07-22 · 07-24 · 07-25) — 코드와 결과
+└── scripts/        # 분할 역산 · 그림 생성 · 저장소 빌드
+</code></pre>
+<p>원본 데이터와 모델 체크포인트는 커밋하지 않았다(<a href=".gitignore"><code>.gitignore</code></a> 참조). 대신 <strong>분할·설정·집계 지표·예측 원자료는 커밋했다</strong> — 재현에 필요한 건 다시 받을 수 있는 파일이 아니라 그때 내린 결정이기 때문이다.</p>
+<p><code>experiments/</code>의 날짜 폴더 구조를 그대로 뒀다. 07-22에서 내린 판정이 07-24에서 뒤집히고 07-25에서 통합된 흔적이 자기정정 ⑧의 실물 근거라서, 깨끗하게 재편하면 그 기록이 사라진다.</p>
+<hr />
+<h2>인용</h2>
+<pre><code class="language-bibtex">@misc{admet_generation_benchmark_2026,
+  title  = {ADMET Generation Benchmark: Do newer model generations actually predict better?},
+  author = {Nudge92},
+  year   = {2026},
+  url    = {https://github.com/Nudge92/admet-generation-benchmark}
+}
+</code></pre>
+<p>관련 저장소: <a href="https://github.com/Nudge92/admet-lipophilicity-prediction">admet-lipophilicity-prediction</a> — 이 벤치마크에서 <strong>유일하게 통계적으로 확인된 세대 효과</strong>가 나온 엔드포인트를 단독으로 다룬 이전 작업.</p>
+<hr />
+<h2>라이선스</h2>
+<ul>
+<li><strong>코드</strong> (<code>scripts/</code>, <code>experiments/</code>의 소스): MIT</li>
+<li><strong>보고서·그림·문서</strong> (<code>docs/</code>, <code>notes/</code>, <code>results/</code>): CC BY 4.0</li>
+<li><strong>데이터</strong>: 원본 미포함. TDC(Therapeutics Data Commons) 및 각 원 데이터셋의 라이선스를 따른다. <code>splits/</code>는 원 데이터의 SMILES와 라벨만 담고 있다.</li>
+</ul></section><hr><section class='doc' id='selfcorrection'><h1>자기정정 8건</h1><p class='src'>원본: <code>notes/self_corrections.md</code></p><h1>자기정정 기록 — 8건 상세</h1>
+<p>이 문서는 벤치마크 제작 과정에서 뒤집히거나 철회된 결론 8건의 전체 기록이다.
+각 항목은 <strong>처음 무엇을 주장했고 · 무엇이 그걸 잡아냈고 · 지금은 무엇이 맞는지</strong> 순서로 적었다.</p>
+<p>이 기록을 남기는 이유: 벤치마크의 신뢰도는 "틀린 적이 없다"가 아니라
+<strong>"틀렸을 때 잡아내는 장치가 실제로 작동했다"</strong>로 세워진다고 보기 때문이다.</p>
+<blockquote>
+<p>📎 각 정정이 <strong>어느 파일 어느 줄</strong>에서 일어났는지는 <a href="evidence.md"><code>evidence.md</code></a>에 있다.
+정정 전 보고서 HTML과 재집계 실행 코드까지 저장소에 들어 있다.</p>
+<p>표기 — Δ는 1위·2위 격차, SD는 seed 표준편차, CI는 95% 부트스트랩 신뢰구간.
+근거 파일은 각 항목 끝에 적었다.</p>
+</blockquote>
+<p><img alt="자기정정 타임라인" src="assets/selfcorrection/sc00_timeline.png" /></p>
+<p>7건이 07-22에 몰려 있는 건 그날 하룻밤 무인 실행이 끝나고 적대검증을 한꺼번에 걸었기 때문이다.
+⑧만 <strong>발견(07-24)과 주 판정 교체(07-25)가 하루 떨어져 있다</strong> — 아래 ⑧에 그 경위를 적었다.</p>
+<hr />
+<h2>① "누수 프리미엄" → "누수 상한"</h2>
+<p><strong>처음 주장</strong> — ADMET-AI가 우리 정직 학습 모델보다 잘 나오는 초과분을, 데이터 누수가 만들어낸 이득의 크기("누수 프리미엄")로 명명했다.</p>
+<p><strong>무엇이 잡아냈나</strong> — 교락 변수 점검. 적대검증에서 CRITICAL로 분류.</p>
+<p><strong>정정 후</strong> — 그 초과분은 누수 <strong>단독</strong>의 효과가 아니다. ADMET-AI는 ⑴ 5개 모델 앙상블이고 ⑵ 31개 과제 멀티태스크로 학습됐으며 ⑶ 튜닝 예산도 다르다. 세 요인이 누수와 교락되어 있어 분리가 불가능하다. 따라서 초과분은 <strong>누수 효과의 상한</strong>으로만 읽어야 한다.</p>
+<ul>
+<li>관측된 상한: 핵심 4종 <strong>0.088</strong> · 확장 <strong>0.149</strong></li>
+<li>교락을 최대한 걷어낸 추정치: <strong>+0.049 ~ +0.074</strong></li>
+</ul>
+<p><strong>누수 판정 근거 3건</strong> — ⑴ TDC 전체로 사전학습 ⑵ 자체 논문 보고치를 우리 test에서 초과 ⑶ 누수 없이 학습한 동종 모델과의 격차. 이 셋을 근거로 순위 판정에서 제외하고 참고선으로만 표시했다.</p>
+<p><code>results/master_matrix.csv</code> · <code>results/adme_matrix.csv</code> (<code>leak_flag</code> 열)</p>
+<hr />
+<h2>② 세대 구분선의 측정 방식</h2>
+<p><strong>처음 주장</strong> — 세대 간 차이를 "그 세대 최고값 − 그 세대 최저값" 폭으로 쟀다.</p>
+<p><strong>무엇이 잡아냈나</strong> — 지표 정의 감사. 적대검증 CRITICAL.</p>
+<p><strong>정정 후</strong> — 이 정의는 <strong>한 세대 안에서 가장 못한 모델 하나가 폭을 좌우한다.</strong> 실패한 설정 하나가 들어가면 그 세대가 넓게 퍼져 보이고, 그래서 "세대 효과가 크다"는 착시가 생긴다. <strong>"1위 vs 2위 격차"</strong>로 바꿨다.</p>
+<p>이 변경 하나로 판정이 뒤집힌 곳이 있다 — LD50을 포함한 핵심 4종이 <strong>4/4 모두 구분 불가</strong>가 됐다. 그 직접 결과가 아래 ③이다.</p>
+<hr />
+<h2>③ "LD50은 4세대 승" → 철회</h2>
+<p><strong>처음 주장</strong> — LD50 급성독성에서 Uni-Mol(G4)이 1위이므로, 이것이 독성 영역에서 확인된 세대 효과라고 봤다.</p>
+<p><strong>무엇이 잡아냈나</strong> — ②의 직접 결과. 격차를 seed 흔들림과 나란히 놓자 무너졌다.</p>
+<p><strong>정정 후 — 철회.</strong> 그리고 LD50만이 아니라 핵심 4종 전부가 무너졌다.</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>엔드포인트</th>
+<th style="text-align: right;">1위·2위 세대 격차</th>
+<th style="text-align: right;">구분 가능선</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DILI</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">0.111</td>
+<td>구분 불가</td>
+</tr>
+<tr>
+<td>hERG</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">0.090</td>
+<td>구분 불가</td>
+</tr>
+<tr>
+<td>AMES</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.028</td>
+<td>구분 불가</td>
+</tr>
+<tr>
+<td><strong>LD50</strong></td>
+<td style="text-align: right;"><strong>0.013</strong></td>
+<td style="text-align: right;"><strong>0.043</strong></td>
+<td><strong>구분 불가 — 철회</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>★기준선 자체도 정정됐다.</strong> LD50의 구분 가능선은 처음에 <strong>누수된 ADMET-AI의 잔차</strong>로 계산돼 0.023으로 과소평가돼 있었다. 우리 모델 MAE 수준으로 스케일해 0.043이 됐다. 이 항목은 <em>측정 대상</em>과 <em>기준선</em>을 둘 다 고친 셈이다.</p>
+<p><strong>결과</strong> — 핵심 4종에서 G4의 확인된 승리는 <strong>0/4</strong>다. 순위표상으로는 여전히 1승으로 집계되지만 세대 효과의 증거로는 쓸 수 없다. README와 보고서는 이 둘을 항상 구분해서 적는다.</p>
+<p>원문이 남긴 정확한 진술 —</p>
+<blockquote>
+<p>정확한 진술은 <em>"최신 세대가 고전을 이긴다는 증거가 없다"</em>이며,
+마찬가지로 <em>"고전이 우월하다"</em>는 증거도 없다.</p>
+</blockquote>
+<p>📊 <code>docs/assets/selfcorrection/sc03_ld50_withdrawn.png</code>
+📎 근거: <code>experiments/2026-07-22/experiment_generation_matrix/notes.md:86</code> · <code>experiments/2026-07-22/master_report/results/consistency.json</code> → <a href="evidence.md#-ld50-g4-승-철회"><code>evidence.md</code></a></p>
+<hr />
+<h2>④ Hanley-McNeil → DeLong</h2>
+<p><strong>처음 주장</strong> — AUC 비교에 Hanley-McNeil 근사를 썼다. 유의 판정 <strong>3건</strong>.</p>
+<p><strong>무엇이 잡아냈나</strong> — 검정 방법 검토. 두 모델이 <strong>같은 test set</strong>을 쓰므로 예측이 상관되어 있는데, 독립 표본을 가정하는 근사는 이 상관을 무시해 검정력을 잃는다.</p>
+<p><strong>정정 후</strong> — DeLong 대응비교(correlated ROC)로 교체. 유의 판정 <strong>10/17건</strong>.</p>
+<p>분모가 18이 아니라 17인 이유: LD50은 회귀 과제(MAE)라 ROC 기반 검정의 대상이 아니다.</p>
+<p><strong>10건 전부 챔피언(G2) 우세.</strong> 통념과 반대 방향이다. G2 &gt; G3가 구분 가능한 곳은 Tox21 NR-Aromatase · SR-ARE · SR-MMP 3곳이다.</p>
+<p><code>results/finalize_check.json</code> (<code>delong_significant</code> · <code>delong_champion_wins</code> · <code>delong_n_compared</code>) · <code>results/reliability.csv</code> (<code>delong_vs_dmpnn_p</code>)</p>
+<hr />
+<h2>⑤ "멀티태스크 이득" → 가설 기각 ★자체 발견</h2>
+<p><strong>처음 주장</strong> — 멀티태스크 학습이 단일 과제 학습보다 낫다. 관측 <strong>9/10</strong>.</p>
+<p><strong>무엇이 잡아냈나</strong> — 누수 대조 분석. <strong>외부 지적 없이 자체적으로 발견했고, 결과는 나에게 불리했다.</strong></p>
+<p><strong>정정 후 — 가설 기각.</strong> CYP 3종은 <strong>같은 분자 라이브러리에 라벨만 다르게 붙은 데이터셋</strong>이다. 멀티태스크로 묶으면 합집합 train에 <strong>test 분자의 88.9%가 섞여 들어간다.</strong></p>
+<blockquote>
+<p>⚠ 88.9%는 <em>이득 중 누수가 차지한 비율</em>이 아니라 <strong>train에 섞인 test 분자의 비율</strong>이다. 누수의 원인이지 효과의 크기가 아니다.</p>
+</blockquote>
+<p>누수를 차단하고 재계산한 순수 멀티태스크 이득:</p>
+<p><img alt="자기정정 ⑤" src="assets/selfcorrection/sc05_multitask.png" /></p>
+<p>사실상 0이거나 음수다. 멀티태스크가 이득을 준 게 아니라, 과제들이 서로의 답을 갖고 있었던 것이다.
+차단 뒤에도 남은 이득은 <strong>소표본 2개(생체이용률·HIA)에 몰려 있다</strong> — "과제 유사도"보다 "데이터가 적은 과제만 덕을 본다"에 가깝다.</p>
+
+<details>
+<summary>값 표 보기</summary>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>그룹</th>
+<th>초기(누수)</th>
+<th style="text-align: right;">차단 후 이득</th>
+<th style="text-align: right;">평균 델타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CYP 억제 (닮은 과제)</td>
+<td>3/3 이득</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;"><strong>+0.0004</strong></td>
+</tr>
+<tr>
+<td>CYP 기질 (작은 과제)</td>
+<td>2/3 이득</td>
+<td style="text-align: right;">0/3</td>
+<td style="text-align: right;"><strong>−0.0240</strong></td>
+</tr>
+<tr>
+<td>ADME 분류 10개 (잡탕)</td>
+<td>9/10 이득</td>
+<td style="text-align: right;">5/10</td>
+<td style="text-align: right;">+0.0228</td>
+</tr>
+</tbody>
+</table></div>
+</details>
+<p><code>results/adme_matrix.csv</code> · <code>experiments/2026-07-22/experiment_adme_full/results/learning_axis.csv</code> · 통합 보고서 §3 축③</p>
+<hr />
+<h2>⑥ "물성 18/18" → 17/18 · 16/18</h2>
+<p><strong>처음 주장</strong> — 물리화학 서술자가 ECFP 지문을 ADME 18개 전부에서 이긴다. (<strong>"압승"이라는 표현을 썼다 — 철회된 표현이다.</strong>)</p>
+<p><strong>무엇이 잡아냈나</strong> — 적대적 검증 6렌즈. <strong>그중 5개가 반응했다.</strong></p>
+<p><strong>정정 후</strong> — 원인은 표현의 우열이 아니라 <strong>로스터의 비대칭</strong>이었다. 물성 쪽에는 모델이 2개(XGBoost, RandomForest), ECFP 쪽에는 1개(XGBoost)만 있었다. "물성 2개 중 최고 vs ECFP 1개"를 비교하면 당연히 물성이 유리하다.</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>비교 방식</th>
+<th style="text-align: right;">물성 승</th>
+<th>진 엔드포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원래(비대칭) — 물성 2모델 중 최고 vs ECFP 1모델</td>
+<td style="text-align: right;">18/18</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>동일 XGB끼리</strong></td>
+<td style="text-align: right;"><strong>17/18</strong></td>
+<td>CYP3A4 기질</td>
+</tr>
+<tr>
+<td><strong>동일 RF끼리</strong></td>
+<td style="text-align: right;"><strong>16/18</strong></td>
+<td>P-gp 기질, CYP2D6 억제</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>결론은 살아남았지만 강도가 달라졌다.</strong> 물성 표현의 우세는 여전히 견고하다. 다만 "압승"은 아니다.</p>
+<p>이 항목은 <a href="../README.md#한계">한계</a>의 첫 줄과 직접 연결된다 — 같은 종류의 비대칭이 <strong>세대 축에도 남아 있다</strong>(G2는 3모델 중 최고, G3·G4는 1모델). 특징 축에서는 잡아 고쳤지만 세대 축에서는 고지만 하고 남겨뒀다.</p>
+<p>📊 <code>docs/assets/selfcorrection/sc06_asymmetric_roster.png</code> · <code>results/feature_2x2.csv</code></p>
+<hr />
+<h2>⑦ "배설 3종 4세대 우세" → 반감기만</h2>
+<p><strong>처음 주장</strong> — 배설(E) 기둥 3개 엔드포인트를 G4가 전부 가져간다. (<strong>"석권" 표현을 썼다 — 철회됐다.</strong>)</p>
+<p><strong>무엇이 잡아냈나</strong> — 효과크기를 표준편차와 나란히 놓기. 적대검증에서 3개 중 1개가 반박됐다.</p>
+<p><strong>정정 후</strong> — 뚜렷한 건 반감기 하나뿐이다.</p>
+<p><img alt="자기정정 ⑦" src="assets/selfcorrection/sc07_excretion.png" /></p>
+<p>간세포 청소율의 격차는 표준편차의 <strong>1/7~1/20</strong>이다(어느 쪽 SD를 기준으로 잡느냐에 따라). 순위표에서는 1위지만 아무것도 말하지 않는 1위다.</p>
+<p>그리고 살아남은 반감기조차 ⑧에서 다시 흔들린다.</p>
+
+<details>
+<summary>값 표 보기</summary>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>엔드포인트</th>
+<th style="text-align: right;">G4 (Uni-Mol)</th>
+<th style="text-align: right;">G2 최고</th>
+<th style="text-align: right;">Δ</th>
+<th style="text-align: right;">G2 SD</th>
+<th style="text-align: right;">G4 SD</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>반감기</td>
+<td style="text-align: right;">0.4697</td>
+<td style="text-align: right;">0.3139 <code>rf_physchem</code></td>
+<td style="text-align: right;"><strong>0.1558</strong></td>
+<td style="text-align: right;">0.0314</td>
+<td style="text-align: right;">0.0357</td>
+<td>Δ ≫ SD — 뚜렷</td>
+</tr>
+<tr>
+<td>간세포 청소율</td>
+<td style="text-align: right;">0.4244</td>
+<td style="text-align: right;">0.4219 <code>rf_physchem</code></td>
+<td style="text-align: right;"><strong>0.0025</strong></td>
+<td style="text-align: right;">0.0167</td>
+<td style="text-align: right;">0.0514</td>
+<td>Δ ≪ SD — 동률</td>
+</tr>
+<tr>
+<td>마이크로솜 청소율</td>
+<td style="text-align: right;">0.5765</td>
+<td style="text-align: right;">0.5507 <code>xgb_physchem</code></td>
+<td style="text-align: right;"><strong>0.0258</strong></td>
+<td style="text-align: right;">0.0288</td>
+<td style="text-align: right;">0.0176</td>
+<td>Δ &lt; SD — 동률</td>
+</tr>
+</tbody>
+</table></div>
+<p>★SD 열을 둘로 나눈 이유 — 이 표의 초판은 SD 한 열만 뒀는데, 간세포 청소율에 적힌 0.0514는
+<strong>G2가 아니라 G4(Uni-Mol)의 SD</strong>였다(원문 실험 노트의 <em>"간세포 Δ0.0025 ≪ sd 0.05"</em>가 그 값이다).
+판정은 어느 쪽을 기준으로 잡아도 바뀌지 않지만, 열 이름이 값과 어긋나 있었으므로 둘 다 적는다.</p>
+</details>
+<p><code>results/adme_matrix.csv</code></p>
+<hr />
+<h2>⑧ G4 검증 판정이 seed 처리 방식에 의존한다</h2>
+<p><strong>처음 주장</strong> — G4 검증(반감기 · 수용해도)에서 "G4 우세, 구분됨"으로 판정했다.</p>
+<p><strong>무엇이 잡아냈나</strong> — 집계 방식 민감도 분석. 같은 데이터·같은 모델로 두 가지 집계를 돌려봤다.</p>
+<ul>
+<li><strong>방법 A</strong> — seed별 예측을 먼저 평균낸 뒤 부트스트랩</li>
+<li><strong>방법 B</strong> — seed별로 지표를 계산해 비교</li>
+</ul>
+<p><strong>정정 후 — 판정이 뒤집힌다.</strong></p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>엔드포인트</th>
+<th>방법</th>
+<th style="text-align: right;">Δ</th>
+<th>95% CI</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>반감기 (Spearman↑)</td>
+<td>A 예측평균</td>
+<td style="text-align: right;">0.1943</td>
+<td>[0.0305, 0.3410]</td>
+<td><strong>구분됨</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>B seed별</td>
+<td style="text-align: right;">0.1525</td>
+<td>[−0.0184, 0.3247]</td>
+<td><strong>구분 안 됨</strong></td>
+</tr>
+<tr>
+<td>수용해도 (MAE↓)</td>
+<td>A 예측평균</td>
+<td style="text-align: right;">0.0424</td>
+<td>[0.0216, 0.0650]</td>
+<td><strong>구분됨</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>B seed별</td>
+<td style="text-align: right;">0.0234</td>
+<td>[−0.0017, 0.0479]</td>
+<td><strong>구분 안 됨</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>원인</strong> — 예측을 먼저 평균내는 것은 앙상블이고, <strong>앙상블은 변동이 큰 모델에 더 큰 이득을 준다.</strong> Uni-Mol(G4)이 여기 해당한다.</p>
+<p>수용해도에서 앙상블로 얻은 이득: G4 <strong>+0.0356</strong> vs G2 <strong>+0.0170</strong>. 이 차이가 관측된 Δ의</p>
+<ul>
+<li>수용해도: <strong>(0.0424 − 0.0234) / 0.0424 = 44.8%</strong></li>
+<li>반감기: <strong>(0.1943 − 0.1525) / 0.1943 = 21.5%</strong></li>
+</ul>
+<p>를 설명한다. 즉 수용해도에서 "G4 우세"라고 부른 것의 절반 가까이가 <strong>모델의 우수함이 아니라 집계 방식의 산물</strong>이다.</p>
+<p><strong>대응 — 그리고 하루 뒤 주 판정을 바꿨다.</strong></p>
+<p>07-24 시점에는 A를 주 판정으로 뒀다. 07-25의 ADME 신뢰도 실험에서 이를 뒤집었다.</p>
+<blockquote>
+<p>★주 판정 = <strong>seed별 부트스트랩 후 종합</strong>. 이유: 이 연구의 주장은 특정 배포물이 아니라
+<strong>방법 비교</strong>이므로 <strong>학습 변동을 CI에 포함</strong>해야 정직하다.
+— <code>experiments/2026-07-25/experiment_adme_reliability/notes.md:75</code></p>
+</blockquote>
+<p>배포물 하나의 성능을 말하려면 A가 맞지만, <strong>방법을 비교하려면 학습 변동이 불확실성 안에 들어와야 한다.</strong> 그래서 현재 주 판정은 <strong>B</strong>다.</p>
+<p><code>results/g4_verification.json</code>의 <code>primary_method</code> 필드는 <code>"A(5seed 예측평균…)"</code>로 남아 있다. <strong>07-24 시점의 값이고 고치지 않았다</strong> — 그때의 판단을 보존하기 위해서다. 이 문서가 정정 이력이므로 여기서 명시한다.</p>
+<p>결론적으로 README와 보고서 모두 <strong>"G4 우세는 통계적으로 확립되지 않았다"</strong>로 쓰고, 두 판정을 함께 보고한다.</p>
+<p><strong>미검증 범위</strong> — VDss · 간세포 청소율 · 마이크로솜 청소율 <strong>3개는 검증 자체를 하지 않았다</strong>(격차가 흔들림 안이라 제외). 이 결과를 그 3개로 일반화하면 안 된다.</p>
+<p><strong>부수 기록 (⑧-a)</strong> — 수용해도 G4는 seed가 5개가 아니라 <strong>3개</strong>다(1·2가 CUDA OOM으로 실패, <code>results/g4_raw.jsonl</code>). 실험 노트에는 <em>"게다가 G4가 3/5 seed(1·2 OOM 실패)"</em>로 이미 적혀 있었고, <code>g4_verification.json</code>의 <code>primary_method</code> 문자열만 "5seed"로 남았다. 값의 오류가 아니라 필드 라벨의 불일치다.</p>
+<p><strong>부수 발견 (⑧-b)</strong> — Uni-Mol은 3D conformer 생성에 실패하는 분자를 평가할 수 없다. 반감기 134개 중 <strong>6개</strong>, 수용해도 1995개 중 <strong>17개</strong>가 제외됐다. G2에서도 같은 분자를 빼서 짝을 맞췄으므로(교집합 Jaccard 1.0) 비교 자체는 공정하지만, <strong>G4 비교만 다른 세대보다 약간 작은 test set 위에서 이뤄진다.</strong></p>
+<p>📊 <code>docs/assets/selfcorrection/sc08_seed_flip.png</code> · <code>results/g4_verification.json</code> · <code>results/g4_verification.csv</code></p>
+<hr />
+<h2>이 8건에서 남는 것</h2>
+<p>세 가지가 반복해서 나타난다.</p>
+<ol>
+<li>
+<p><strong>격차는 흔들림과 함께 봐야 한다.</strong> ③⑦이 같은 실수의 두 사례다. 순위표만 보면 1위지만, SD를 옆에 놓는 순간 사라지는 1위가 있다. 그래서 <a href="assets/fig2_gap_vs_uncertainty.png">그림 ②</a>를 만들었고, 36개 중 17개가 여기 해당한다.</p>
+</li>
+<li>
+<p><strong>비교 대상의 수를 맞춰야 한다.</strong> ⑥이 특징 축에서 이걸 잡았다. 같은 문제가 세대 축에도 남아 있고, 고치지 못한 채 한계에 적었다.</p>
+</li>
+<li>
+<p><strong>집계 방식이 결론을 만든다.</strong> ⑧이 가장 불편한 사례다. 데이터도 모델도 그대로인데 묶는 방식만으로 판정이 뒤집힌다. 그래서 두 결과를 모두 보고한다.</p>
+</li>
+</ol>
+<p>그리고 ⑤ — <strong>유리한 결론을 내 손으로 기각한 유일한 항목이다.</strong> 나머지 7건은 검증 장치가 잡아냈지만, 이건 아무도 묻지 않았는데 확인했다가 무너진 경우다.</p></section><hr><section class='doc' id='evidence'><h1>근거</h1><p class='src'>원본: <code>notes/evidence.md</code></p><h1>근거 색인 — 무엇을 보고 정정했나</h1>
+<p><code>self_corrections.md</code>의 8건 각각이 <strong>어느 파일의 어느 줄에서</strong> 일어났는지 적는다.</p>
+<p>주장만 있고 근거 경로가 없으면 검증할 수 없다. 이 문서는 그 간격을 메우기 위한 것이고,
+저장소에 커밋된 실제 파일만 가리킨다.</p>
+<blockquote>
+<p>경로는 저장소 루트 기준이다. <code>experiments/</code> 아래는 실험 당시의 원본 트리를 그대로 옮긴 것이다.</p>
+</blockquote>
+<p>📊 아래 표를 그림으로 본 것: <code>docs/assets/selfcorrection/sc00_timeline.png</code>
+   (각 정정이 어느 날짜 폴더의 어느 실험에서 일어났나)</p>
+<hr />
+<h2>한눈에</h2>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>정정</th>
+<th>1차 근거 (판단이 바뀐 지점)</th>
+<th>뒷받침 데이터</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">①</td>
+<td>누수 프리미엄 → 상한</td>
+<td><code>experiments/2026-07-22/experiment_generation_matrix/notes.md:81</code></td>
+<td><code>.../results/leakage.json</code> · <code>experiment_gen_expansion_g1g3/notes.md:53-66</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">②</td>
+<td>range 판정 → 1위·2위 격차</td>
+<td><code>experiments/2026-07-22/experiment_generation_matrix/notes.md:86</code></td>
+<td><code>experiment_g3_dmpnn_seed42/notes.md:75</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">③</td>
+<td>LD50 G4 승 철회</td>
+<td>위와 같은 줄 (②의 직접 결과)</td>
+<td><code>results/master_matrix.csv</code> · <code>experiments/2026-07-22/master_report/results/consistency.json</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">④</td>
+<td>Hanley-McNeil → DeLong</td>
+<td><code>experiments/2026-07-22/master_report/notes.md:47-48</code></td>
+<td><code>results/finalize_check.json</code> · <code>master_report_before_final.html</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">⑤</td>
+<td>멀티태스크 이득 → 기각</td>
+<td><code>experiments/2026-07-22/experiment_adme_full/notes.md</code> (축③)</td>
+<td><code>.../results/learning_axis.csv</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">⑥</td>
+<td>물성 18/18 → 17/18·16/18</td>
+<td><code>experiments/2026-07-22/experiment_adme_full/src/rf_ecfp_symmetric.py</code> (머리말)</td>
+<td><code>results/feature_2x2.csv</code> · <code>.../results/feature_ablation.csv</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">⑦</td>
+<td>배설 3종 → 반감기만</td>
+<td><code>experiments/2026-07-22/experiment_adme_full/notes.md</code> (축①)</td>
+<td><code>results/adme_matrix.csv</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">⑧</td>
+<td>seed 처리 의존</td>
+<td><code>experiments/2026-07-24/experiment_g4_verification/notes.md</code> (결론 3줄)</td>
+<td><code>results/g4_verification.json</code> · <code>experiment_adme_reliability/notes.md:75-76</code></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>① 누수 프리미엄 → 누수 상한</h2>
+<p><strong>판단이 바뀐 문장</strong> — <code>experiment_generation_matrix/notes.md:81</code></p>
+<blockquote>
+<p>★★중대 정정(적대검증): 이 0.088을 "누수 프리미엄"이라 부르면 안 된다. 패키지 실측 결과
+ADMET-AI는 5-모델 앙상블 × 31과제 멀티태스크·튜닝된 배포본이고, 우리 D-MPNN은
+단일모델·단일과제·미튜닝이다 … 따라서 0.088에는 누수 + 앙상블 + 멀티태스크 전이 + 튜닝이
+교락돼 있고 이는 <strong>누수의 상한</strong>이다.</p>
+</blockquote>
+<p><strong>어떻게 실측했나</strong> — 배포 패키지를 직접 뜯었다. <code>admet_ai/resources/models/admet_{classification,regression}/model_0..4.pt</code> 파일 5개, 체크포인트의 <code>output_columns</code> 길이 31/10, <code>_make_ensemble_predictions</code> 호출.</p>
+<p><strong>누수 판정 근거 3건</strong> — <code>experiment_generation_matrix/notes.md:42</code> 이하</p>
+<ol>
+<li>TDC 전체로 사전학습</li>
+<li>자체 논문 보고치를 우리 test에서 초과 → <strong>누수 크기의 가장 깨끗한 추정 +0.049~0.074</strong></li>
+<li>정직 학습 동종 모델과의 격차 → 상한 (핵심 0.0876 · 확장 0.1491, <code>experiments/2026-07-22/master_report/results/consistency.json</code>)</li>
+</ol>
+<p><strong>★한계까지 적어뒀다</strong> — 같은 파일 <code>:55</code></p>
+<blockquote>
+<p>공정 보정 결과: 누수 보정 불가. ADMET-AI의 학습 분자 목록이 공개돼 있지 않아
+"학습셋에 없는 분자"를 정의할 수 없다. … "공집합임을 실측했다"가 아니라
+<strong>"하위셋을 정의할 수 없다"가 참이다.</strong></p>
+</blockquote>
+<p>📎 <code>experiments/2026-07-22/experiment_g3_dmpnn_seed42/results/leakage.json</code>
+   — 엔드포인트별 exact/InChIKey/골격 중복 수 + test 동일성 Jaccard</p>
+<hr />
+<h2>② 세대 구분선의 측정 방식</h2>
+<p><strong>판단이 바뀐 문장</strong> — <code>experiment_generation_matrix/notes.md:86</code></p>
+<blockquote>
+<p>초안은 판정에 세대별 최고−최저 <strong>폭(range)</strong>을 썼는데, 그 폭은 <strong>최하위 세대</strong>가 만든 값이라
+1위의 우위를 전혀 함의하지 않는다(적대검증 지적).</p>
+</blockquote>
+<p><strong>바꾼 뒤 결과</strong> — 핵심 4종 전부 구분 불가.</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>엔드포인트</th>
+<th style="text-align: right;">1위·2위 격차</th>
+<th style="text-align: right;">구분 가능선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DILI</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">0.111</td>
+</tr>
+<tr>
+<td>hERG</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">0.090</td>
+</tr>
+<tr>
+<td>AMES</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.028</td>
+</tr>
+<tr>
+<td>LD50</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.043</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>★기준선 자체도 정정했다</strong> — LD50의 구분 가능선은 처음에 <strong>누수된 ADMET-AI의 잔차</strong>로 계산돼 0.023으로 과소평가돼 있었다. 우리 모델 MAE 수준으로 스케일해 <strong>0.043</strong>이 됐다. 즉 이 항목은 <em>측정 대상</em>과 <em>기준선</em>을 둘 다 고쳤다.</p>
+<p>📎 <code>experiments/2026-07-22/experiment_g3_dmpnn_seed42/notes.md:75</code> (같은 정정의 독립 기록)</p>
+<hr />
+<h2>③ LD50 G4 승 철회</h2>
+<p>②의 직접 결과다. 별도 분석이 아니라 <strong>기준을 바꾸자 자동으로 무너진 것</strong>이다.</p>
+<p>같은 줄이 정확한 진술도 남겨뒀다:</p>
+<blockquote>
+<p>정확한 진술은 <em>"최신 세대가 고전을 이긴다는 증거가 없다"</em>이며,
+마찬가지로 <em>"고전이 우월하다"</em>는 증거도 없다.</p>
+</blockquote>
+<p>📊 <code>docs/assets/selfcorrection/sc03_ld50_withdrawn.png</code>
+📎 <code>experiments/2026-07-22/master_report/results/consistency.json</code> — <code>best_gen_dist {G2:17, G4:1}</code> · <code>g3_first_place: 0</code></p>
+<hr />
+<h2>④ Hanley-McNeil → DeLong</h2>
+<p><strong>판단이 바뀐 문장</strong> — <code>master_report/notes.md:47</code></p>
+<blockquote>
+<p>구분 가능선은 Hanley-McNeil <strong>비대응 가정</strong>이라 보수적 → 하한 경보로만.
+★최종화에서 <strong>DeLong 정확 대응비교로 보강했다</strong> — 이 한계는 §6에서 해소됐다.</p>
+</blockquote>
+<p><strong>무엇이 이걸 가능하게 했나</strong> — <code>master_report/notes.md:48</code></p>
+<blockquote>
+<p>~~분자별 예측 미저장으로 부트스트랩·DeLong 불가~~ → ★<code>experiment_deploy_reliability</code>에서
+챔피언의 분자별 예측을 만들어 부트스트랩 CI·DeLong을 산출했고 §6·§11에 반영했다.</p>
+</blockquote>
+<p>즉 ④는 "검정을 바꿨다"가 아니라 <strong>"검정을 가능하게 만드는 데이터를 새로 만들었다"</strong>가 먼저다.</p>
+<p><strong>★정정 전 문서가 그대로 남아 있다</strong></p>
+<ul>
+<li><code>experiments/2026-07-22/master_report/results/master_report_before_final.html</code> — DeLong 반영 전</li>
+<li><code>experiments/2026-07-22/master_report/results/master_report_before_polish.html</code> — 그 이전</li>
+<li><code>results/finalize_check.json</code> — 전후 숫자 대조 (<code>n_numbers_before/after</code> 464 · <code>numbers_identical: true</code>)</li>
+</ul>
+<p><strong>★검증식 자체도 한 번 고쳤다</strong> — <code>master_report/notes.md:144</code></p>
+<blockquote>
+<p>처음엔 "숫자 multiset 동일"로 검사했는데 (B)가 중복 행을 지우므로 <strong>당연히 줄어드는</strong> 것을
+실패로 잡았다. "새 숫자 0 + 고유값 집합 동일 + 감소분이 §8 중복분과 정확히 일치"
+세 조건으로 바꿔 확인했다.</p>
+</blockquote>
+<p>📎 <code>experiments/2026-07-22/master_report/results/polish_check.json</code> — 표 재정렬 before/after 전문</p>
+<hr />
+<h2>⑤ 멀티태스크 이득 → 가설 기각 ★자체 발견</h2>
+<p><strong>판단이 바뀐 문장</strong> — <code>experiment_adme_full/notes.md</code> (축③)</p>
+<blockquote>
+<p>★자체 발견한 누수로 결론 뒤집힘. CYP 3종이 같은 분자 라이브러리(라벨만 다름)라
+<strong>합집합 train에 test의 88.9%가 섞였다</strong> → 누수 차단 후 재계산하니 "닮은 과제 이득" 가설
+<strong>기각</strong>(CYP 억제 +0.0004 · 기질 −0.024). 남은 이득은 소표본 2개에 집중.</p>
+</blockquote>
+<p><strong>88.9%가 무엇인지 정확히</strong> — <em>이득 중 누수가 차지한 비율이 아니라</em>, 멀티태스크 학습의
+합집합 train에 섞여 들어간 <strong>test 분자의 비율</strong>이다. 누수의 원인이지 효과의 크기가 아니다.</p>
+<p><strong>원자료</strong> — <code>experiments/2026-07-22/experiment_adme_full/results/learning_axis.csv</code>
+그룹(<code>all_adme_cls</code> / <code>cyp_inhibition</code> / <code>cyp_substrate</code>)별 멀티태스크 − 단일 델타.
+<code>cyp_inhibition</code> 세 값 (−0.0061, +0.0108, −0.0034)의 평균이 <strong>+0.0004</strong>로 재계산된다.</p>
+<p>📊 <code>docs/assets/selfcorrection/sc05_multitask.png</code>
+📎 초기(누수) 관측 3그룹 — <code>experiments/2026-07-22/experiment_adme_full/src/build_final.py:234</code>
+   (<code>cyp_inhibition</code> 3/3 · <code>cyp_substrate</code> 2/3 · <code>all_adme_cls</code> 9/10)</p>
+<hr />
+<h2>⑥ 물성 18/18 → 17/18 · 16/18</h2>
+<p><strong>판단이 바뀐 문장</strong> — <code>experiment_adme_full/src/rf_ecfp_symmetric.py</code> 머리말</p>
+<blockquote>
+<p>적대검증 확정 HIGH: "물리화학 18/18 ECFP 압승"은 physchem에 2모델(xgb+rf)·ECFP에 1모델만 준
+<strong>best-of-2 산물</strong>이었다. rf_ecfp(빠져 있던 4번째 조합)를 추가해 <strong>2×2 대칭(모델×특징)으로
+재집계</strong> → 진짜 '특징 효과'를 격리한다. 기존 예측·기록은 건드리지 않고 별도 파일에만 쓴다.</p>
+</blockquote>
+<p><strong>이 항목의 근거는 문서가 아니라 실행 코드다.</strong> 빠져 있던 조합을 실제로 돌려서 2×2를 채웠다.</p>
+<p>📊 <code>docs/assets/selfcorrection/sc06_asymmetric_roster.png</code>
+📎 <code>results/feature_2x2.csv</code> (2×2 결과) · <code>.../results/rf_ecfp_raw.jsonl</code> (원자료)
+📎 <code>.../results/feature_ablation.csv</code> — 축② 특징 기여도</p>
+<hr />
+<h2>⑦ 배설 3종 → 반감기만</h2>
+<p><strong>판단이 바뀐 문장</strong> — <code>experiment_adme_full/notes.md</code> (축①)</p>
+<blockquote>
+<p>★적대검증 정정: <strong>반감기는 결정적, 두 청소율은 G2와 구분 불가 동률</strong>(간세포 Δ0.0025 ≪ sd 0.05)이라
+'3종 석권'은 과장(<strong>방향은 진짜 · 표현 과했음</strong>).</p>
+</blockquote>
+<p>"방향은 진짜, 표현이 과했다"는 자기평가가 원문에 그대로 있다.</p>
+<p>★원문이 든 <code>sd 0.05</code>는 <strong>G2가 아니라 G4(Uni-Mol)의 seed SD</strong>(0.0514)다. G2 최고(<code>rf_physchem</code>)의 SD는 0.0167이고,
+어느 쪽을 기준으로 잡아도 "동률" 판정은 바뀌지 않는다. <code>self_corrections.md</code> ⑦의 표에 둘 다 적어뒀다.</p>
+<p>📊 <code>docs/assets/selfcorrection/sc07_excretion.png</code>
+📎 <code>results/adme_matrix.csv</code></p>
+<hr />
+<h2>⑧ seed 처리 의존 — 그리고 그 뒤 주 판정이 바뀌었다</h2>
+<p><strong>1단계 (07-24)</strong> — <code>experiment_g4_verification/notes.md</code> 결론 3줄</p>
+<blockquote>
+<ol>
+<li>반감기 — 주 판정(A: 5seed 예측평균)에서 G4 우세 구분됨 … ★단 보수 판정(B: seed별)에서는
+   CI [−0.018, +0.325]로 구분 안 됨.</li>
+<li>수용해도 — … ★단 (B)에서는 구분 안 됨. 게다가 <strong>G4가 3/5 seed</strong>(1·2 OOM 실패).</li>
+<li><strong>여전히 미검증</strong> — VDss·간세포청소율·마이크로솜청소율 3개는 검증하지 않았다.
+   <strong>이 결과를 그 3개로 일반화하면 안 된다.</strong></li>
+</ol>
+</blockquote>
+<p><strong>★2단계 (07-25) — 주 판정이 A에서 B로 바뀌었다</strong> — <code>experiment_adme_reliability/notes.md:75-76</code></p>
+<blockquote>
+<p>★주 판정 = <strong>seed별 부트스트랩 후 종합</strong>. 이유: 이 연구의 주장은 특정 배포물이 아니라
+<strong>방법 비교</strong>이므로 <strong>학습 변동을 CI에 포함</strong>해야 정직하다.
+'5seed 예측평균'도 병기하되 그것은 5-모델 앙상블 평가이며 <strong>변동이 큰 모델(Uni-Mol)에
+비대칭적으로 유리</strong>하다 — G4 검증 실험에서 이 차이가 판정 자체를 뒤집었다.</p>
+</blockquote>
+<p>따라서 <code>results/g4_verification.json</code>의 <code>primary_method: "A(5seed 예측평균…)"</code>은 <strong>07-24 시점의 값이고,
+하루 뒤 B로 교체됐다.</strong> 파일을 수정하지 않고 남겨둔 이유는 그때의 판단을 보존하기 위해서다.
+현재의 주 판정은 B이며, <strong>두 판정 모두 보고한다.</strong></p>
+<p><strong>부수 기록</strong>
+- seed 3/5 (OOM 실패): <code>experiments/2026-07-24/.../results/g4_raw.jsonl</code>
+- conformer 생성 실패 분자와 사유: <code>experiments/2026-07-24/.../logs/conformer_failed.json</code>
+  (<code>ETKDG embed failed</code> — 반감기 6/135, 수용해도 17/1995)
+- 재현 검증: <code>.../results/step1_repro.json</code> (seed별 값 포함) · <code>step2_repro.json</code> · <code>step0_split_check.json</code></p>
+<p>📊 <code>docs/assets/selfcorrection/sc08_seed_flip.png</code></p>
+<hr />
+<h2>8건에 안 들어간 기록들</h2>
+<p>자기정정으로 번호를 붙이지는 않았지만 같은 성격의 기록이다. 남겨둔다.</p>
+<p><strong>재현 방식</strong> — <code>experiments/2026-07-22/experiment_deploy_reliability/results/reproduction_check.json</code></p>
+<blockquote>
+<p>모델 아티팩트가 저장돼 있지 않아 로드 불가 → 동일 config·seed·분할로 <strong>재현 학습 후 추론</strong>.
+모든 예측은 ★재현본임을 flag한다.</p>
+</blockquote>
+<p>18개 전부 허용오차 0.005 안, <code>n_fail: 0</code>. logD는 별도로 <code>logd_g3_repro.json</code>(diff 0.0).</p>
+<p><strong>"동일 config"가 틀린 표현이었다</strong> — <code>experiment_g3_dmpnn_seed42/notes.md:36</code></p>
+<blockquote>
+<p>★단 <strong>에폭이 다르다</strong> — seed=1 런은 30, 이번은 50. 따라서 "동일 config"라는 표현은 틀렸고,
+두 런의 차이를 <strong>분할 효과로만 귀속할 수 없다</strong>.</p>
+</blockquote>
+<p><strong>변수명이 틀렸던 것</strong> — 같은 파일 <code>:32</code></p>
+<blockquote>
+<p><code>train_dmpnn.py</code>가 처음 찍은 <code>train_test_exact_overlap</code>은 실제로 <strong>InChIKey14(골격) 중복</strong>이었다.
+정확분자/전체InChIKey/골격 셋을 따로 계산해 이름을 바로잡았다.</p>
+</blockquote>
+<p><strong>실행 사고 2건</strong> — <code>experiment_gen_expansion_g1g3/notes.md:34,36</code></p>
+<blockquote>
+<p>★사고 1: G2 첫 실행에서 210건 중 95건 실패. RDKit <code>Ipc</code> 같은 초대형 서술자가 float64에선
+유한하나 <strong>float32 캐스팅에서 inf</strong>가 됐다. 고친 뒤 — <strong>성공분 115건도 전처리가 다르므로
+전량 폐기하고 재학습</strong>했다(섞으면 표가 오염된다).</p>
+<p>★사고 2: Tox21 G3가 5/5 실패. chemprop env의 RDKit이 알루미늄 화합물을 거부.
+필터로 해결하고 <strong>분자셋이 바뀌었으므로 G1·G2·G3 전부 재실행</strong>했다.</p>
+</blockquote>
+<p><strong>지표 방향 단위 테스트</strong> — <code>experiment_adme_reliability/notes.md:28</code></p>
+<blockquote>
+<p>MAE↓ 4개, Spearman↑ 4개, AUROC↑ 10개가 섞여 있어 부호 실수 시 순위가 통째로 뒤집힌다.
+코드에 테스트를 박아 검증했다(4/4 통과).</p>
+</blockquote>
+<p><strong>logD 외과적 병합</strong> — <code>experiment_adme_reliability/notes.md:26</code></p>
+<blockquote>
+<p>logD는 챔피언 순번 4번이라 전체 재실행 시 RNG가 뒤 13개 CI를 바꿈 → 단독 계산 후 기존
+CSV·detail에 <strong>외과적 병합</strong>(나머지 17개 파일수준 변경 셀 <strong>0</strong> 확인).</p>
+</blockquote></section><hr><section class='doc' id='methods'><h1>방법</h1><p class='src'>원본: <code>notes/methods.md</code></p><h1>방법</h1>
+<h2>분할</h2>
+<ul>
+<li><strong>레시피</strong>: TDC scaffold (Bemis-Murcko), <code>seed=42</code>, <code>frac 0.7 / 0.1 / 0.2</code></li>
+<li><strong>호출</strong>: <code>Tox(name).get_split(method='scaffold', seed=42)</code></li>
+<li><strong>test는 고정, train/valid만 seed로 재샘플링된다.</strong> 예: DILI(총 475) — seed 1은
+  train 325 / valid 54, seed 2는 331 / 48, test는 둘 다 96으로 동일.</li>
+</ul>
+<p><code>splits/</code> 의 test set 정의는 <strong>확정된 예측 파일에서 역산</strong>했다
+(<code>scripts/extract_splits.py</code>). 모델을 다시 돌리지 않았다.</p>
+<p>두 가지를 대조했고 둘 다 불일치 0건이었다.</p>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>검사</th>
+<th>내용</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파일 내부</td>
+<td>같은 파일의 seed 1~5가 같은 test set을 쓰는가</td>
+<td>0건 불일치</td>
+</tr>
+<tr>
+<td>모델 간</td>
+<td>같은 엔드포인트의 서로 다른 모델이 같은 test set을 쓰는가</td>
+<td>0건 불일치</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>splits/_manifest.csv</code> 에 엔드포인트별 <code>n_test</code> · 양성비 · <strong>sha256 지문</strong>이 있다.
+재현한 분할이 같은지 지문으로 확인할 수 있다.</p>
+<h3>"동일 분할"의 범위</h3>
+<p>엔드포인트 <strong>안에서</strong> 모든 모델이 같은 test set을 쓴다는 뜻이다.
+엔드포인트 <strong>사이</strong>에 같은 분자를 쓴다는 뜻이 아니다 — Tox21은 assay마다 라벨이
+붙은 분자가 달라 <code>n_test</code>가 1051~1437로 갈린다.</p>
+<p>예외: Uni-Mol(G4)은 3D conformer 생성에 실패한 분자를 평가할 수 없다.
+반감기 6/134, 수용해도 17/1995가 제외됐다. G2에서도 같은 분자를 빼서
+짝을 맞췄으나(교집합 Jaccard 1.0), G4 비교만 약간 작은 test set 위에 있다.</p>
+<h2>지표</h2>
+<div class='tablewrap'><table>
+<thead>
+<tr>
+<th>과제</th>
+<th>주지표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>분류</td>
+<td>AUROC (부차: AUPRC)</td>
+</tr>
+<tr>
+<td>회귀</td>
+<td>MAE 또는 Spearman</td>
+</tr>
+</tbody>
+</table></div>
+<p>세대별 대표값은 <strong>해당 세대 모델 중 최고값</strong>이다.
+G2는 3개 모델(물성×XGB, 물성×RF, ECFP×XGB) 중 최고를 뽑고 G3·G4는 각 1개다 —
+이 <strong>다중비교 비대칭</strong>은 해소하지 못한 채 한계에 명시했다.</p>
+<h2>통계</h2>
+<ul>
+<li><strong>DeLong 대응비교</strong> — 같은 test set을 쓰는 두 모델의 AUC 비교.
+  분류 17개 대상, 10건 유의, 전부 챔피언(G2) 우세.
+  LD50은 회귀라 대상이 아니다.</li>
+<li><strong>부트스트랩</strong> — 1위와 2위의 차이에 95% 신뢰구간. 구간이 0을 포함하지 않을 때만
+  "구분됨"으로 판정.</li>
+<li><strong>격차 ÷ SD</strong> — 1위·2위 격차를 1위 자신의 seed 표준편차로 나눈 값.
+  1보다 작으면 흔들림 안. 36개 중 17개가 여기 해당한다.</li>
+</ul>
+<h3>seed 집계 방식</h3>
+<p>두 가지가 있고 <strong>결론이 달라진다</strong>(→ <code>self_corrections.md</code> ⑧).</p>
+<ul>
+<li><strong>A</strong> — seed별 예측을 먼저 평균낸 뒤 지표 계산 (앙상블)</li>
+<li><strong>B</strong> — seed별로 지표를 계산해 비교</li>
+</ul>
+<p>A는 변동이 큰 모델에 유리하다. G4 검증에서는 두 판정을 모두 보고한다.</p>
+<h2>누수 처리</h2>
+<p>ADMET-AI는 누수 3증거로 순위 판정에서 제외하고 참고선으로만 표시했다.</p>
+<ol>
+<li>TDC 전체로 사전학습</li>
+<li>자체 논문 보고치를 우리 test에서 초과</li>
+<li>누수 없이 학습한 동종 모델과의 격차 (핵심 4종 0.088 · 확장 0.149)</li>
+</ol>
+<p>이 초과분은 앙상블·멀티태스크·튜닝과 교락되어 있어 <strong>누수 효과의 상한</strong>으로만
+읽어야 한다. 교락을 걷어낸 추정치는 +0.049~0.074.</p></section><hr></div></body></html>
