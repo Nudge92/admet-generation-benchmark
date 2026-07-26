@@ -7,6 +7,9 @@
 
 > 경로는 저장소 루트 기준이다. `experiments/` 아래는 실험 당시의 원본 트리를 그대로 옮긴 것이다.
 
+📊 아래 표를 그림으로 본 것: `docs/assets/selfcorrection/sc00_timeline.png`
+   (각 정정이 어느 날짜 폴더의 어느 실험에서 일어났나)
+
 ---
 
 ## 한눈에
@@ -15,7 +18,7 @@
 |:--:|---|---|---|
 | ① | 누수 프리미엄 → 상한 | `experiments/2026-07-22/experiment_generation_matrix/notes.md:81` | `.../results/leakage.json` · `experiment_gen_expansion_g1g3/notes.md:53-66` |
 | ② | range 판정 → 1위·2위 격차 | `experiments/2026-07-22/experiment_generation_matrix/notes.md:86` | `experiment_g3_dmpnn_seed42/notes.md:75` |
-| ③ | LD50 G4 승 철회 | 위와 같은 줄 (②의 직접 결과) | `results/master_matrix.csv` · `results/consistency.json` |
+| ③ | LD50 G4 승 철회 | 위와 같은 줄 (②의 직접 결과) | `results/master_matrix.csv` · `experiments/2026-07-22/master_report/results/consistency.json` |
 | ④ | Hanley-McNeil → DeLong | `experiments/2026-07-22/master_report/notes.md:47-48` | `results/finalize_check.json` · `master_report_before_final.html` |
 | ⑤ | 멀티태스크 이득 → 기각 | `experiments/2026-07-22/experiment_adme_full/notes.md` (축③) | `.../results/learning_axis.csv` |
 | ⑥ | 물성 18/18 → 17/18·16/18 | `experiments/2026-07-22/experiment_adme_full/src/rf_ecfp_symmetric.py` (머리말) | `results/feature_2x2.csv` · `.../results/feature_ablation.csv` |
@@ -39,7 +42,7 @@
 
 1. TDC 전체로 사전학습
 2. 자체 논문 보고치를 우리 test에서 초과 → **누수 크기의 가장 깨끗한 추정 +0.049~0.074**
-3. 정직 학습 동종 모델과의 격차 → 상한 (핵심 0.0876 · 확장 0.1491, `results/consistency.json`)
+3. 정직 학습 동종 모델과의 격차 → 상한 (핵심 0.0876 · 확장 0.1491, `experiments/2026-07-22/master_report/results/consistency.json`)
 
 **★한계까지 적어뒀다** — 같은 파일 `:55`
 
@@ -84,7 +87,7 @@
 > 마찬가지로 *"고전이 우월하다"*는 증거도 없다.
 
 📊 `docs/assets/selfcorrection/sc03_ld50_withdrawn.png`
-📎 `results/consistency.json` — `best_gen_dist {G2:17, G4:1}` · `g3_first_place: 0`
+📎 `experiments/2026-07-22/master_report/results/consistency.json` — `best_gen_dist {G2:17, G4:1}` · `g3_first_place: 0`
 
 ---
 
@@ -133,6 +136,10 @@
 그룹(`all_adme_cls` / `cyp_inhibition` / `cyp_substrate`)별 멀티태스크 − 단일 델타.
 `cyp_inhibition` 세 값 (−0.0061, +0.0108, −0.0034)의 평균이 **+0.0004**로 재계산된다.
 
+📊 `docs/assets/selfcorrection/sc05_multitask.png`
+📎 초기(누수) 관측 3그룹 — `experiments/2026-07-22/experiment_adme_full/src/build_final.py:234`
+   (`cyp_inhibition` 3/3 · `cyp_substrate` 2/3 · `all_adme_cls` 9/10)
+
 ---
 
 ## ⑥ 물성 18/18 → 17/18 · 16/18
@@ -160,6 +167,10 @@
 
 "방향은 진짜, 표현이 과했다"는 자기평가가 원문에 그대로 있다.
 
+★원문이 든 `sd 0.05`는 **G2가 아니라 G4(Uni-Mol)의 seed SD**(0.0514)다. G2 최고(`rf_physchem`)의 SD는 0.0167이고,
+어느 쪽을 기준으로 잡아도 "동률" 판정은 바뀌지 않는다. `self_corrections.md` ⑦의 표에 둘 다 적어뒀다.
+
+📊 `docs/assets/selfcorrection/sc07_excretion.png`
 📎 `results/adme_matrix.csv`
 
 ---

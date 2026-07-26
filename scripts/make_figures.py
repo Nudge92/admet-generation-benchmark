@@ -209,7 +209,7 @@ def sc03():
 
 fig1(); fig2(); fig3(); sc03()
 
-ALL.to_csv("/home/claude/assets/figure_data.csv", index=False)
+ALL.to_csv(f"{SRC}/figure_data.csv", index=False)
 print("생성 완료")
 for root, _d, fs in os.walk(OUT):
     for f in sorted(fs):
